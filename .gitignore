@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.log
+
+# Prisma
+server/prisma/dev.db
+server/prisma/dev.db-journal
+server/prisma/migrations/dev/
+
+# Foundry
+contracts/out/
+contracts/cache/
+contracts/broadcast/
+contracts/lib/
+contracts/foundry.lock

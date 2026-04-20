@@ -1,0 +1,54 @@
+// Prisma schema for the Relm backend.
+// SQLite locally; swap to Postgres when we deploy to Railway.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// A verified link between a Luanti player account and a Soneium
+// wallet address. One-way lookup both directions:
+// - relm_wallet /wallet → address for a given player
+// - deduplicate addresses so a wallet can't be bound to two players
+model PlayerWallet {
+  id        String   @id @default(cuid())
+  player    String   @unique
+  address   String   @unique
+  linkedAt  DateTime @default(now())
+}
+
+// Short-lived challenge issued when a player runs /wallet-link in game.
+// The browser flow signs this nonce with the player's wallet to prove
+// ownership before PlayerWallet is written.
+model WalletChallenge {
+  id        String   @id @default(cuid())
+  player    String
+  nonce     String   @unique
+  expiresAt DateTime
+  consumed  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([player])
+}
+
+// Reward events batched by the Lua mod. Scored asynchronously and
+// converted into on-chain mints. `pending` until the scorer picks it
+// up; `scored` after scoring; `minted` once the tx lands.
+model RewardEvent {
+  id        String   @id @default(cuid())
+  player    String
+  address   String
+  kind      String   // dignode | placenode | hp_change | death
+  payload   String   // JSON blob
+  scoreBps  Int?     // points (bps = 1/10000 of a token)
+  mintedAt  DateTime?
+  txHash    String?
+  createdAt DateTime @default(now())
+
+  @@index([address, createdAt])
+  @@index([mintedAt])
+}
