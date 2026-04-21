@@ -1,5 +1,6 @@
 import { Router, type Request, type Response } from "express";
 import { prisma } from "../lib/prisma.js";
+import { rewardsIngestLimiter } from "../lib/ratelimit.js";
 
 export const rewardsRouter = Router();
 
@@ -11,7 +12,7 @@ export const rewardsRouter = Router();
 // Auth: `X-Relm-Secret` header must match RELM_BACKEND_SECRET. That's
 // shared between the server and the modpack's minetest.conf, and it
 // stops randoms from posting fake events at the open endpoint.
-rewardsRouter.post("/ingest", async (req: Request, res: Response) => {
+rewardsRouter.post("/ingest", rewardsIngestLimiter, async (req: Request, res: Response) => {
   const secret = req.header("x-relm-secret");
   if (!secret || secret !== process.env.RELM_BACKEND_SECRET) {
     return res.status(401).json({ error: "bad secret" });

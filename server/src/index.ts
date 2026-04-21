@@ -6,6 +6,9 @@ import { startScorer } from "./workers/scorer.js";
 import { startMinter } from "./workers/minter.js";
 
 const app = express();
+// Trust the Railway edge proxy so rate-limiting keys off the real
+// client IP rather than the Railway-internal address.
+app.set("trust proxy", 1);
 app.use(express.json({ limit: "1mb" }));
 
 app.get("/healthz", (_req, res) => res.json({ ok: true }));

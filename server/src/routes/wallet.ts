@@ -1,13 +1,14 @@
 import { Router, type Request, type Response } from "express";
 import { prisma } from "../lib/prisma.js";
 import { freshChallenge, verifyChallenge } from "../lib/siwe.js";
+import { walletChallengeLimiter, walletConfirmLimiter } from "../lib/ratelimit.js";
 
 export const walletRouter = Router();
 
 // POST /api/wallet/challenge { player }
 // Issues a one-time nonce + URL the player opens in their browser to
 // connect a wallet and sign. Stored nonce gates /confirm.
-walletRouter.post("/challenge", async (req: Request, res: Response) => {
+walletRouter.post("/challenge", walletChallengeLimiter, async (req: Request, res: Response) => {
   const { player } = req.body ?? {};
   if (typeof player !== "string" || player.length === 0 || player.length > 64) {
     return res.status(400).json({ error: "player required" });
@@ -31,7 +32,7 @@ walletRouter.post("/challenge", async (req: Request, res: Response) => {
 // The in-game `/wallet-set <addr> <token>` flow calls this after the
 // browser returned a token. `token` IS the nonce, re-echoed — the
 // signature + message are what actually authorize the bind.
-walletRouter.post("/confirm", async (req: Request, res: Response) => {
+walletRouter.post("/confirm", walletConfirmLimiter, async (req: Request, res: Response) => {
   const { player, address, token, message, signature } = req.body ?? {};
   if (
     typeof player !== "string" ||
