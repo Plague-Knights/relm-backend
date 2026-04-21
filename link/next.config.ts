@@ -1,15 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   async rewrites() {
-    // Forward API calls to the Express server in dev so the wallet
-    // page doesn't need CORS. In production these two services will
-    // live behind the same domain anyway.
+    // Forward API calls to the Express server so the browser sees
+    // same-origin requests and we don't need CORS. In prod this points
+    // at the Railway internal URL of the server service; in dev it
+    // points at localhost:3000.
+    const backend = process.env.BACKEND_URL ?? process.env.NEXT_PUBLIC_BACKEND_URL ?? "http://localhost:3000";
     return [
-      {
-        source: "/api/:path*",
-        destination: `${process.env.NEXT_PUBLIC_BACKEND_URL ?? "http://localhost:3000"}/api/:path*`,
-      },
+      { source: "/api/:path*", destination: `${backend}/api/:path*` },
     ];
   },
 };
