@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 import { walletRouter } from "./routes/wallet.js";
 import { rewardsRouter } from "./routes/rewards.js";
+import { cosmeticsRouter } from "./routes/cosmetics.js";
 import { startScorer } from "./workers/scorer.js";
 import { startMinter } from "./workers/minter.js";
 
@@ -15,6 +16,7 @@ app.get("/healthz", (_req, res) => res.json({ ok: true }));
 
 app.use("/api/wallet", walletRouter);
 app.use("/api/rewards", rewardsRouter);
+app.use("/api/cosmetics", cosmeticsRouter);
 
 const PORT = Number(process.env.PORT ?? 3000);
 app.listen(PORT, () => {
