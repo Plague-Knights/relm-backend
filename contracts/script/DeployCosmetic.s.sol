@@ -4,27 +4,39 @@ pragma solidity 0.8.24;
 import { Script, console2 } from "forge-std/Script.sol";
 import { RelmCosmetic } from "../src/RelmCosmetic.sol";
 
-/// Deploys RelmCosmetic and seeds three starter cosmetic types so the
-/// shop has something to display on day one. Re-runnable safely — each
-/// run produces a new contract; only run once per environment.
+/// Deploys RelmCosmetic v2 (perks + dual-currency) and seeds five
+/// starter types so the shop launches with a real spread of items.
+///
+/// Cosmetic types:
+/// 1. Crimson Cape       — 0.001 ETH OR 200 RELM, pure accessory
+/// 2. Cobalt Trail       — 0.002 ETH OR 400 RELM, pure accessory
+/// 3. Founder Pickaxe    — 0.01 ETH only, skins relm_core:pick_wood,
+///                         UNBREAKABLE + KEEP_ON_DEATH + SOULBOUND, 100 max
+/// 4. Iron Pickaxe Skin  — RELM only (1500), skins relm_core:pick_iron,
+///                         KEEP_ON_DEATH (RELM-grindable upgrade path)
+/// 5. Wood Axe Skin      — RELM only (300), skins relm_core:axe_wood,
+///                         no perks (entry-level RELM sink)
+///
+/// Run with: RELM_TOKEN_ADDR=0x... forge script script/DeployCosmetic.s.sol:DeployCosmetic ...
 contract DeployCosmetic is Script {
+    uint16 constant UNBREAKABLE   = 1 << 0;
+    uint16 constant KEEP_ON_DEATH = 1 << 1;
+    uint16 constant SOULBOUND     = 1 << 2;
+
     function run() external {
+        address relmTokenAddr = vm.envAddress("RELM_TOKEN_ADDR");
+        string memory baseUri = "https://relm-link-production.up.railway.app/api/cosmetics/meta";
+
         vm.startBroadcast();
-        RelmCosmetic shop = new RelmCosmetic();
+        RelmCosmetic shop = new RelmCosmetic(relmTokenAddr);
 
-        // Phase-1 cosmetics. Metadata URIs point at the link app's
-        // /shop/meta/<id>.json route; we'll lift them to IPFS once
-        // there's enough volume to justify pinning.
-        string memory baseUri = "https://relm-link-production.up.railway.app/shop/meta";
-
-        uint256 capeId       = shop.registerType(0.001 ether, string.concat(baseUri, "/1.json"), 0);
-        uint256 trailId      = shop.registerType(0.002 ether, string.concat(baseUri, "/2.json"), 0);
-        uint256 founderId    = shop.registerType(0.01  ether, string.concat(baseUri, "/3.json"), 100);
+        shop.registerType(0.001 ether, 200 ether,  string.concat(baseUri, "/1"), 0,   "",                        0);
+        shop.registerType(0.002 ether, 400 ether,  string.concat(baseUri, "/2"), 0,   "",                        0);
+        shop.registerType(0.01  ether, 0,          string.concat(baseUri, "/3"), 100, "relm_core:pick_wood",     UNBREAKABLE | KEEP_ON_DEATH | SOULBOUND);
+        shop.registerType(0,           1500 ether, string.concat(baseUri, "/4"), 0,   "relm_core:pick_iron",     KEEP_ON_DEATH);
+        shop.registerType(0,           300 ether,  string.concat(baseUri, "/5"), 0,   "relm_core:axe_wood",      0);
 
         vm.stopBroadcast();
-        console2.log("RelmCosmetic deployed at", address(shop));
-        console2.log("Type 1 (Crimson Cape):", capeId);
-        console2.log("Type 2 (Blue Particle Trail):", trailId);
-        console2.log("Type 3 (Founder Pickaxe Skin, 100 max):", founderId);
+        console2.log("RelmCosmetic v2 deployed at", address(shop));
     }
 }

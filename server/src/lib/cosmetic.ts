@@ -11,10 +11,13 @@ const COSMETIC_ABI = [
     inputs: [{ type: "uint256" }],
     outputs: [
       { name: "priceWei", type: "uint256" },
+      { name: "priceRelm", type: "uint256" },
       { name: "active", type: "bool" },
       { name: "metadataURI", type: "string" },
       { name: "maxSupply", type: "uint256" },
       { name: "minted", type: "uint256" },
+      { name: "itemId", type: "string" },
+      { name: "perks", type: "uint16" },
     ],
   },
   {
@@ -22,7 +25,6 @@ const COSMETIC_ABI = [
     inputs: [{ name: "owner", type: "address" }],
     outputs: [{ type: "uint256" }],
   },
-  // ERC-721 Transfer log we use to enumerate ownership cheaply.
   {
     type: "event", name: "Transfer", inputs: [
       { indexed: true, name: "from", type: "address" },
@@ -42,7 +44,19 @@ function shopAddress(): Address {
   return a as Address;
 }
 
-export async function listTypes() {
+export type CosmeticType = {
+  id: number;
+  priceWei: string;
+  priceRelm: string;
+  active: boolean;
+  metadataURI: string;
+  maxSupply: number;
+  minted: number;
+  itemId: string;
+  perks: number;
+};
+
+export async function listTypes(): Promise<CosmeticType[]> {
   const addr = shopAddress();
   const next = await publicClient.readContract({
     address: addr,
@@ -50,38 +64,29 @@ export async function listTypes() {
     functionName: "nextTypeId",
   }) as bigint;
 
-  const out: Array<{
-    id: number;
-    priceWei: string;
-    active: boolean;
-    metadataURI: string;
-    maxSupply: number;
-    minted: number;
-  }> = [];
-
+  const out: CosmeticType[] = [];
   for (let i = 1n; i < next; i++) {
     const t = await publicClient.readContract({
       address: addr,
       abi: COSMETIC_ABI,
       functionName: "cosmeticTypes",
       args: [i],
-    }) as readonly [bigint, boolean, string, bigint, bigint];
+    }) as readonly [bigint, bigint, boolean, string, bigint, bigint, string, number];
     out.push({
       id: Number(i),
       priceWei: t[0].toString(),
-      active: t[1],
-      metadataURI: t[2],
-      maxSupply: Number(t[3]),
-      minted: Number(t[4]),
+      priceRelm: t[1].toString(),
+      active: t[2],
+      metadataURI: t[3],
+      maxSupply: Number(t[4]),
+      minted: Number(t[5]),
+      itemId: t[6],
+      perks: Number(t[7]),
     });
   }
   return out;
 }
 
-// Walk Transfer logs to enumerate every tokenId an address currently
-// owns. For a low-volume cosmetic shop this is more than fast enough;
-// once volume grows, swap to a tokenOfOwnerByIndex extension or an
-// off-chain index.
 export async function ownedByAddress(owner: Address) {
   const addr = shopAddress();
   const balance = await publicClient.readContract({
@@ -107,8 +112,6 @@ export async function ownedByAddress(owner: Address) {
   });
 
   const owned = new Set<bigint>();
-  // Iterate chronologically: transfers IN add, OUT remove. ERC-721 mint
-  // events are also Transfers from address(0).
   type Ev = { blockNumber: bigint; logIndex: number; tokenId: bigint; kind: "in" | "out" };
   const events: Ev[] = [
     ...inLogs.map(l => ({ blockNumber: l.blockNumber!, logIndex: l.logIndex!, tokenId: l.args.tokenId!, kind: "in" as const })),
@@ -132,5 +135,22 @@ export async function ownedByAddress(owner: Address) {
     }) as bigint;
     out.push({ tokenId: Number(tokenId), typeId: Number(typeId) });
   }
+  return out;
+}
+
+// Bitmask helpers — mirror the Lua side and the Solidity constants.
+export const PERKS = {
+  UNBREAKABLE:   1 << 0,
+  KEEP_ON_DEATH: 1 << 1,
+  SOULBOUND:     1 << 2,
+  AUTO_PICKUP:   1 << 3,
+} as const;
+
+export function perksToList(perks: number): string[] {
+  const out: string[] = [];
+  if (perks & PERKS.UNBREAKABLE)   out.push("unbreakable");
+  if (perks & PERKS.KEEP_ON_DEATH) out.push("keep_on_death");
+  if (perks & PERKS.SOULBOUND)     out.push("soulbound");
+  if (perks & PERKS.AUTO_PICKUP)   out.push("auto_pickup");
   return out;
 }

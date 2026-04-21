@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220">
+  <defs>
+    <linearGradient id="iron-head" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9aa6b5"/>
+      <stop offset="100%" stop-color="#3a4250"/>
+    </linearGradient>
+  </defs>
+  <rect width="220" height="220" fill="#0a0e16"/>
+  <rect x="80" y="55" width="20" height="120" fill="#3a2410" stroke="#1a0e04" stroke-width="2"/>
+  <path d="M40 50 L160 30 L155 80 L60 80 Z" fill="url(#iron-head)" stroke="#1f2630" stroke-width="2"/>
+  <text x="110" y="200" text-anchor="middle" fill="#9aa6b5" font-family="ui-monospace,monospace" font-size="11" opacity="0.85">IRON RESKIN</text>
+</svg>
