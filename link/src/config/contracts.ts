@@ -3,6 +3,22 @@
 
 export const RELM_COSMETIC_ADDRESS = "0x16d872c874f698c182603e2975602e6677353574" as const;
 export const RELM_TOKEN_ADDRESS    = "0x5caF5D0c542Cd515651dADfC4197D343DDcB2D51" as const;
+export const RELM_REFILL_ADDRESS   = "0xe41cb4abd76dc37763450b0b7a1826e5177615a9" as const;
+
+export const RELM_REFILL_ABI = [
+  {
+    type: "function", name: "refill", stateMutability: "nonpayable",
+    inputs: [], outputs: [],
+  },
+  {
+    type: "function", name: "refillPrice", stateMutability: "view",
+    inputs: [], outputs: [{ type: "uint256" }],
+  },
+  {
+    type: "function", name: "refillAmount", stateMutability: "view",
+    inputs: [], outputs: [{ type: "uint256" }],
+  },
+] as const;
 
 export const RELM_COSMETIC_ABI = [
   {

@@ -35,6 +35,33 @@ model WalletChallenge {
   @@index([player])
 }
 
+// Per-player energy meter. Scoring rewards only fire while a player
+// has energy > 0; each scored event decrements 1. Energy regenerates
+// at REGEN_PER_MIN per minute up to MAX_ENERGY (constants live in
+// server/src/lib/energy.ts so the curve is in one place).
+//
+// `lastRegenAt` lets the regen worker compute the eligible regen
+// without us holding a per-player timer.
+model PlayerEnergy {
+  player      String   @id
+  current     Int      @default(100)
+  lastRegenAt DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Refill receipts so we don't double-credit a chain event if the
+// watcher restarts mid-batch.
+model EnergyRefill {
+  id        String   @id @default(cuid())
+  player    String
+  address   String
+  amount    Int
+  txHash    String   @unique
+  createdAt DateTime @default(now())
+
+  @@index([player])
+}
+
 // Reward events batched by the Lua mod. Scored asynchronously and
 // converted into on-chain mints. `pending` until the scorer picks it
 // up; `scored` after scoring; `minted` once the tx lands.

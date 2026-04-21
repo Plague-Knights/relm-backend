@@ -3,8 +3,10 @@ import express from "express";
 import { walletRouter } from "./routes/wallet.js";
 import { rewardsRouter } from "./routes/rewards.js";
 import { cosmeticsRouter } from "./routes/cosmetics.js";
+import { energyRouter } from "./routes/energy.js";
 import { startScorer } from "./workers/scorer.js";
 import { startMinter } from "./workers/minter.js";
+import { startRefillWatcher } from "./workers/refillWatcher.js";
 
 const app = express();
 // Trust the Railway edge proxy so rate-limiting keys off the real
@@ -17,6 +19,7 @@ app.get("/healthz", (_req, res) => res.json({ ok: true }));
 app.use("/api/wallet", walletRouter);
 app.use("/api/rewards", rewardsRouter);
 app.use("/api/cosmetics", cosmeticsRouter);
+app.use("/api/energy", energyRouter);
 
 const PORT = Number(process.env.PORT ?? 3000);
 app.listen(PORT, () => {
@@ -28,5 +31,6 @@ app.listen(PORT, () => {
   if (process.env.RELM_DISABLE_WORKERS !== "1") {
     startScorer();
     startMinter();
+    startRefillWatcher();
   }
 });
