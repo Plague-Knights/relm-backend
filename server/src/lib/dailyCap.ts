@@ -12,16 +12,63 @@ import { prisma } from "./prisma.js";
 //   - The economy gets a hard supply ceiling (PER_PLAYER * active players),
 //     which gives whales nothing extra and protects token value.
 //
-// Tuning knobs live in `RELM_DAILY_CAP_BPS` env (defaults to 30,000 bps =
-// 3 RELM / player / day), so we can ratchet without redeploying scoring.
+// Two layers of supply control:
+//   1. RELM_DAILY_CAP_BPS  — the *initial* per-player daily cap (bps).
+//      Defaults to 30,000 bps = 3 RELM / player / day.
+//   2. EMISSION_HALVING_DAYS + EMISSION_GENESIS — every N days the
+//      cap halves. After MAX_HALVINGS halvings the cap floors at
+//      MIN_DAILY_CAP_BPS so rewards don't asymptote to literal zero.
+//
+// Together these give predictable scarcity without redeploys: tomorrow
+// is the same as today, but a year out is provably lower. Players see
+// the curve up front; insiders can't quietly accelerate it.
 
 const DEFAULT_PER_PLAYER_DAILY_CAP_BPS = 30_000;
+const MIN_DAILY_CAP_BPS = 1_000;          // floor at 0.1 RELM/day/player
+const DEFAULT_HALVING_DAYS = 180;
+const MAX_HALVINGS = 4;
+const MS_PER_DAY = 86_400_000;
 
-function perPlayerCap(): number {
+function basePerPlayerCap(): number {
   const raw = process.env.RELM_DAILY_CAP_BPS;
   if (!raw) return DEFAULT_PER_PLAYER_DAILY_CAP_BPS;
   const n = parseInt(raw, 10);
   return Number.isFinite(n) && n > 0 ? n : DEFAULT_PER_PLAYER_DAILY_CAP_BPS;
+}
+
+function halvingDays(): number {
+  const raw = process.env.EMISSION_HALVING_DAYS;
+  if (!raw) return DEFAULT_HALVING_DAYS;
+  const n = parseInt(raw, 10);
+  return Number.isFinite(n) && n > 0 ? n : DEFAULT_HALVING_DAYS;
+}
+
+function genesisTs(): number {
+  const raw = process.env.EMISSION_GENESIS;
+  if (!raw) {
+    // Pin to a fixed date so the halving schedule is stable across
+    // restarts and reproducible from outside. April 24 2026 UTC.
+    return Date.UTC(2026, 3, 24);
+  }
+  const t = Date.parse(raw);
+  return Number.isFinite(t) ? t : Date.UTC(2026, 3, 24);
+}
+
+function currentHalvings(now = Date.now()): number {
+  const elapsedDays = Math.max(0, (now - genesisTs()) / MS_PER_DAY);
+  const halvings = Math.floor(elapsedDays / halvingDays());
+  return Math.min(halvings, MAX_HALVINGS);
+}
+
+/**
+ * Effective per-player daily cap right now, in bps. Halves every
+ * EMISSION_HALVING_DAYS, floors at MIN_DAILY_CAP_BPS.
+ */
+function perPlayerCap(now = Date.now()): number {
+  const base = basePerPlayerCap();
+  const halvings = currentHalvings(now);
+  const decayed = Math.floor(base / 2 ** halvings);
+  return Math.max(MIN_DAILY_CAP_BPS, decayed);
 }
 
 function utcDay(now = new Date()): string {
@@ -63,17 +110,25 @@ export async function clampToDaily(player: string, requestedBps: number): Promis
 
 /**
  * Read-only lookup for the energy/cap endpoint and chat command.
- * Returns today's earned amount + the cap.
+ * Returns today's earned amount + the cap + halving metadata.
  */
 export async function readDaily(player: string) {
   const day = utcDay();
   const row = await prisma.playerDaily.findUnique({
     where: { player_day: { player, day } },
   });
+  const now = Date.now();
+  const halvings = currentHalvings(now);
+  const nextHalvingAt = halvings >= MAX_HALVINGS
+    ? null
+    : new Date(genesisTs() + (halvings + 1) * halvingDays() * MS_PER_DAY).toISOString();
   return {
     player,
     day,
     earnedBps: row?.bpsEarned ?? 0,
-    capBps: perPlayerCap(),
+    capBps: perPlayerCap(now),
+    halvings,
+    maxHalvings: MAX_HALVINGS,
+    nextHalvingAt,
   };
 }
