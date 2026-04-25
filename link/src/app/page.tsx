@@ -18,6 +18,7 @@ export default function Home() {
       <div style={{ marginTop: 18, display: "flex", gap: 8, flexWrap: "wrap" }}>
         <a href="/shop" className="btn">Open shop</a>
         <a href="/land" className="btn">Buy land</a>
+        <a href="/arena" className="btn">Arena</a>
       </div>
     </div>
   );

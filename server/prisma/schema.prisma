@@ -155,3 +155,52 @@ model SolanaPayment {
   @@index([memo])
   @@index([fromAddr])
 }
+
+// Internal "game wallet" balance per player. Used by the Arena (and
+// any future mini-game). All values in bps; 10,000 bps = 1 RELM.
+// Mints from the scorer credit this balance; on-chain withdrawals
+// debit it. Bets / payouts move it around without touching the chain.
+model PlayerBalance {
+  player     String   @id
+  balanceBps Int      @default(0)
+  updatedAt  DateTime @updatedAt
+}
+
+// Arena round — 4 NPC fighters per round, pari-mutuel betting in
+// RELM (off-chain balance). Outcomes are deterministic: server
+// commits H(seed) when the round opens, reveals the seed when the
+// betting window closes, the sim runs purely from (fighter stats,
+// seed). Anyone can re-derive the outcome offline.
+model ArenaRound {
+  id              String      @id @default(cuid())
+  status          String      // OPEN | LOCKED | SETTLED
+  seedCommit      String      // sha256(seed) hex
+  seedReveal      String?     // hex seed, populated at LOCKED
+  fighters        Json        // [{ id, name, power, speed, luck }]
+  winnerIdx       Int?
+  totalPoolBps    Int         @default(0)
+  houseBps        Int         @default(0)
+  bettingClosesAt DateTime
+  settledAt       DateTime?
+  createdAt       DateTime    @default(now())
+
+  bets            ArenaBet[]
+
+  @@index([status, bettingClosesAt])
+}
+
+model ArenaBet {
+  id         String     @id @default(cuid())
+  roundId    String
+  round      ArenaRound @relation(fields: [roundId], references: [id], onDelete: Cascade)
+  player     String
+  fighterIdx Int        // 0..3
+  amountBps  Int
+  payoutBps  Int        @default(0)
+  settled    Boolean    @default(false)
+  createdAt  DateTime   @default(now())
+
+  @@unique([roundId, player, fighterIdx])
+  @@index([roundId])
+  @@index([player])
+}
