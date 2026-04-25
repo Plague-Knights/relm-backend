@@ -16,7 +16,7 @@ contract RelmCosmeticTest is Test {
 
     function setUp() public {
         vm.prank(owner);
-        token = new RelmToken(minter);
+        token = new RelmToken(minter, 100_000_000 * 1e18);
         vm.prank(owner);
         shop = new RelmCosmetic(address(token));
         vm.deal(alice, 10 ether);

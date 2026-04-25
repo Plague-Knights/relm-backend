@@ -16,7 +16,7 @@ contract RelmEnergyRefillTest is Test {
 
     function setUp() public {
         vm.prank(owner);
-        token = new RelmToken(minter);
+        token = new RelmToken(minter, 100_000_000 * 1e18);
         vm.prank(owner);
         refill = new RelmEnergyRefill(address(token), 50 ether, 100);
 
