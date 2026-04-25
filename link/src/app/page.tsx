@@ -15,8 +15,9 @@ export default function Home() {
         <li>Connect your wallet, sign the challenge</li>
         <li>Run <code>/wallet-set &lt;address&gt; &lt;token&gt;</code> back in game</li>
       </ol>
-      <div style={{ marginTop: 18 }}>
+      <div style={{ marginTop: 18, display: "flex", gap: 8, flexWrap: "wrap" }}>
         <a href="/shop" className="btn">Open shop</a>
+        <a href="/land" className="btn">Buy land</a>
       </div>
     </div>
   );
