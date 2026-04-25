@@ -14,38 +14,54 @@ type EventKind = "dignode" | "placenode" | "hp_change" | "death" | string;
 // deeper. The mapgen ore depths + clust_scarcity in mods/relm_core
 // pick the frequency; this file sets the payout. Keep the two
 // aligned — if we nerf an ore's spawn rate, bump its bps to match.
+// New philosophy: trivial actions earn dust, dangerous / rare / deep
+// actions earn real tokens. Combined with the daily cap (lib/dailyCap.ts)
+// this means a thousand dirt blocks/day still hits the cap fast — no
+// one farms surface dirt for hours.
+//
+// Keep aligned with mods/relm_core mapgen: nerf an ore's spawn rate,
+// bump its bps here.
 const DIG_BPS: Record<string, number> = {
-  "relm_core:stone":    100,   // 0.01 RELM — common baseline
-  "relm_core:dirt":      60,
-  "relm_core:grass":     60,
-  "relm_core:sand":      60,
-  "relm_core:tree":     180,   // trees are finite per chunk, worth more
-  "relm_core:leaves":    20,
-  "relm_core:wood":      40,   // crafted, prevents placecycle farming
+  // Surface filler — dust-tier so fresh players see *something* tick
+  // over while exploring.
+  "relm_core:stone":     15,
+  "relm_core:dirt":       5,
+  "relm_core:grass":      5,
+  "relm_core:sand":       5,
+  "relm_core:leaves":     2,
 
-  "relm_core:coal_ore":  400,  // 0.04 RELM
-  "relm_core:iron_ore":  900,  // 0.09 RELM
-  "relm_core:gold_ore": 2000,  // 0.20 RELM
-  "relm_core:ink_ore":  6000,  // 0.60 RELM — the chase tier
+  // Renewable wood-cycle: trees are finite per chunk so worth a bit
+  // more than dirt, but wood (the crafted form) only earns dust to
+  // kill dig→craft→place→re-dig farms.
+  "relm_core:tree":       80,
+  "relm_core:wood":        5,
+
+  // Real economy — depth + risk + scarcity. Bumped vs the old curve
+  // so the daily cap actually fills from these tiers, not from dirt.
+  "relm_core:coal_ore":   250,  // 0.025 RELM
+  "relm_core:iron_ore":   700,  // 0.07 RELM
+  "relm_core:gold_ore":  1800,  // 0.18 RELM
+  "relm_core:ink_ore":   7500,  // 0.75 RELM — chase tier
 };
 
 export function scoreEvent(kind: EventKind, payload: unknown): number {
   switch (kind) {
     case "dignode": {
       const node = getStr(payload, "node") ?? "";
-      return DIG_BPS[node] ?? 30;
+      // Unknown node? 5 bps so future content drops aren't accidentally
+      // lucrative until they're explicitly tabled.
+      return DIG_BPS[node] ?? 5;
     }
     case "placenode":
-      // Half-credit for placing stone/wood — rewards building without
-      // fully paying the dig price twice via dig/place cycles.
-      return 50;
+      // Building earns dust — discourages place→dig farm cycles while
+      // still rewarding the act of building.
+      return 5;
     case "hp_change":
-      // Don't pay for damage events; easy to self-grief for points.
+      // Easy to self-grief for points. Drop.
       return 0;
     case "death":
-      // Minor consolation so players aren't punished emotionally by a
-      // pause in their reward stream.
-      return 20;
+      // Don't reward dying.
+      return 0;
     default:
       return 0;
   }

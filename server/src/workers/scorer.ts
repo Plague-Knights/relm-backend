@@ -1,6 +1,6 @@
 import { prisma } from "../lib/prisma.js";
 import { scoreEvent } from "../lib/scoring.js";
-import { spend, COST_PER_EVENT } from "../lib/energy.js";
+import { clampToDaily } from "../lib/dailyCap.js";
 
 const SCORE_INTERVAL_MS = 10_000;
 const BATCH_SIZE = 500;
@@ -9,10 +9,10 @@ const BATCH_SIZE = 500;
 // `scoreBps` back. Idempotent — uses `scoreBps IS NULL` as the claim
 // flag so two interleaved runs don't double-score.
 //
-// Energy gating: each event that would award positive bps consumes
-// COST_PER_EVENT energy from the player. If the player is out of
-// energy, the event is still consumed (scoreBps=0) so it doesn't
-// re-queue forever; the player just earns nothing for it.
+// Daily cap: each event that would award positive bps gets clamped to
+// whatever the player has left for today (UTC midnight reset). Past
+// the cap, the event is still consumed (scoreBps=0) so it doesn't
+// re-queue forever. Replaces the older energy-meter gating.
 async function scoreOnce() {
   const rows = await prisma.rewardEvent.findMany({
     where: { scoreBps: null },
@@ -26,11 +26,9 @@ async function scoreOnce() {
     try { payload = JSON.parse(row.payload); } catch {}
     const baseBps = scoreEvent(row.kind, payload);
 
-    let effectiveBps = baseBps;
-    if (baseBps > 0) {
-      const after = await spend(row.player, COST_PER_EVENT);
-      if (after === null) effectiveBps = 0; // out of energy — record but don't award
-    }
+    const effectiveBps = baseBps > 0
+      ? await clampToDaily(row.player, baseBps)
+      : 0;
 
     await prisma.rewardEvent.update({
       where: { id: row.id },

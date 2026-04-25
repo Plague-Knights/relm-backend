@@ -79,3 +79,16 @@ model RewardEvent {
   @@index([address, createdAt])
   @@index([mintedAt])
 }
+
+// Per-player daily earnings counter. Tracks bps awarded today (UTC),
+// hard-capped at RELM_DAILY_CAP_BPS. Replaces the older PlayerEnergy
+// gating model — see lib/dailyCap.ts.
+model PlayerDaily {
+  player    String
+  day       String   // YYYY-MM-DD UTC
+  bpsEarned Int      @default(0)
+  updatedAt DateTime @updatedAt
+
+  @@id([player, day])
+  @@index([day])
+}
