@@ -4,9 +4,11 @@ import { walletRouter } from "./routes/wallet.js";
 import { rewardsRouter } from "./routes/rewards.js";
 import { cosmeticsRouter } from "./routes/cosmetics.js";
 import { energyRouter } from "./routes/energy.js";
+import { landRouter } from "./routes/land.js";
 import { startScorer } from "./workers/scorer.js";
 import { startMinter } from "./workers/minter.js";
 import { startRefillWatcher } from "./workers/refillWatcher.js";
+import { startLandWatcher } from "./workers/landWatcher.js";
 
 const app = express();
 // Trust the Railway edge proxy so rate-limiting keys off the real
@@ -20,6 +22,7 @@ app.use("/api/wallet", walletRouter);
 app.use("/api/rewards", rewardsRouter);
 app.use("/api/cosmetics", cosmeticsRouter);
 app.use("/api/energy", energyRouter);
+app.use("/api/land", landRouter);
 
 const PORT = Number(process.env.PORT ?? 3000);
 app.listen(PORT, () => {
@@ -32,5 +35,6 @@ app.listen(PORT, () => {
     startScorer();
     startMinter();
     startRefillWatcher();
+    startLandWatcher();
   }
 });

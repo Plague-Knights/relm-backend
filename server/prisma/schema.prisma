@@ -92,3 +92,66 @@ model PlayerDaily {
   @@id([player, day])
   @@index([day])
 }
+
+// Land registry. Plots are bought with SOL on Solana mainnet (the
+// game economy is RELM-on-Soneium, but land is "real" / fiat-equivalent
+// so it stays uncorrelated to RELM token price swings).
+//
+// Three tiers — Plot / Region / Territory — defined in lib/landTiers.ts.
+// Coordinates are world-space (x, z) at the bottom-left corner; the
+// plot covers (x..x+size, z..z+size) for all y values.
+model LandPlot {
+  id           String   @id @default(cuid())
+  x            Int
+  z            Int
+  tier         Int      // 1 = Plot, 2 = Region, 3 = Territory
+  size         Int      // edge length in blocks; derived from tier
+  status       String   @default("available") // available | reserved | owned
+  ownerPlayer  String?  // Luanti player name (links via PlayerWallet)
+  ownerSolAddr String?  // Solana wallet that paid
+  txSignature  String?  // Solana tx that closed the sale
+  claimedAt    DateTime?
+  // Custom display name (Tier-3 territories can name their region)
+  label        String?
+  createdAt    DateTime @default(now())
+
+  @@unique([x, z, tier])
+  @@index([ownerPlayer])
+  @@index([status])
+}
+
+// Pending purchase intent. The site mints one of these when a player
+// picks a plot; the player has `expiresAt` minutes to send `priceSol`
+// to TREASURY_SOL_ADDRESS with `memo` in the tx memo. The watcher
+// matches and converts to a LandPlot.status = "owned".
+model LandPaymentIntent {
+  id           String   @id @default(cuid())
+  plotId       String   @unique
+  player       String   // Luanti player name (immutable on this intent)
+  solAddr      String?  // wallet they intend to pay from (optional, advisory)
+  priceSol     String   // decimal as string for precision
+  memo         String   @unique // randomized; "relm-land-<8 hex>"
+  expiresAt    DateTime
+  matchedTx    String?  // tx signature that fulfilled this intent
+  fulfilledAt  DateTime?
+  createdAt    DateTime @default(now())
+
+  @@index([player])
+  @@index([expiresAt])
+}
+
+// Observed Solana txs to the treasury wallet. Watcher polls and writes
+// these idempotently (tx signature is unique). Lets us replay matching
+// against intents if a watcher restart misses a tick.
+model SolanaPayment {
+  id          String   @id @default(cuid())
+  signature   String   @unique
+  fromAddr    String
+  amountSol   String   // decimal string
+  memo        String?
+  matchedPlot String?
+  observedAt  DateTime @default(now())
+
+  @@index([memo])
+  @@index([fromAddr])
+}
