@@ -335,6 +335,22 @@ model BotMatchBet {
 // mint/burn ratio. Burn rows mean RELM is permanently destroyed
 // (deflationary). Treasury rows mean RELM is locked in the house pool
 // (used for prize pools, tournament rewards, governance funding).
+// /go/<key> click attribution. Each redirect logs a row so we can A/B
+// which content niches + which channels actually convert.
+model RefClick {
+  id        String   @id @default(cuid())
+  key       String                              // e.g. "gambulls"
+  niche     String?                             // optional: gambling, sports, etc
+  source    String?                             // ig, tiktok, telegram, bio, ...
+  referer   String?
+  ua        String?
+  ip        String?
+  createdAt DateTime @default(now())
+
+  @@index([key, createdAt])
+  @@index([niche, createdAt])
+}
+
 model EconLedger {
   id        String   @id @default(cuid())
   // mint | burn | treasury | shop_buy | land_tax | tournament_fee | refund

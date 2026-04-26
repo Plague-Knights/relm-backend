@@ -22,7 +22,7 @@ const TILES: Tile[] = [
   {
     title: "Gambulls Casino",
     subtitle: "Crypto casino · slots · live dealer",
-    url: "https://gambulls.com/?ref=realglitchd",
+    url: "https://relm-server-production.up.railway.app/go/gambulls?s=bio",
     accent: "#ff8a3d",
   },
   // Add more partners here as deals close.
