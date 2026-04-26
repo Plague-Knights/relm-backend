@@ -38,6 +38,40 @@
       "trait_type": "Luck",
       "value": 92,
       "max_value": 100
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
     }
-  ]
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://relm-link-production.up.railway.app/nft/img/0560.png",
+        "type": "image/png",
+        "role": "avatar"
+      },
+      {
+        "uri": "https://relm-link-production.up.railway.app/nft/iso/0560.png",
+        "type": "image/png",
+        "role": "iso"
+      },
+      {
+        "uri": "https://relm-link-production.up.railway.app/nft/ingame/0560.png",
+        "type": "image/png",
+        "role": "ingame"
+      },
+      {
+        "uri": "https://relm-link-production.up.railway.app/nft/tq/0560.png",
+        "type": "image/png",
+        "role": "three_quarter"
+      },
+      {
+        "uri": "https://relm-link-production.up.railway.app/nft/skin/0560.png",
+        "type": "image/png",
+        "role": "luanti_skin"
+      }
+    ],
+    "category": "image"
+  }
 }

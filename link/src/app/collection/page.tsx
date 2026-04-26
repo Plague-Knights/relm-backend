@@ -11,13 +11,27 @@ type Entry = {
   id: string;
   name: string;
   image: string;
+  iso: string;
+  ingame: string;
+  threeQuarter: string;
+  skin: string;
   metadata: string;
+  tier: string;
 };
 
 type Manifest = {
   count: number;
   generatedAt: string;
+  rarityDistribution?: Record<string, number>;
   fighters: Entry[];
+};
+
+const TIER_COLORS: Record<string, string> = {
+  Common:    "#9aa0a6",
+  Uncommon:  "#7fff9b",
+  Rare:      "#7fc3ff",
+  Epic:      "#c97fff",
+  Legendary: "#ffd040",
 };
 
 const PAGE_SIZE = 60;
@@ -31,12 +45,15 @@ export default function CollectionPage() {
     fetch("/nft/manifest.json").then((r) => r.json()).then(setManifest).catch(() => {});
   }, []);
 
+  const [tierFilter, setTierFilter] = useState<string | null>(null);
+
   const filtered = manifest
-    ? (search
-        ? manifest.fighters.filter(f =>
-            f.name.toLowerCase().includes(search.toLowerCase())
-            || String(f.tokenId).includes(search))
-        : manifest.fighters)
+    ? manifest.fighters.filter(f => {
+        if (tierFilter && f.tier !== tierFilter) return false;
+        if (!search) return true;
+        const q = search.toLowerCase();
+        return f.name.toLowerCase().includes(q) || String(f.tokenId).includes(q);
+      })
     : [];
   const pages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const slice = filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
@@ -90,30 +107,68 @@ export default function CollectionPage() {
               </div>
             </div>
 
+            {manifest.rarityDistribution && (
+              <div style={{ display: "flex", gap: 8, marginBottom: 18, flexWrap: "wrap" }}>
+                {(["Common", "Uncommon", "Rare", "Epic", "Legendary"] as const).map((t) => {
+                  const count = manifest.rarityDistribution?.[t] ?? 0;
+                  const active = tierFilter === t;
+                  return (
+                    <button
+                      key={t}
+                      onClick={() => { setTierFilter(active ? null : t); setPage(0); }}
+                      style={{
+                        padding: "6px 12px",
+                        fontSize: 12, fontWeight: 700, letterSpacing: "0.04em",
+                        background: active ? `${TIER_COLORS[t]}22` : "rgba(255,255,255,0.04)",
+                        color: TIER_COLORS[t],
+                        border: `1px solid ${active ? TIER_COLORS[t] : "rgba(255,255,255,0.1)"}`,
+                        borderRadius: 999,
+                        cursor: "pointer",
+                      }}
+                    >
+                      {t} <span style={{ opacity: 0.6, marginLeft: 4 }}>{count}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+
             <div style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
               gap: 12,
             }}>
-              {slice.map((f) => (
-                <a key={f.tokenId} href={`/fighters/${f.id}`} style={{
-                  textDecoration: "none", color: "#fff",
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: 12,
-                  padding: 10,
-                  display: "flex", flexDirection: "column", gap: 6,
-                  transition: "transform 120ms, border-color 120ms",
-                }}>
-                  <img src={f.image} alt={f.name} loading="lazy" style={{
-                    width: "100%", aspectRatio: "1 / 1", objectFit: "cover",
-                    borderRadius: 8, background: "rgba(0,0,0,0.3)",
-                    imageRendering: "pixelated",
-                  }} />
-                  <div style={{ fontSize: 13, fontWeight: 700, marginTop: 2 }}>{f.name}</div>
-                  <div style={{ fontSize: 11, opacity: 0.55 }}>#{f.tokenId.toString().padStart(4, "0")}</div>
-                </a>
-              ))}
+              {slice.map((f) => {
+                const tierColor = TIER_COLORS[f.tier] ?? "#9aa0a6";
+                return (
+                  <a key={f.tokenId} href={`/fighters/${f.id}`} style={{
+                    textDecoration: "none", color: "#fff",
+                    background: "rgba(255,255,255,0.04)",
+                    border: `1px solid ${tierColor}33`,
+                    boxShadow: f.tier === "Legendary" ? `0 0 20px ${tierColor}55` : "none",
+                    borderRadius: 12,
+                    padding: 10,
+                    display: "flex", flexDirection: "column", gap: 6,
+                    position: "relative",
+                    transition: "transform 120ms, border-color 120ms",
+                  }}>
+                    <img src={f.image} alt={f.name} loading="lazy" style={{
+                      width: "100%", aspectRatio: "1 / 1", objectFit: "cover",
+                      borderRadius: 8, background: "rgba(0,0,0,0.3)",
+                      imageRendering: "pixelated",
+                    }} />
+                    <div style={{
+                      position: "absolute", top: 14, right: 14,
+                      padding: "2px 7px", borderRadius: 4,
+                      background: "rgba(0,0,0,0.55)",
+                      color: tierColor,
+                      fontSize: 9, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase",
+                    }}>{f.tier}</div>
+                    <div style={{ fontSize: 13, fontWeight: 700, marginTop: 2 }}>{f.name}</div>
+                    <div style={{ fontSize: 11, opacity: 0.55 }}>#{f.tokenId.toString().padStart(4, "0")}</div>
+                  </a>
+                );
+              })}
             </div>
 
             {pages > 1 && (

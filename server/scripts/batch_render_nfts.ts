@@ -12,8 +12,49 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 import * as crypto from "node:crypto";
-import { makeAvatar, makeIsoRender, type FighterArtInput } from "../src/lib/fighterArt.js";
-import { buildMetadata, rollTraits } from "../src/lib/fighterTraits.js";
+import {
+  makeAvatar, makeIsoRender, makeInGamePreview, makeInGame3Q, makeSkin,
+  type FighterArtInput,
+} from "../src/lib/fighterArt.js";
+import {
+  buildMetadata, rollTraits, traitProbability, type TraitCategory, type TraitSet,
+} from "../src/lib/fighterTraits.js";
+
+// Combined inverse-probability of all 5 traits + (power+speed+luck)
+// percentile. Tier thresholds get computed in pass 2 from the score
+// distribution so we always hit the target 60/25/10/4/1 split.
+function rarityScore(traits: TraitSet, total: number): number {
+  let traitScore = 0;
+  const cats: TraitCategory[] = ["background", "helmet", "armor", "weapon", "hair"];
+  for (const c of cats) {
+    const p = traitProbability(c, traits[c]);
+    if (p > 0) traitScore += 1 / p;
+  }
+  return traitScore + (total / 285) * 8;
+}
+
+// Sorted percentile cutoffs for 1000 fighters: bottom 60% = Common,
+// next 25% = Uncommon, next 10% = Rare, next 4% = Epic, top 1% = Leg.
+function tierFor(score: number, sorted: number[]): string {
+  const n = sorted.length;
+  const cuts = [
+    { tier: "Common",    upTo: Math.floor(n * 0.60) },
+    { tier: "Uncommon",  upTo: Math.floor(n * 0.85) },
+    { tier: "Rare",      upTo: Math.floor(n * 0.95) },
+    { tier: "Epic",      upTo: Math.floor(n * 0.99) },
+    { tier: "Legendary", upTo: n },
+  ];
+  // Binary search for rank (count of scores ≤ this score).
+  let lo = 0, hi = n;
+  while (lo < hi) {
+    const mid = (lo + hi) >>> 1;
+    if (sorted[mid]! <= score) lo = mid + 1;
+    else hi = mid;
+  }
+  const rank = lo;
+  for (const c of cuts) if (rank <= c.upTo) return c.tier;
+  return "Legendary";
+}
 
 const COUNT = Number(process.argv[2] ?? 1000);
 const OUT_DIR = path.resolve(process.argv[3] ?? "./sample-fighters/nft");
@@ -55,11 +96,28 @@ function statRoll(seed: number, salt: string): number {
 
 async function main() {
   fs.mkdirSync(OUT_DIR, { recursive: true });
-  fs.mkdirSync(path.join(OUT_DIR, "img"), { recursive: true });
-  fs.mkdirSync(path.join(OUT_DIR, "iso"), { recursive: true });
-  fs.mkdirSync(path.join(OUT_DIR, "meta"), { recursive: true });
+  for (const sub of ["img", "iso", "ingame", "tq", "skin", "meta"]) {
+    fs.mkdirSync(path.join(OUT_DIR, sub), { recursive: true });
+  }
 
-  const manifest: Array<{ tokenId: number; id: string; name: string; image: string; metadata: string }> = [];
+  // Pass 1: compute all rarity scores so we can pick percentile cutoffs.
+  const allScores: number[] = [];
+  for (let i = 0; i < COUNT; i++) {
+    const id = fakeCuid(i + 1);
+    const traits = rollTraits(id);
+    const power = statRoll(i + 1, "power");
+    const speed = statRoll(i + 1, "speed");
+    const luck = statRoll(i + 1, "luck");
+    allScores.push(rarityScore(traits, power + speed + luck));
+  }
+  const sortedScores = [...allScores].sort((a, b) => a - b);
+
+  const manifest: Array<{
+    tokenId: number; id: string; name: string;
+    image: string; ingame: string; iso: string; threeQuarter: string; skin: string;
+    metadata: string; tier: string;
+  }> = [];
+  const rarityCount: Record<string, number> = {};
   const t0 = Date.now();
   for (let i = 0; i < COUNT; i++) {
     const tokenId = i + 1;
@@ -72,34 +130,72 @@ async function main() {
 
     const fighter: FighterRow = { id, name, power, speed, luck };
 
-    // Render avatar (square card) + iso render (3D pose).
+    // 5 render angles per fighter: avatar (square card), iso (3D
+    // perspective), ingame (gameplay screenshot composition),
+    // 3-quarter pose, and the skin atlas (used directly by Luanti to
+    // texture the in-game character mesh).
     const artInput: FighterArtInput = {
       id, name, power, speed, luck,
       power_color: power, speed_color: speed, luck_color: luck,
     } as FighterArtInput;
     const avatar = makeAvatar(artInput);
     const iso = makeIsoRender(artInput);
+    const ingame = makeInGamePreview(artInput);
+    const threeQ = makeInGame3Q(artInput);
+    const skin = makeSkin(artInput);
 
-    const imgRel = `img/${tokenId.toString().padStart(4, "0")}.png`;
-    const isoRel = `iso/${tokenId.toString().padStart(4, "0")}.png`;
-    const metaRel = `meta/${tokenId.toString().padStart(4, "0")}.json`;
+    const tag = tokenId.toString().padStart(4, "0");
+    const imgRel    = `img/${tag}.png`;
+    const isoRel    = `iso/${tag}.png`;
+    const ingameRel = `ingame/${tag}.png`;
+    const tqRel     = `tq/${tag}.png`;
+    const skinRel   = `skin/${tag}.png`;
+    const metaRel   = `meta/${tag}.json`;
 
     fs.writeFileSync(path.join(OUT_DIR, imgRel), avatar);
     fs.writeFileSync(path.join(OUT_DIR, isoRel), iso);
+    fs.writeFileSync(path.join(OUT_DIR, ingameRel), ingame);
+    fs.writeFileSync(path.join(OUT_DIR, tqRel), threeQ);
+    fs.writeFileSync(path.join(OUT_DIR, skinRel), skin);
 
-    const meta = buildMetadata({
+    const score = rarityScore(traits, power + speed + luck);
+    const tier = tierFor(score, sortedScores);
+    rarityCount[tier] = (rarityCount[tier] || 0) + 1;
+
+    // Augment standard Metaplex metadata with tier + extra renders.
+    const baseMeta = buildMetadata({
       fighter: { id, name, power, speed, luck, mint: null },
       imageUrl: `${IMAGE_BASE}/${imgRel}`,
       externalUrl: `${EXTERNAL_BASE}/${id}`,
     });
-    fs.writeFileSync(path.join(OUT_DIR, metaRel), JSON.stringify(meta, null, 2));
+    const enriched = {
+      ...baseMeta,
+      attributes: [
+        ...(baseMeta.attributes ?? []),
+        { trait_type: "Rarity", value: tier },
+      ],
+      properties: {
+        files: [
+          { uri: `${IMAGE_BASE}/${imgRel}`,    type: "image/png", role: "avatar" },
+          { uri: `${IMAGE_BASE}/${isoRel}`,    type: "image/png", role: "iso" },
+          { uri: `${IMAGE_BASE}/${ingameRel}`, type: "image/png", role: "ingame" },
+          { uri: `${IMAGE_BASE}/${tqRel}`,     type: "image/png", role: "three_quarter" },
+          { uri: `${IMAGE_BASE}/${skinRel}`,   type: "image/png", role: "luanti_skin" },
+        ],
+        category: "image",
+      },
+    };
+    fs.writeFileSync(path.join(OUT_DIR, metaRel), JSON.stringify(enriched, null, 2));
 
     manifest.push({
-      tokenId,
-      id,
-      name,
-      image: `${IMAGE_BASE}/${imgRel}`,
-      metadata: `${IMAGE_BASE}/${metaRel}`,
+      tokenId, id, name,
+      image:        `${IMAGE_BASE}/${imgRel}`,
+      iso:          `${IMAGE_BASE}/${isoRel}`,
+      ingame:       `${IMAGE_BASE}/${ingameRel}`,
+      threeQuarter: `${IMAGE_BASE}/${tqRel}`,
+      skin:         `${IMAGE_BASE}/${skinRel}`,
+      metadata:     `${IMAGE_BASE}/${metaRel}`,
+      tier,
     });
 
     if ((i + 1) % 50 === 0) {
@@ -111,10 +207,16 @@ async function main() {
   }
 
   fs.writeFileSync(path.join(OUT_DIR, "manifest.json"),
-    JSON.stringify({ count: COUNT, generatedAt: new Date().toISOString(), fighters: manifest }, null, 2));
+    JSON.stringify({
+      count: COUNT,
+      generatedAt: new Date().toISOString(),
+      rarityDistribution: rarityCount,
+      fighters: manifest,
+    }, null, 2));
 
   const elapsed = (Date.now() - t0) / 1000;
   console.log(`[render] done: ${COUNT} fighters in ${elapsed.toFixed(1)}s -> ${OUT_DIR}`);
+  console.log(`[render] rarity:`, rarityCount);
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
