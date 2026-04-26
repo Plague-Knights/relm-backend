@@ -299,21 +299,25 @@ export async function tickBrain(obs: BotObservation): Promise<Command[]> {
   s.lastRank = obs.rank;
   s.lastScore = obs.score;
   s.lastStamina = obs.stamina ?? 100;
-  if (!out) return [];
+  if (!out) return cmdsPre;
 
   const cmds: Command[] = [];
-  if (out.chat) {
+  if (out.chat && (mode === "chat" || mode === "both")) {
     s.lastChat = out.chat;
     s.recentChat.push(`${obs.name}: ${out.chat}`);
     if (s.recentChat.length > 6) s.recentChat.shift();
     cmds.push({ skill: "chat", text: out.chat });
   }
-  if (out.pace) {
-    s.lastPace = out.pace;
-    cmds.push({ skill: "set_pace", pace: out.pace, durationSec: 18 });
-  }
-  if (out.wander) {
-    cmds.push({ skill: "wander", xOffset: out.wander.xOffset, zOffset: out.wander.zOffset, reason: out.reason ?? undefined });
+  // Play decisions only emit when we explicitly asked for them. Models
+  // sometimes leak pace/wander into chat-mode responses.
+  if (mode !== "chat") {
+    if (out.pace) {
+      s.lastPace = out.pace;
+      cmds.push({ skill: "set_pace", pace: out.pace, durationSec: 18 });
+    }
+    if (out.wander) {
+      cmds.push({ skill: "wander", xOffset: out.wander.xOffset, zOffset: out.wander.zOffset, reason: out.reason ?? undefined });
+    }
   }
   if (out.goal) {
     s.recentGoals.push(out.goal);
