@@ -11,6 +11,7 @@ export const goRouter = Router();
 // Edit-this map of key → destination. Keep keys URL-safe.
 const PARTNER_URLS: Record<string, string> = {
   gambulls: "https://gambulls.com/?ref=realglitchd",
+  dealdraft: "https://dealdraft.net/?ref=glitchdgamba",
 };
 
 goRouter.get("/:key", async (req: Request, res: Response) => {

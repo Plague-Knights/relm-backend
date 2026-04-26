@@ -31,6 +31,13 @@ type Tile = {
 
 const PARTNER_TILES: Tile[] = [
   {
+    title: "DealDraft",
+    subtitle: "Best casino bonuses, side-by-side. The deal aggregator.",
+    url: "https://relm-server-production.up.railway.app/go/dealdraft?s=bio",
+    accent: "#ffd040",
+    badge: "FEATURED",
+  },
+  {
     title: "Gambulls Casino",
     subtitle: "Crypto casino · slots · live dealer",
     url: "https://relm-server-production.up.railway.app/go/gambulls?s=bio",
