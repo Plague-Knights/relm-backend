@@ -333,6 +333,30 @@ botMatchRouter.post("/in-engine/tick", async (req: Request, res: Response) => {
   }
 });
 
+// POST /api/bot-match/in-engine/seed — Luanti mod calls at match start
+// to get a committed seed for diamond placement. Returns { commit,
+// seed } where commit = sha256(seed). The mod uses `seed` to
+// deterministically place the diamond (no math.random). The commit
+// is logged + can be verified by spectators against the revealed
+// seed at match settle.
+botMatchRouter.post("/in-engine/seed", async (_req: Request, res: Response) => {
+  const { seed, commit } = commitSeed();
+  // Persist the seed against the most recent OPEN/RUNNING match if
+  // one exists. Fall back to ephemeral commit otherwise so the mod
+  // can still run match-only fairness without a backend match row.
+  const m = await prisma.botMatch.findFirst({
+    where: { status: { in: ["OPEN", "RUNNING"] } },
+    orderBy: { startsAt: "desc" },
+  });
+  if (m) {
+    await prisma.botMatch.update({
+      where: { id: m.id },
+      data: { seedCommit: commit, seedReveal: null },
+    });
+  }
+  res.json({ commit, seed: seed.toString("hex"), matchId: m?.id ?? null });
+});
+
 // POST /api/bot-match/in-engine/finish — fired by the Luanti mod when
 // a bot wins an in-engine match. Uses the OPEN/RUNNING match's
 // entries to find the winner by name, settles the match (prize pool
