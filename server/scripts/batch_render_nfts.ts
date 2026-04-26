@@ -162,10 +162,13 @@ async function main() {
     const tier = tierFor(score, sortedScores);
     rarityCount[tier] = (rarityCount[tier] || 0) + 1;
 
-    // Augment standard Metaplex metadata with tier + extra renders.
+    // The 3-quarter render is the closest match to how the fighter
+    // looks in-game (chunky 3D voxel character mesh, perspective view).
+    // Use that as the primary NFT image so collectors see what they'll
+    // actually wear, not a flat trading-card.
     const baseMeta = buildMetadata({
       fighter: { id, name, power, speed, luck, mint: null },
-      imageUrl: `${IMAGE_BASE}/${imgRel}`,
+      imageUrl: `${IMAGE_BASE}/${tqRel}`,
       externalUrl: `${EXTERNAL_BASE}/${id}`,
     });
     const enriched = {
@@ -189,11 +192,12 @@ async function main() {
 
     manifest.push({
       tokenId, id, name,
-      image:        `${IMAGE_BASE}/${imgRel}`,
+      image:        `${IMAGE_BASE}/${tqRel}`,    // primary in-game pose
       iso:          `${IMAGE_BASE}/${isoRel}`,
       ingame:       `${IMAGE_BASE}/${ingameRel}`,
       threeQuarter: `${IMAGE_BASE}/${tqRel}`,
-      skin:         `${IMAGE_BASE}/${skinRel}`,
+      avatar:       `${IMAGE_BASE}/${imgRel}`,   // square card
+      skin:         `${IMAGE_BASE}/${skinRel}`,  // luanti character.png atlas
       metadata:     `${IMAGE_BASE}/${metaRel}`,
       tier,
     });
