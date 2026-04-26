@@ -1,5 +1,8 @@
 import { Router, type Request, type Response } from "express";
 import { listTypes, ownedByAddress, perksToList } from "../lib/cosmetic.js";
+import * as balance from "../lib/balance.js";
+import * as econ from "../lib/econ.js";
+import { prisma } from "../lib/prisma.js";
 import type { Address } from "viem";
 
 export const cosmeticsRouter = Router();
@@ -104,4 +107,76 @@ cosmeticsRouter.get("/meta/:typeId", (req: Request, res: Response) => {
   const meta = COSMETIC_META[id];
   if (!meta) return res.status(404).json({ error: "unknown type" });
   res.json(meta);
+});
+
+// POST /api/cosmetics/buy { player, typeId } — debits the player's
+// in-game RELM balance, splits the cost 50/50 burn vs treasury, and
+// queues the NFT mint to the linked wallet. The actual on-chain mint
+// runs in a worker (so the buy returns instantly).
+//
+// This is the primary RELM sink — every cosmetic purchase
+// permanently removes half its price from supply.
+cosmeticsRouter.post("/buy", async (req: Request, res: Response) => {
+  const { player, typeId } = (req.body ?? {}) as {
+    player?: string;
+    typeId?: number;
+  };
+  if (typeof player !== "string" || !player.trim()) {
+    return res.status(400).json({ error: "player required" });
+  }
+  if (typeof typeId !== "number" || !Number.isInteger(typeId) || typeId <= 0) {
+    return res.status(400).json({ error: "typeId required" });
+  }
+
+  // Look up the cosmetic + its RELM price from the on-chain registry.
+  // priceRelm is in token wei (1e18 per RELM). Convert to bps for the
+  // in-game ledger: 1 RELM = 10000 bps, so wei → bps = wei / 1e14.
+  let types;
+  try {
+    types = await listTypes();
+  } catch (e) {
+    return res.status(503).json({ error: `cosmetic list unavailable: ${(e as Error).message}` });
+  }
+  const t = types.find((x) => x.id === typeId);
+  if (!t) return res.status(404).json({ error: "unknown type" });
+  const priceWei = BigInt(t.priceRelm);
+  if (priceWei === 0n) {
+    return res.status(400).json({ error: "this cosmetic is not RELM-priced" });
+  }
+  const priceBps = Number(priceWei / 10n ** 14n);
+  if (!Number.isFinite(priceBps) || priceBps <= 0) {
+    return res.status(400).json({ error: "price out of range" });
+  }
+
+  const newBal = await balance.debit(player, priceBps);
+  if (newBal === null) {
+    return res.status(402).json({ error: "insufficient RELM balance", priceBps });
+  }
+
+  // Look up the player's linked wallet for the on-chain mint queue.
+  const link = await prisma.playerWallet.findUnique({ where: { player } });
+  const address = link?.address ?? null;
+
+  const { burned, treasury } = await econ.burnTreasurySplit(priceBps, {
+    player,
+    address: address ?? undefined,
+    meta: { typeId, name: COSMETIC_META[typeId]?.name },
+  });
+
+  // The actual ERC-721 mint is async — recorded in EconLedger.meta
+  // and picked up by the minter worker. For now we just succeed and
+  // let the player see the balance change immediately.
+  res.json({
+    ok: true,
+    typeId,
+    priceBps,
+    burnedBps: burned,
+    treasuryBps: treasury,
+    balanceBps: newBal,
+    pendingMint: !!address,
+  });
+});
+
+cosmeticsRouter.get("/econ/stats", async (_req: Request, res: Response) => {
+  res.json(await econ.stats());
 });

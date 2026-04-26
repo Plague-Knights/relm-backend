@@ -15,10 +15,14 @@ datasource db {
 // - relm_wallet /wallet → address for a given player
 // - deduplicate addresses so a wallet can't be bound to two players
 model PlayerWallet {
-  id        String   @id @default(cuid())
-  player    String   @unique
-  address   String   @unique
-  linkedAt  DateTime @default(now())
+  id                String   @id @default(cuid())
+  player            String   @unique
+  address           String   @unique
+  // Which Fighter the player is wearing in-game right now. Null →
+  // default Luanti skin. The Lua mod reads this on join + on
+  // /myfighter <id> commands to swap the active skin.
+  activeFighterId   String?
+  linkedAt          DateTime @default(now())
 }
 
 // Short-lived challenge issued when a player runs /wallet-link in game.
@@ -203,4 +207,168 @@ model ArenaBet {
   @@unique([roundId, player, fighterIdx])
   @@index([roundId])
   @@index([player])
+}
+
+// Bot-controlled "collect the objective" match. A round of this is
+// a 5-minute window where 4-8 fighters compete to grab as many
+// objectives as possible. Each fighter is driven by an external
+// script (the bot) which polls /state and posts /intent. Server is
+// authoritative on positions + scoring so cheaters can't lie about
+// pickups. Settled outcomes feed the same pari-mutuel betting model
+// the Arena already uses.
+model BotMatch {
+  id              String       @id @default(cuid())
+  status          String       // OPEN | RUNNING | SETTLED | CANCELLED
+  // Square arena bounds in nodes (e.g. 16 = 16x16 area centered at origin).
+  arenaSize       Int          @default(16)
+  // RNG seed for objective layout. Committed up front, revealed at
+  // settle so bots can't precompute and observers can verify.
+  seedCommit      String
+  seedReveal      String?
+  startsAt        DateTime
+  endsAt          DateTime
+  bettingClosesAt DateTime
+  settledAt       DateTime?
+  // Risk-to-earn: every entry pays this fee (RELM bps) to play. The
+  // pool funds payouts to top finishers + the house cut. Losers
+  // forfeit their fee — that's the gambling on the owner side. The
+  // pari-mutuel `bets` table is a separate gambling layer for
+  // non-owner spectators.
+  entryFeeBps     Int          @default(10000)  // 1 RELM by default
+  prizePoolBps    Int          @default(0)      // sum of paid-in fees
+  // Top-N split of the prize pool after house cut. Stored as JSON
+  // weights so different match types can pay 1st/2nd/3rd vs winner-
+  // takes-all. e.g. [60, 25, 10] → 1st 60%, 2nd 25%, 3rd 10%, rest house.
+  payoutSplit     Json         @default("[60,25,10]")
+  // Total RELM pool from spectator bets.
+  totalPoolBps    Int          @default(0)
+  houseBps        Int          @default(0)
+  winnerEntryId   String?
+  createdAt       DateTime     @default(now())
+
+  entries         BotMatchEntry[]
+  bets            BotMatchBet[]
+  objectives      BotMatchObjective[]
+
+  @@index([status, startsAt])
+}
+
+// One entry per fighter in a match. Each fighter has its own bot
+// (controller script) that owns the intent stream for that entry.
+model BotMatchEntry {
+  id          String     @id @default(cuid())
+  matchId     String
+  match       BotMatch   @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  fighterId   String     // FK to Fighter. Stays a string, not relation,
+                         // so deletion of an old fighter doesn't cascade
+                         // through historical matches.
+  // Live state — updated each tick by the match runtime.
+  posX        Float      @default(0)
+  posZ        Float      @default(0)
+  yaw         Float      @default(0)
+  hp          Int        @default(100)
+  score       Int        @default(0) // objectives collected
+  // Intent the bot most recently submitted. Server applies it on the
+  // next tick; clears after applying.
+  intentMoveX Float?
+  intentMoveZ Float?
+  intentAction String?   // "collect" | "idle" | future verbs
+  intentAt    DateTime?
+  // Auth — bots send this token in the Authorization header so anyone
+  // can't post intents on someone else's behalf.
+  intentToken String     @unique
+  // Entry fee accounting. Set when the entry is created. Returned
+  // (in part) via prize-pool split if this entry finishes in the
+  // payout zone; otherwise forfeited to the pool.
+  entryFeeBps Int        @default(0)
+  // Final placement (1 = 1st, 2 = 2nd, ...). Filled at settle.
+  placement   Int?
+  payoutBps   Int        @default(0)
+
+  @@index([matchId])
+  @@index([fighterId])
+}
+
+// One row per objective in the match. status flips to "collected" the
+// instant a bot enters its tile — server-authoritative.
+model BotMatchObjective {
+  id          String     @id @default(cuid())
+  matchId     String
+  match       BotMatch   @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  posX        Float
+  posZ        Float
+  value       Int        @default(1) // points (some objectives could be worth more)
+  status      String     @default("active") // active | collected
+  collectedBy String?    // BotMatchEntry id
+  collectedAt DateTime?
+
+  @@index([matchId, status])
+}
+
+model BotMatchBet {
+  id         String     @id @default(cuid())
+  matchId    String
+  match      BotMatch   @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  player     String     // Luanti player name placing the bet
+  entryId    String     // BotMatchEntry they're betting on
+  amountBps  Int
+  payoutBps  Int        @default(0)
+  settled    Boolean    @default(false)
+  createdAt  DateTime   @default(now())
+
+  @@unique([matchId, player, entryId])
+  @@index([matchId])
+  @@index([player])
+}
+
+// Permanent fighter identity. Pass 1: backend-created, stats baked at
+// creation. Pass 2: backed by a Solana NFT — `mint` becomes the SPL
+// mint address, ownerSol is read from chain ownership, stats live on
+// the on-chain metadata. Backend stays the single source of truth for
+// win/loss/race count to keep the arena worker fast.
+// Token economy ledger. Every RELM mint/burn/treasury movement gets a
+// row so we can compute circulating supply, daily burn rate, and the
+// mint/burn ratio. Burn rows mean RELM is permanently destroyed
+// (deflationary). Treasury rows mean RELM is locked in the house pool
+// (used for prize pools, tournament rewards, governance funding).
+model EconLedger {
+  id        String   @id @default(cuid())
+  // mint | burn | treasury | shop_buy | land_tax | tournament_fee | refund
+  kind      String
+  amountBps Int
+  // Optional player or address attribution.
+  player    String?
+  address   String?
+  // Free-form context (e.g. {"typeId":3,"reason":"shop_buy"} for shop).
+  meta      String?
+  createdAt DateTime @default(now())
+
+  @@index([kind, createdAt])
+  @@index([player])
+}
+
+model Fighter {
+  id          String   @id @default(cuid())
+  // SPL mint address once on-chain. Null until Pass 2.
+  mint        String?  @unique
+  name        String
+  power       Int      // 25-95
+  speed       Int      // 25-95
+  luck        Int      // 25-95
+  ownerSol    String?  // Solana wallet that owns the NFT
+  ownerPlayer String?  // Luanti player name (denormalized, optional)
+  // Lifetime record. Updated on settle.
+  wins        Int      @default(0)
+  losses      Int      @default(0)
+  races       Int      @default(0)
+  retired     Boolean  @default(false)
+  // Whether the fighter is currently entered into the active pool.
+  // Owners can withdraw to "rest" their fighter; only entered ones
+  // get drafted into rounds.
+  entered     Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([entered, retired])
+  @@index([ownerSol])
 }
