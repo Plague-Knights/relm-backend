@@ -1,0 +1,43 @@
+{
+  "name": "Quellborn",
+  "description": "A Relm Arena fighter. Power 42, Speed 52, Luck 73.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0811.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c2cc626e20dbfcc4e2f0d4bbf",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Green Valley"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Bare Head"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Solid"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Axe"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Mohawk"
+    },
+    {
+      "trait_type": "Power",
+      "value": 42,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 52,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 73,
+      "max_value": 100
+    }
+  ]
+}

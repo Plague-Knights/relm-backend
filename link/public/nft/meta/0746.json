@@ -1,0 +1,43 @@
+{
+  "name": "Glinttide",
+  "description": "A Relm Arena fighter. Power 65, Speed 39, Luck 47.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0746.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c53653668c71a95e1350f65b0",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Fire Chasm"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Horned Crown"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Solid"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Blade"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Flowing"
+    },
+    {
+      "trait_type": "Power",
+      "value": 65,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 39,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 47,
+      "max_value": 100
+    }
+  ]
+}

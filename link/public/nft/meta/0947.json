@@ -1,0 +1,43 @@
+{
+  "name": "Bogscale",
+  "description": "A Relm Arena fighter. Power 93, Speed 25, Luck 90.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0947.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c16f9ba16415851cad8dca3a4",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Nebula Void"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Headband"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Solid"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Blade"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Bald"
+    },
+    {
+      "trait_type": "Power",
+      "value": 93,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 25,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 90,
+      "max_value": 100
+    }
+  ]
+}

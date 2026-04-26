@@ -1,0 +1,43 @@
+{
+  "name": "Palefrost",
+  "description": "A Relm Arena fighter. Power 60, Speed 43, Luck 56.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0118.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c01bea0caf0179dcbe67c4ad8",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Arena Stone"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Headband"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Scaled"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Axe"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Buzz"
+    },
+    {
+      "trait_type": "Power",
+      "value": 60,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 43,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 56,
+      "max_value": 100
+    }
+  ]
+}

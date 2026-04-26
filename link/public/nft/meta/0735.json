@@ -1,0 +1,43 @@
+{
+  "name": "Driftspike",
+  "description": "A Relm Arena fighter. Power 37, Speed 43, Luck 94.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0735.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c818421998fad8f7374eebf7f",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Nebula Void"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Bare Head"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Striped"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Axe"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Bald"
+    },
+    {
+      "trait_type": "Power",
+      "value": 37,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 43,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 94,
+      "max_value": 100
+    }
+  ]
+}

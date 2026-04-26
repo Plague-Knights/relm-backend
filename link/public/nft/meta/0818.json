@@ -1,0 +1,43 @@
+{
+  "name": "Hollowstep",
+  "description": "A Relm Arena fighter. Power 46, Speed 56, Luck 60.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0818.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c5f6a6b87ccd2971ba057ba3e",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Nebula Void"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Bare Head"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Striped"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Blade"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Bald"
+    },
+    {
+      "trait_type": "Power",
+      "value": 46,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 56,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 60,
+      "max_value": 100
+    }
+  ]
+}

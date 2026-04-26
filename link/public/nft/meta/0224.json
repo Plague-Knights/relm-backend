@@ -1,0 +1,43 @@
+{
+  "name": "Ironstep",
+  "description": "A Relm Arena fighter. Power 86, Speed 87, Luck 34.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0224.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c70ac565289b32a4c9b3f6801",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Arena Stone"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Headband"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Chest Emblem"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Axe"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Buzz"
+    },
+    {
+      "trait_type": "Power",
+      "value": 86,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 87,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 34,
+      "max_value": 100
+    }
+  ]
+}

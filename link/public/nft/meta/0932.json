@@ -1,0 +1,43 @@
+{
+  "name": "Stormlock",
+  "description": "A Relm Arena fighter. Power 90, Speed 77, Luck 41.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0932.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/caa10b5338e801e06c6346570",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Gilded Hall"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Headband"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Scaled"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Bow"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Bald"
+    },
+    {
+      "trait_type": "Power",
+      "value": 90,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 77,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 41,
+      "max_value": 100
+    }
+  ]
+}

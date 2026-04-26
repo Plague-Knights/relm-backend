@@ -1,0 +1,43 @@
+{
+  "name": "Clinchclaw",
+  "description": "A Relm Arena fighter. Power 53, Speed 61, Luck 53.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0798.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c5c913defc2752d08e1c21fbe",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Nebula Void"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Bare Head"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Chest Emblem"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Axe"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Short"
+    },
+    {
+      "trait_type": "Power",
+      "value": 53,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 61,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 53,
+      "max_value": 100
+    }
+  ]
+}

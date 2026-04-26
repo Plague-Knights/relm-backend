@@ -1,0 +1,43 @@
+{
+  "name": "Bogscale",
+  "description": "A Relm Arena fighter. Power 69, Speed 48, Luck 72.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0835.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/cbd371e0452a18beb1478b169",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Gilded Hall"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Headband"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Chest Emblem"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Blade"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Buzz"
+    },
+    {
+      "trait_type": "Power",
+      "value": 69,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 48,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 72,
+      "max_value": 100
+    }
+  ]
+}

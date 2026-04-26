@@ -1,0 +1,43 @@
+{
+  "name": "Ravelfrost",
+  "description": "A Relm Arena fighter. Power 65, Speed 76, Luck 49.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0440.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c3f9b6dda806f705af33817e8",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Fire Chasm"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Headband"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Striped"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Blade"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Bald"
+    },
+    {
+      "trait_type": "Power",
+      "value": 65,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 76,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 49,
+      "max_value": 100
+    }
+  ]
+}

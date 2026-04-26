@@ -1,0 +1,43 @@
+{
+  "name": "Vexshade",
+  "description": "A Relm Arena fighter. Power 79, Speed 26, Luck 40.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0933.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c5a64b24cb9e8245995983dfe",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Nebula Void"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Headband"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Runic"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Axe"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Short"
+    },
+    {
+      "trait_type": "Power",
+      "value": 79,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 26,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 40,
+      "max_value": 100
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Palelock",
+  "description": "A Relm Arena fighter. Power 28, Speed 41, Luck 88.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0502.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/cb0b127adf8355729a1dbefb2",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Arena Stone"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Bare Head"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Chest Emblem"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Blade"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Mohawk"
+    },
+    {
+      "trait_type": "Power",
+      "value": 28,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 41,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 88,
+      "max_value": 100
+    }
+  ]
+}

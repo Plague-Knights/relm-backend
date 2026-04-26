@@ -1,0 +1,43 @@
+{
+  "name": "Stormfang",
+  "description": "A Relm Arena fighter. Power 64, Speed 81, Luck 90.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0404.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c3aff66c7e9c6f4ae1827c932",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Gilded Hall"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Bare Head"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Solid"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Blade"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Buzz"
+    },
+    {
+      "trait_type": "Power",
+      "value": 64,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 81,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 90,
+      "max_value": 100
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Vexrage",
+  "description": "A Relm Arena fighter. Power 44, Speed 51, Luck 26.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0085.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/ca46b3787f0f4caade929c9e5",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Green Valley"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Headband"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Chest Emblem"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Blade"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Short"
+    },
+    {
+      "trait_type": "Power",
+      "value": 44,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 51,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 26,
+      "max_value": 100
+    }
+  ]
+}

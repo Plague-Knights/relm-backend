@@ -1,0 +1,43 @@
+{
+  "name": "Briskborn",
+  "description": "A Relm Arena fighter. Power 80, Speed 90, Luck 49.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0061.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c41937e423f078163a114fc23",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Nebula Void"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Headband"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Solid"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Staff"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Buzz"
+    },
+    {
+      "trait_type": "Power",
+      "value": 80,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 90,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 49,
+      "max_value": 100
+    }
+  ]
+}

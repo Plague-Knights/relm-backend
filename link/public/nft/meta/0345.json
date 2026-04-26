@@ -1,0 +1,43 @@
+{
+  "name": "Sablehand",
+  "description": "A Relm Arena fighter. Power 26, Speed 57, Luck 31.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0345.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c5967b44f4067e98ea0c304f0",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Green Valley"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Headband"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Solid"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Blade"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Buzz"
+    },
+    {
+      "trait_type": "Power",
+      "value": 26,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 57,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 31,
+      "max_value": 100
+    }
+  ]
+}

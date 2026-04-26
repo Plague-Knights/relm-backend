@@ -1,0 +1,43 @@
+{
+  "name": "Clinchpact",
+  "description": "A Relm Arena fighter. Power 70, Speed 89, Luck 51.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0894.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c91bf4a18e1e3ee4036063042",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Nebula Void"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Horned Crown"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Solid"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Blade"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Mohawk"
+    },
+    {
+      "trait_type": "Power",
+      "value": 70,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 89,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 51,
+      "max_value": 100
+    }
+  ]
+}

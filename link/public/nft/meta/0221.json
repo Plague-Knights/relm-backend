@@ -1,0 +1,43 @@
+{
+  "name": "Briskborn",
+  "description": "A Relm Arena fighter. Power 32, Speed 78, Luck 67.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0221.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c6680337ef60914226a192bfb",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Arena Stone"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Horned Crown"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Solid"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Staff"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Bald"
+    },
+    {
+      "trait_type": "Power",
+      "value": 32,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 78,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 67,
+      "max_value": 100
+    }
+  ]
+}

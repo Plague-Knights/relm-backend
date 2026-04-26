@@ -1,0 +1,43 @@
+{
+  "name": "Mireweave",
+  "description": "A Relm Arena fighter. Power 78, Speed 71, Luck 63.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0476.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c309129313ec4d5180ce9e82a",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Gilded Hall"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Bare Head"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Inverted"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Blade"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Bald"
+    },
+    {
+      "trait_type": "Power",
+      "value": 78,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 71,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 63,
+      "max_value": 100
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Mirepact",
+  "description": "A Relm Arena fighter. Power 78, Speed 62, Luck 75.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0332.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c32e9ec53f0f888cc8ac65ffe",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Nebula Void"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Headband"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Solid"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Axe"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Bald"
+    },
+    {
+      "trait_type": "Power",
+      "value": 78,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 62,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 75,
+      "max_value": 100
+    }
+  ]
+}

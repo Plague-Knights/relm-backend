@@ -1,0 +1,43 @@
+{
+  "name": "Quellvein",
+  "description": "A Relm Arena fighter. Power 66, Speed 49, Luck 53.",
+  "image": "https://relm-link-production.up.railway.app/nft/img/0635.png",
+  "external_url": "https://relm-link-production.up.railway.app/fighters/c4fd37a5ed2ac46f3ae5f5a2f",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Fire Chasm"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "Steel Circlet"
+    },
+    {
+      "trait_type": "Armor",
+      "value": "Solid"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Blade"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Short"
+    },
+    {
+      "trait_type": "Power",
+      "value": 66,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Speed",
+      "value": 49,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 53,
+      "max_value": 100
+    }
+  ]
+}
