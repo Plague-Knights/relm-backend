@@ -6,11 +6,15 @@ import { cosmeticsRouter } from "./routes/cosmetics.js";
 import { energyRouter } from "./routes/energy.js";
 import { landRouter } from "./routes/land.js";
 import { arenaRouter } from "./routes/arena.js";
+import { fightersRouter } from "./routes/fighters.js";
+import { botMatchRouter } from "./routes/botMatch.js";
 import { startScorer } from "./workers/scorer.js";
 import { startMinter } from "./workers/minter.js";
 import { startRefillWatcher } from "./workers/refillWatcher.js";
 import { startLandWatcher } from "./workers/landWatcher.js";
 import { startArenaWorker } from "./workers/arenaWorker.js";
+import { startBotMatchWorker } from "./workers/botMatchWorker.js";
+import { startLandTaxWorker } from "./workers/landTax.js";
 
 const app = express();
 // Trust the Railway edge proxy so rate-limiting keys off the real
@@ -26,6 +30,8 @@ app.use("/api/cosmetics", cosmeticsRouter);
 app.use("/api/energy", energyRouter);
 app.use("/api/land", landRouter);
 app.use("/api/arena", arenaRouter);
+app.use("/api/fighters", fightersRouter);
+app.use("/api/bot-match", botMatchRouter);
 
 const PORT = Number(process.env.PORT ?? 3000);
 app.listen(PORT, () => {
@@ -40,5 +46,7 @@ app.listen(PORT, () => {
     startRefillWatcher();
     startLandWatcher();
     startArenaWorker();
+    startBotMatchWorker();
+    startLandTaxWorker();
   }
 });

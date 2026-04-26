@@ -117,15 +117,26 @@ cosmeticsRouter.get("/meta/:typeId", (req: Request, res: Response) => {
 // This is the primary RELM sink — every cosmetic purchase
 // permanently removes half its price from supply.
 cosmeticsRouter.post("/buy", async (req: Request, res: Response) => {
-  const { player, typeId } = (req.body ?? {}) as {
+  const { player: rawPlayer, address: rawAddress, typeId } = (req.body ?? {}) as {
     player?: string;
+    address?: string;
     typeId?: number;
   };
-  if (typeof player !== "string" || !player.trim()) {
-    return res.status(400).json({ error: "player required" });
-  }
   if (typeof typeId !== "number" || !Number.isInteger(typeId) || typeId <= 0) {
     return res.status(400).json({ error: "typeId required" });
+  }
+  // Accept either {player} (in-game name) or {address} (linked wallet).
+  // Address path looks up the player via PlayerWallet so the shop UI
+  // doesn't need to know the player name.
+  let player = typeof rawPlayer === "string" && rawPlayer.trim() ? rawPlayer.trim() : "";
+  if (!player && typeof rawAddress === "string" && /^0x[a-fA-F0-9]{40}$/.test(rawAddress)) {
+    const link = await prisma.playerWallet.findUnique({
+      where: { address: rawAddress.toLowerCase() },
+    });
+    if (link) player = link.player;
+  }
+  if (!player) {
+    return res.status(400).json({ error: "player or linked address required" });
   }
 
   // Look up the cosmetic + its RELM price from the on-chain registry.
@@ -179,4 +190,20 @@ cosmeticsRouter.post("/buy", async (req: Request, res: Response) => {
 
 cosmeticsRouter.get("/econ/stats", async (_req: Request, res: Response) => {
   res.json(await econ.stats());
+});
+
+// In-game RELM balance for a connected wallet — looks up the linked
+// player and returns their PlayerBalance row. Drives the shop's
+// "Buy with In-game RELM" button.
+cosmeticsRouter.get("/balance/:address", async (req: Request, res: Response) => {
+  const raw = typeof req.params.address === "string" ? req.params.address : "";
+  if (!/^0x[a-fA-F0-9]{40}$/.test(raw)) {
+    return res.status(400).json({ error: "bad address" });
+  }
+  const link = await prisma.playerWallet.findUnique({
+    where: { address: raw.toLowerCase() },
+  });
+  if (!link) return res.json({ player: null, balanceBps: 0 });
+  const bal = await balance.get(link.player);
+  res.json({ player: link.player, balanceBps: bal });
 });

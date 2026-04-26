@@ -38,6 +38,10 @@ export default function ShopPage() {
   const [error, setError] = useState<string | null>(null);
   const [activeTypeId, setActiveTypeId] = useState<number | null>(null);
   const [activeMode, setActiveMode] = useState<"eth" | "relm" | null>(null);
+  const [inGameBalanceBps, setInGameBalanceBps] = useState<number | null>(null);
+  const [econ, setEcon] = useState<{ minted: number; burned: number; treasury: number; circulating: number } | null>(null);
+  const [buying, setBuying] = useState<number | null>(null);
+  const [buyMsg, setBuyMsg] = useState<string | null>(null);
 
   const { address, isConnected } = useAccount();
   const chainId = useChainId();
@@ -60,7 +64,41 @@ export default function ShopPage() {
       .then(r => r.ok ? r.json() : Promise.reject(`status ${r.status}`))
       .then(d => setItems(d.types))
       .catch(e => setError(String(e)));
+    fetch("/api/cosmetics/econ/stats").then(r => r.json()).then(setEcon).catch(() => {});
   }, []);
+
+  // Pull in-game RELM balance whenever the connected wallet changes.
+  useEffect(() => {
+    if (!address) { setInGameBalanceBps(null); return; }
+    fetch(`/api/cosmetics/balance/${address}`).then(r => r.json()).then(d => {
+      setInGameBalanceBps(typeof d.balanceBps === "number" ? d.balanceBps : 0);
+    }).catch(() => setInGameBalanceBps(0));
+  }, [address]);
+
+  async function buyInGame(t: CosmeticType) {
+    if (!address) return;
+    setBuying(t.id);
+    setBuyMsg(null);
+    try {
+      const r = await fetch("/api/cosmetics/buy", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ address, typeId: t.id }),
+      });
+      const d = await r.json();
+      if (!r.ok) {
+        setBuyMsg(d.error ?? `error ${r.status}`);
+      } else {
+        setBuyMsg(`bought · burned ${d.burnedBps} bps · new balance ${d.balanceBps} bps`);
+        setInGameBalanceBps(d.balanceBps);
+        fetch("/api/cosmetics/econ/stats").then(rr => rr.json()).then(setEcon).catch(() => {});
+      }
+    } catch (e) {
+      setBuyMsg((e as Error).message);
+    } finally {
+      setBuying(null);
+    }
+  }
 
   useEffect(() => {
     if (confirmed) {
@@ -136,6 +174,26 @@ export default function ShopPage() {
         <div className="row">
           <ConnectButton chainStatus="icon" />
         </div>
+
+        {inGameBalanceBps !== null && (
+          <div className="row" style={{ fontSize: 13, opacity: 0.85 }}>
+            in-game balance: <b style={{ marginLeft: 6 }}>{(inGameBalanceBps / 10000).toFixed(4)} RELM</b>
+            <span style={{ marginLeft: 6, opacity: 0.5 }}>(earned by mining; spendable below)</span>
+          </div>
+        )}
+
+        {econ && (
+          <div className="row" style={{ fontSize: 12, opacity: 0.7, gap: 12, display: "flex" }}>
+            <span>minted {(econ.minted/10000).toFixed(0)}</span>
+            <span style={{ color: "#ff8a8a" }}>burned {(econ.burned/10000).toFixed(0)}</span>
+            <span style={{ color: "#ffd040" }}>treasury {(econ.treasury/10000).toFixed(0)}</span>
+            <span>circulating {(econ.circulating/10000).toFixed(0)}</span>
+          </div>
+        )}
+
+        {buyMsg && (
+          <div className="row" style={{ fontSize: 13, color: "var(--accent)" }}>{buyMsg}</div>
+        )}
 
         {wrongChain && (
           <div className="row">
@@ -225,6 +283,18 @@ export default function ShopPage() {
                         disabled={baseDisabled || (activeTypeId !== null && activeTypeId !== t.id)}
                       >
                         {Math.round(Number(formatEther(BigInt(t.priceRelm))))} RELM
+                      </button>
+                    )}
+                    {relmEnabled && (
+                      <button
+                        className="btn"
+                        style={{ flex: 1, fontSize: 13, background: "#3a8e3a" }}
+                        onClick={() => buyInGame(t)}
+                        disabled={!isConnected || soldOut || buying !== null
+                          || (inGameBalanceBps !== null && inGameBalanceBps < Number(BigInt(t.priceRelm) / 10n ** 14n))}
+                        title="Spend in-game RELM (earned by mining). 50% burned, 50% to prize-pool treasury."
+                      >
+                        {buying === t.id ? "…" : `${Math.round(Number(formatEther(BigInt(t.priceRelm))))} in-game`}
                       </button>
                     )}
                   </div>
