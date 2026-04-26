@@ -22,6 +22,10 @@ model PlayerWallet {
   // default Luanti skin. The Lua mod reads this on join + on
   // /myfighter <id> commands to swap the active skin.
   activeFighterId   String?
+  // Pickaxe upgrade tier — sink layer. 0=wood (free), 1=stone (100 RELM),
+  // 2=steel (500), 3=diamond (2500), 4=ink/legendary (10000). Each step
+  // splits 50% burn / 50% treasury.
+  pickaxeTier       Int      @default(0)
   linkedAt          DateTime @default(now())
 }
 

@@ -104,6 +104,61 @@ economyRouter.get("/balance/:player", async (req: Request, res: Response) => {
   res.json({ player, balanceBps: await balance.get(player) });
 });
 
+// Pickaxe upgrade — each tier costs progressively more RELM. The lua
+// mod reads /pickaxe/:player on join and gives the matching tool.
+const PICKAXE_TIER_BPS: number[] = [0, 100, 500, 2500, 10000].map(r => r * 10000);
+const PICKAXE_TIER_NAMES = ["wood", "stone", "steel", "diamond", "ink"];
+
+economyRouter.get("/pickaxe/:player", async (req: Request, res: Response) => {
+  const player = typeof req.params.player === "string" ? req.params.player : "";
+  if (!player) return res.status(400).json({ error: "bad player" });
+  const link = await prisma.playerWallet.findUnique({ where: { player } });
+  const tier = link?.pickaxeTier ?? 0;
+  res.json({
+    player,
+    tier,
+    name: PICKAXE_TIER_NAMES[tier] ?? "unknown",
+    nextTierBps: PICKAXE_TIER_BPS[tier + 1] ?? null,
+    nextTierName: PICKAXE_TIER_NAMES[tier + 1] ?? null,
+  });
+});
+
+economyRouter.post("/pickaxe/upgrade", async (req: Request, res: Response) => {
+  const { player } = (req.body ?? {}) as { player?: string };
+  if (typeof player !== "string" || !player.trim()) {
+    return res.status(400).json({ error: "player required" });
+  }
+  const link = await prisma.playerWallet.findUnique({ where: { player: player.trim() } });
+  if (!link) return res.status(404).json({ error: "wallet not linked" });
+  const next = link.pickaxeTier + 1;
+  const cost = PICKAXE_TIER_BPS[next];
+  if (cost === undefined) {
+    return res.status(400).json({ error: "max tier reached", tier: link.pickaxeTier });
+  }
+  const newBal = await balance.debit(player.trim(), cost);
+  if (newBal === null) {
+    return res.status(402).json({ error: "insufficient RELM balance", priceBps: cost });
+  }
+  await prisma.playerWallet.update({
+    where: { id: link.id },
+    data: { pickaxeTier: next },
+  });
+  const { burned, treasury } = await econ.burnTreasurySplit(cost, {
+    player,
+    address: link.address,
+    meta: { kind: "pickaxe_upgrade", fromTier: link.pickaxeTier, toTier: next },
+  });
+  return res.json({
+    ok: true,
+    tier: next,
+    name: PICKAXE_TIER_NAMES[next],
+    priceBps: cost,
+    burnedBps: burned,
+    treasuryBps: treasury,
+    balanceBps: newBal,
+  });
+});
+
 economyRouter.get("/recent/:limit?", async (req: Request, res: Response) => {
   const lim = Math.min(50, Math.max(1, Number(req.params.limit) || 20));
   const rows = await prisma.econLedger.findMany({
