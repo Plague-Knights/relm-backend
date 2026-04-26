@@ -267,13 +267,28 @@ function clampInt(v: unknown, lo: number, hi: number): number {
 export async function tickBrain(obs: BotObservation): Promise<Command[]> {
   const now = Date.now();
   const s = getState(obs);
+
+  // Deterministic stamina rules — don't waste an LLM call on the
+  // obvious cases. Bonk → rest, recovered → resume.
+  const stamina = obs.stamina ?? 100;
+  const cmdsPre: Command[] = [];
+  if (stamina < 15 && s.lastPace !== "rest") {
+    s.lastPace = "rest";
+    s.lastPlayAt = now;
+    cmdsPre.push({ skill: "set_pace", pace: "rest", durationSec: 8 });
+  } else if (stamina > 85 && s.lastPace === "rest") {
+    s.lastPace = "normal";
+    s.lastPlayAt = now;
+    cmdsPre.push({ skill: "set_pace", pace: "normal", durationSec: 18 });
+  }
+
   const wantChat = shouldDecideChat(obs, s, now);
   const wantPlay = shouldDecidePlay(obs, s, now);
   if (!wantChat && !wantPlay) {
     s.lastRank = obs.rank;
     s.lastScore = obs.score;
-    s.lastStamina = obs.stamina ?? 100;
-    return [];
+    s.lastStamina = stamina;
+    return cmdsPre;
   }
   const mode: "chat" | "play" | "both" =
     wantChat && wantPlay ? "both" : wantChat ? "chat" : "play";
@@ -304,7 +319,7 @@ export async function tickBrain(obs: BotObservation): Promise<Command[]> {
     s.recentGoals.push(out.goal);
     if (s.recentGoals.length > 4) s.recentGoals.shift();
   }
-  return cmds;
+  return [...cmdsPre, ...cmds];
 }
 
 export async function tickBrains(
