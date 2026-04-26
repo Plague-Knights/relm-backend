@@ -1,12 +1,12 @@
 {
-  "name": "Ironclaw",
+  "name": "Ironpact",
   "description": "A Relm Arena fighter. Power 46, Speed 45, Luck 45.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0640.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c717508d9e61f825011d4c869",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Nebula Void"
+      "value": "Stormfront"
     },
     {
       "trait_type": "Helmet",
@@ -14,11 +14,11 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Scaled"
+      "value": "Chest Emblem"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",

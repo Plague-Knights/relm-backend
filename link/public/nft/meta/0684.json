@@ -1,12 +1,12 @@
 {
-  "name": "Mireweave",
+  "name": "Miretide",
   "description": "A Relm Arena fighter. Power 48, Speed 49, Luck 48.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0684.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cd8e429aa32a020c901130280",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Frozen Tundra"
     },
     {
       "trait_type": "Helmet",
@@ -18,11 +18,11 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",
-      "value": "Bald"
+      "value": "Short"
     },
     {
       "trait_type": "Power",

@@ -1,5 +1,5 @@
 {
-  "name": "Raveltide",
+  "name": "Ravelhand",
   "description": "A Relm Arena fighter. Power 25, Speed 34, Luck 31.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0424.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cc35d185b545a326b4a7f6149",
@@ -18,11 +18,11 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Twin Daggers"
     },
     {
       "trait_type": "Hair",
-      "value": "Short"
+      "value": "Long"
     },
     {
       "trait_type": "Power",

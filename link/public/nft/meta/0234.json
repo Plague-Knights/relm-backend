@@ -1,5 +1,5 @@
 {
-  "name": "Glintweave",
+  "name": "Glinttide",
   "description": "A Relm Arena fighter. Power 36, Speed 30, Luck 25.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0234.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c6d67b2c8e3e4e4f5280d3b88",
@@ -10,7 +10,7 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Headband"
+      "value": "Steel Circlet"
     },
     {
       "trait_type": "Armor",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Axe"
+      "value": "Blade"
     },
     {
       "trait_type": "Hair",

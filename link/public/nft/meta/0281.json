@@ -1,12 +1,12 @@
 {
-  "name": "Sablehand",
+  "name": "Sablevein",
   "description": "A Relm Arena fighter. Power 49, Speed 42, Luck 35.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0281.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cd50e85edec158448063000b8",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Nebula Void"
     },
     {
       "trait_type": "Helmet",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Bow"
     },
     {
       "trait_type": "Hair",

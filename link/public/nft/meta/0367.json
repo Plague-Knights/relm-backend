@@ -1,28 +1,28 @@
 {
-  "name": "Driftspike",
+  "name": "Driftburn",
   "description": "A Relm Arena fighter. Power 36, Speed 60, Luck 60.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0367.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c365c45a465343bee83f4220e",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Frozen Tundra"
     },
     {
       "trait_type": "Helmet",
-      "value": "Headband"
+      "value": "Steel Circlet"
     },
     {
       "trait_type": "Armor",
-      "value": "Runic"
+      "value": "Inverted"
     },
     {
       "trait_type": "Weapon",
-      "value": "Axe"
+      "value": "Blade"
     },
     {
       "trait_type": "Hair",
-      "value": "Short"
+      "value": "Long"
     },
     {
       "trait_type": "Power",

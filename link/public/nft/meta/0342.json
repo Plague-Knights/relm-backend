@@ -1,20 +1,20 @@
 {
   "name": "Palefrost",
-  "description": "A Relm Arena fighter. Power 60, Speed 72, Luck 64.",
+  "description": "A Relm Arena fighter. Power 51, Speed 47, Luck 55.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0342.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c4f644a284ee305c846f7d5a8",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Gilded Hall"
+      "value": "Sunset Mesa"
     },
     {
       "trait_type": "Helmet",
-      "value": "Horned Crown"
+      "value": "Full Plate"
     },
     {
       "trait_type": "Armor",
-      "value": "Scaled"
+      "value": "Chest Emblem"
     },
     {
       "trait_type": "Weapon",
@@ -22,26 +22,26 @@
     },
     {
       "trait_type": "Hair",
-      "value": "Short"
+      "value": "Mohawk"
     },
     {
       "trait_type": "Power",
-      "value": 60,
+      "value": 51,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 72,
+      "value": 47,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 64,
+      "value": 55,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Rare"
+      "value": "Uncommon"
     }
   ],
   "properties": {

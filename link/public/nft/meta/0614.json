@@ -6,23 +6,23 @@
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Nebula Void"
+      "value": "Frozen Tundra"
     },
     {
       "trait_type": "Helmet",
-      "value": "Visor"
+      "value": "Hooded Cowl"
     },
     {
       "trait_type": "Armor",
-      "value": "Scaled"
+      "value": "Plated"
     },
     {
       "trait_type": "Weapon",
-      "value": "Blade"
+      "value": "Staff"
     },
     {
       "trait_type": "Hair",
-      "value": "Short"
+      "value": "Long"
     },
     {
       "trait_type": "Power",

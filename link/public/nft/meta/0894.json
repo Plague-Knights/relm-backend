@@ -6,15 +6,15 @@
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Nebula Void"
+      "value": "Frozen Tundra"
     },
     {
       "trait_type": "Helmet",
-      "value": "Horned Crown"
+      "value": "Skull Mask"
     },
     {
       "trait_type": "Armor",
-      "value": "Solid"
+      "value": "Striped"
     },
     {
       "trait_type": "Weapon",
@@ -22,7 +22,7 @@
     },
     {
       "trait_type": "Hair",
-      "value": "Mohawk"
+      "value": "Topknot"
     },
     {
       "trait_type": "Power",

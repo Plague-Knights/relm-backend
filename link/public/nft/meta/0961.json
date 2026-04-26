@@ -1,24 +1,24 @@
 {
-  "name": "Cinderspike",
+  "name": "Cinderburn",
   "description": "A Relm Arena fighter. Power 35, Speed 39, Luck 52.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0961.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c1acacc9bf703dce5aaca49fa",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Frozen Tundra"
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Visor"
     },
     {
       "trait_type": "Armor",
-      "value": "Chest Emblem"
+      "value": "Plated"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",

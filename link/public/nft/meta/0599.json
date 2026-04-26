@@ -1,16 +1,16 @@
 {
-  "name": "Ashshade",
-  "description": "A Relm Arena fighter. Power 38, Speed 27, Luck 28.",
+  "name": "Ashhand",
+  "description": "A Relm Arena fighter. Power 40, Speed 45, Luck 46.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0599.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cc29f90409ff124d45b6ea866",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Gilded Hall"
+      "value": "Sunset Mesa"
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Visor"
     },
     {
       "trait_type": "Armor",
@@ -18,30 +18,30 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Blade"
+      "value": "Bow"
     },
     {
       "trait_type": "Hair",
-      "value": "Buzz"
+      "value": "Bald"
     },
     {
       "trait_type": "Power",
-      "value": 38,
+      "value": 40,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 27,
+      "value": 45,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 28,
+      "value": 46,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Common"
+      "value": "Uncommon"
     }
   ],
   "properties": {

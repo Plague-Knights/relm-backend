@@ -1,24 +1,24 @@
 {
-  "name": "Stormlock",
+  "name": "Stormrage",
   "description": "A Relm Arena fighter. Power 35, Speed 55, Luck 50.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0420.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c962de9d9ff455ae4ba563474",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Nebula Void"
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Visor"
     },
     {
       "trait_type": "Armor",
-      "value": "Striped"
+      "value": "Scaled"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Twin Daggers"
     },
     {
       "trait_type": "Hair",

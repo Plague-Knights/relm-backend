@@ -1,12 +1,12 @@
 {
-  "name": "Ravelfrost",
+  "name": "Ravelfang",
   "description": "A Relm Arena fighter. Power 49, Speed 43, Luck 32.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0136.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cbc077f81d99c24a81d734d4a",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Nebula Void"
     },
     {
       "trait_type": "Helmet",
@@ -18,11 +18,11 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",
-      "value": "Bald"
+      "value": "Short"
     },
     {
       "trait_type": "Power",

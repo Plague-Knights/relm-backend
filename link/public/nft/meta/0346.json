@@ -1,24 +1,24 @@
 {
-  "name": "Glinttide",
+  "name": "Glintfrost",
   "description": "A Relm Arena fighter. Power 61, Speed 74, Luck 56.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0346.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c0f1a270c286e073465ab5b2c",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Green Valley"
+      "value": "Fire Chasm"
     },
     {
       "trait_type": "Helmet",
-      "value": "Full Plate"
+      "value": "Halo"
     },
     {
       "trait_type": "Armor",
-      "value": "Striped"
+      "value": "Scaled"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",

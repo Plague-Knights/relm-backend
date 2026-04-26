@@ -1,12 +1,12 @@
 {
-  "name": "Driftburn",
+  "name": "Driftvein",
   "description": "A Relm Arena fighter. Power 49, Speed 42, Luck 45.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0815.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c3f34e6971bf738214fad72d7",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Nebula Void"
     },
     {
       "trait_type": "Helmet",
@@ -14,11 +14,11 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Solid"
+      "value": "Striped"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",

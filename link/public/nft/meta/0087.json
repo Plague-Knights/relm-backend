@@ -1,16 +1,16 @@
 {
-  "name": "Ashhand",
+  "name": "Ashshade",
   "description": "A Relm Arena fighter. Power 26, Speed 27, Luck 27.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0087.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c292fa0a8d6d178e8777c0822",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Arena Stone"
+      "value": "Green Valley"
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Visor"
     },
     {
       "trait_type": "Armor",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Axe"
+      "value": "Blade"
     },
     {
       "trait_type": "Hair",

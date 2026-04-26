@@ -1,5 +1,5 @@
 {
-  "name": "Ashhand",
+  "name": "Ashfrost",
   "description": "A Relm Arena fighter. Power 25, Speed 50, Luck 41.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0647.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cec82fb4004d5b9fab38732ce",
@@ -10,7 +10,7 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Visor"
+      "value": "Hooded Cowl"
     },
     {
       "trait_type": "Armor",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Twin Daggers"
     },
     {
       "trait_type": "Hair",

@@ -1,16 +1,16 @@
 {
-  "name": "Clinchpact",
+  "name": "Clinchweave",
   "description": "A Relm Arena fighter. Power 27, Speed 38, Luck 27.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0478.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c4b99601bac3ecab39e4bee6f",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Nebula Void"
     },
     {
       "trait_type": "Helmet",
-      "value": "Headband"
+      "value": "Steel Circlet"
     },
     {
       "trait_type": "Armor",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",

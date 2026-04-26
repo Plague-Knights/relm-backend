@@ -1,24 +1,24 @@
 {
-  "name": "Stormfang",
+  "name": "Stormclaw",
   "description": "A Relm Arena fighter. Power 62, Speed 57, Luck 62.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0756.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c718a49a722480ec1f80c8561",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Nebula Void"
+      "value": "Frozen Tundra"
     },
     {
       "trait_type": "Helmet",
-      "value": "Full Plate"
+      "value": "Halo"
     },
     {
       "trait_type": "Armor",
-      "value": "Solid"
+      "value": "Striped"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",

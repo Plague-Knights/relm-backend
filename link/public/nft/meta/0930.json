@@ -1,24 +1,24 @@
 {
-  "name": "Hollowfang",
+  "name": "Hollowstep",
   "description": "A Relm Arena fighter. Power 63, Speed 37, Luck 53.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0930.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c46b351216330a31e1f701223",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Nebula Void"
+      "value": "Stormfront"
     },
     {
       "trait_type": "Helmet",
-      "value": "Horned Crown"
+      "value": "Skull Mask"
     },
     {
       "trait_type": "Armor",
-      "value": "Chest Emblem"
+      "value": "Plated"
     },
     {
       "trait_type": "Weapon",
-      "value": "Axe"
+      "value": "Blade"
     },
     {
       "trait_type": "Hair",

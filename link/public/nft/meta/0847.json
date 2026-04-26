@@ -1,5 +1,5 @@
 {
-  "name": "Driftspike",
+  "name": "Driftvein",
   "description": "A Relm Arena fighter. Power 47, Speed 28, Luck 41.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0847.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c47709b8825f240fa0eb3bf62",
@@ -10,19 +10,19 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Headband"
+      "value": "Steel Circlet"
     },
     {
       "trait_type": "Armor",
-      "value": "Solid"
+      "value": "Striped"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",
-      "value": "Mohawk"
+      "value": "Topknot"
     },
     {
       "trait_type": "Power",

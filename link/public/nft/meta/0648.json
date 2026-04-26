@@ -1,16 +1,16 @@
 {
-  "name": "Ravelfrost",
+  "name": "Raveltide",
   "description": "A Relm Arena fighter. Power 46, Speed 45, Luck 34.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0648.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c45f94434e723732b2c661b85",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Green Valley"
+      "value": "Fire Chasm"
     },
     {
       "trait_type": "Helmet",
-      "value": "Bare Head"
+      "value": "Headband"
     },
     {
       "trait_type": "Armor",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Bow"
     },
     {
       "trait_type": "Hair",

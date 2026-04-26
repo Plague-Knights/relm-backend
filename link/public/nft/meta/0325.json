@@ -1,20 +1,20 @@
 {
   "name": "Vexshade",
-  "description": "A Relm Arena fighter. Power 77, Speed 65, Luck 87.",
+  "description": "A Relm Arena fighter. Power 78, Speed 74, Luck 53.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0325.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cc8486e991ced421454ffbbc5",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Frozen Tundra"
     },
     {
       "trait_type": "Helmet",
-      "value": "Bare Head"
+      "value": "Headband"
     },
     {
       "trait_type": "Armor",
-      "value": "Inverted"
+      "value": "Mythril Weave"
     },
     {
       "trait_type": "Weapon",
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 77,
+      "value": 78,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 65,
+      "value": 74,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 87,
+      "value": 53,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Epic"
+      "value": "Rare"
     }
   ],
   "properties": {

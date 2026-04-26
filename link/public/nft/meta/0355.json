@@ -1,6 +1,6 @@
 {
-  "name": "Bograge",
-  "description": "A Relm Arena fighter. Power 71, Speed 78, Luck 74.",
+  "name": "Bogfrost",
+  "description": "A Relm Arena fighter. Power 42, Speed 55, Luck 53.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0355.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cf67b637778e98f4d4b874dfd",
   "attributes": [
@@ -10,38 +10,38 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Visor"
+      "value": "Hooded Cowl"
     },
     {
       "trait_type": "Armor",
-      "value": "Runic"
+      "value": "Inverted"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Crossbow"
     },
     {
       "trait_type": "Hair",
-      "value": "Bald"
+      "value": "Short"
     },
     {
       "trait_type": "Power",
-      "value": 71,
+      "value": 42,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 78,
+      "value": 55,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 74,
+      "value": 53,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Rare"
+      "value": "Uncommon"
     }
   ],
   "properties": {

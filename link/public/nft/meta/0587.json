@@ -1,24 +1,24 @@
 {
-  "name": "Quellborn",
-  "description": "A Relm Arena fighter. Power 61, Speed 46, Luck 55.",
+  "name": "Quellshade",
+  "description": "A Relm Arena fighter. Power 80, Speed 82, Luck 93.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0587.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cd40059ee29f57ac3df1bc959",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Gilded Hall"
+      "value": "Black Hole"
     },
     {
       "trait_type": "Helmet",
-      "value": "Headband"
+      "value": "Steel Circlet"
     },
     {
       "trait_type": "Armor",
-      "value": "Solid"
+      "value": "Striped"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Soulblade"
     },
     {
       "trait_type": "Hair",
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 61,
+      "value": 80,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 46,
+      "value": 82,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 55,
+      "value": 93,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Uncommon"
+      "value": "Legendary"
     }
   ],
   "properties": {

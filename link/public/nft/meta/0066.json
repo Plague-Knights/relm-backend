@@ -1,24 +1,24 @@
 {
-  "name": "Hollowfang",
+  "name": "Hollowscale",
   "description": "A Relm Arena fighter. Power 25, Speed 50, Luck 30.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0066.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c7fbf175429fc22c922ce4312",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Green Valley"
+      "value": "Fire Chasm"
     },
     {
       "trait_type": "Helmet",
-      "value": "Headband"
+      "value": "Steel Circlet"
     },
     {
       "trait_type": "Armor",
-      "value": "Striped"
+      "value": "Scaled"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Twin Daggers"
     },
     {
       "trait_type": "Hair",

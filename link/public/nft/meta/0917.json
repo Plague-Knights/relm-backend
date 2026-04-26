@@ -1,16 +1,16 @@
 {
   "name": "Vexrage",
-  "description": "A Relm Arena fighter. Power 40, Speed 33, Luck 34.",
+  "description": "A Relm Arena fighter. Power 59, Speed 48, Luck 44.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0917.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c323fcafc71dab2135356b82a",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Gilded Hall"
+      "value": "Sunset Mesa"
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Hooded Cowl"
     },
     {
       "trait_type": "Armor",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Blade"
+      "value": "Staff"
     },
     {
       "trait_type": "Hair",
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 40,
+      "value": 59,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 33,
+      "value": 48,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 34,
+      "value": 44,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Common"
+      "value": "Uncommon"
     }
   ],
   "properties": {

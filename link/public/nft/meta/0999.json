@@ -1,24 +1,24 @@
 {
-  "name": "Ashhand",
-  "description": "A Relm Arena fighter. Power 55, Speed 63, Luck 75.",
+  "name": "Ashfrost",
+  "description": "A Relm Arena fighter. Power 44, Speed 54, Luck 59.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0999.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c8ebde920952dd6f4faa1f984",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Gilded Hall"
+      "value": "Sunset Mesa"
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Visor"
     },
     {
       "trait_type": "Armor",
-      "value": "Striped"
+      "value": "Scaled"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Twin Daggers"
     },
     {
       "trait_type": "Hair",
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 55,
+      "value": 44,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 63,
+      "value": 54,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 75,
+      "value": 59,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Rare"
+      "value": "Uncommon"
     }
   ],
   "properties": {

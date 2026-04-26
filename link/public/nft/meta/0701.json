@@ -1,5 +1,5 @@
 {
-  "name": "Briskborn",
+  "name": "Briskvein",
   "description": "A Relm Arena fighter. Power 27, Speed 46, Luck 34.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0701.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c6da3e135ed85d49df9306934",
@@ -14,11 +14,11 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Striped"
+      "value": "Scaled"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",

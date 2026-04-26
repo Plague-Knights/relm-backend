@@ -1,5 +1,5 @@
 {
-  "name": "Quellborn",
+  "name": "Quellweave",
   "description": "A Relm Arena fighter. Power 45, Speed 39, Luck 48.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0763.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c2d027c9078a6f6ffd81d49f3",
@@ -10,15 +10,15 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Headband"
+      "value": "Steel Circlet"
     },
     {
       "trait_type": "Armor",
-      "value": "Scaled"
+      "value": "Chest Emblem"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Twin Daggers"
     },
     {
       "trait_type": "Hair",

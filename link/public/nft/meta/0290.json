@@ -1,5 +1,5 @@
 {
-  "name": "Hollowfang",
+  "name": "Hollowpact",
   "description": "A Relm Arena fighter. Power 60, Speed 43, Luck 58.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0290.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c8b038303d767801990596db2",
@@ -10,7 +10,7 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Horned Crown"
+      "value": "Full Plate"
     },
     {
       "trait_type": "Armor",
@@ -18,11 +18,11 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",
-      "value": "Short"
+      "value": "Mohawk"
     },
     {
       "trait_type": "Power",

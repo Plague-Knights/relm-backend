@@ -1,16 +1,16 @@
 {
-  "name": "Palefrost",
+  "name": "Palelock",
   "description": "A Relm Arena fighter. Power 31, Speed 32, Luck 25.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0646.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c1fed9a77366605e93da56575",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Nebula Void"
     },
     {
       "trait_type": "Helmet",
-      "value": "Bare Head"
+      "value": "Headband"
     },
     {
       "trait_type": "Armor",
@@ -18,11 +18,11 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Axe"
+      "value": "Blade"
     },
     {
       "trait_type": "Hair",
-      "value": "Short"
+      "value": "Long"
     },
     {
       "trait_type": "Power",

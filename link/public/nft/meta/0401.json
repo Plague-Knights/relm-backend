@@ -6,15 +6,15 @@
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Green Valley"
+      "value": "Fire Chasm"
     },
     {
       "trait_type": "Helmet",
-      "value": "Headband"
+      "value": "Steel Circlet"
     },
     {
       "trait_type": "Armor",
-      "value": "Chest Emblem"
+      "value": "Runic"
     },
     {
       "trait_type": "Weapon",
@@ -22,7 +22,7 @@
     },
     {
       "trait_type": "Hair",
-      "value": "Mohawk"
+      "value": "Topknot"
     },
     {
       "trait_type": "Power",

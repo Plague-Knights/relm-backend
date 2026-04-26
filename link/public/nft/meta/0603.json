@@ -1,16 +1,16 @@
 {
-  "name": "Quellvein",
+  "name": "Quellborn",
   "description": "A Relm Arena fighter. Power 53, Speed 36, Luck 59.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0603.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cc43e91047b9ab9d72e126dd7",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Nebula Void"
+      "value": "Stormfront"
     },
     {
       "trait_type": "Helmet",
-      "value": "Horned Crown"
+      "value": "Full Plate"
     },
     {
       "trait_type": "Armor",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Blade"
+      "value": "Bow"
     },
     {
       "trait_type": "Hair",

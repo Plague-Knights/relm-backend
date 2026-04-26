@@ -1,24 +1,24 @@
 {
-  "name": "Clinchpact",
+  "name": "Clinchtide",
   "description": "A Relm Arena fighter. Power 44, Speed 56, Luck 65.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0046.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c4513f757a313c6646ec92b71",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Nebula Void"
     },
     {
       "trait_type": "Helmet",
-      "value": "Visor"
+      "value": "Horned Crown"
     },
     {
       "trait_type": "Armor",
-      "value": "Scaled"
+      "value": "Chest Emblem"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",

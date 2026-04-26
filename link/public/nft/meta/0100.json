@@ -1,5 +1,5 @@
 {
-  "name": "Stormlock",
+  "name": "Stormhand",
   "description": "A Relm Arena fighter. Power 35, Speed 36, Luck 49.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0100.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c0c10311d229495a17aad2f13",
@@ -14,11 +14,11 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Scaled"
+      "value": "Chest Emblem"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Crossbow"
     },
     {
       "trait_type": "Hair",

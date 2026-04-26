@@ -1,5 +1,5 @@
 {
-  "name": "Sablehand",
+  "name": "Sableshade",
   "description": "A Relm Arena fighter. Power 29, Speed 31, Luck 40.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0313.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cfeed8d7bde2bd8b358959ee2",
@@ -14,11 +14,11 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Scaled"
+      "value": "Chest Emblem"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",

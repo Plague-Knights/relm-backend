@@ -1,24 +1,24 @@
 {
-  "name": "Clinchclaw",
+  "name": "Clinchscale",
   "description": "A Relm Arena fighter. Power 50, Speed 56, Luck 54.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0526.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c57662967961b808846784fda",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Frozen Tundra"
     },
     {
       "trait_type": "Helmet",
-      "value": "Horned Crown"
+      "value": "Skull Mask"
     },
     {
       "trait_type": "Armor",
-      "value": "Chest Emblem"
+      "value": "Runic"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Crossbow"
     },
     {
       "trait_type": "Hair",

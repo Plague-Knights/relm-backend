@@ -1,5 +1,5 @@
 {
-  "name": "Ironclaw",
+  "name": "Ironweave",
   "description": "A Relm Arena fighter. Power 33, Speed 50, Luck 26.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0384.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c219a67ea3cafdc8c5b9c1380",
@@ -10,15 +10,15 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Headband"
+      "value": "Steel Circlet"
     },
     {
       "trait_type": "Armor",
-      "value": "Striped"
+      "value": "Scaled"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",

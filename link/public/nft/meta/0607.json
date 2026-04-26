@@ -1,12 +1,12 @@
 {
-  "name": "Driftburn",
+  "name": "Driftborn",
   "description": "A Relm Arena fighter. Power 33, Speed 29, Luck 25.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0607.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c8178455f2ef1072bd4038394",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Green Valley"
+      "value": "Fire Chasm"
     },
     {
       "trait_type": "Helmet",
@@ -18,11 +18,11 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",
-      "value": "Mohawk"
+      "value": "Topknot"
     },
     {
       "trait_type": "Power",

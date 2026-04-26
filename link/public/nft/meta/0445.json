@@ -1,16 +1,16 @@
 {
-  "name": "Briskburn",
+  "name": "Briskstep",
   "description": "A Relm Arena fighter. Power 63, Speed 49, Luck 59.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0445.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/ca47dd84938717640e7a33b6f",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Arena Stone"
+      "value": "Green Valley"
     },
     {
       "trait_type": "Helmet",
-      "value": "Horned Crown"
+      "value": "Skull Mask"
     },
     {
       "trait_type": "Armor",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Crossbow"
     },
     {
       "trait_type": "Hair",

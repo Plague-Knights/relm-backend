@@ -1,12 +1,12 @@
 {
-  "name": "Stormfang",
-  "description": "A Relm Arena fighter. Power 39, Speed 46, Luck 45.",
+  "name": "Stormstep",
+  "description": "A Relm Arena fighter. Power 71, Speed 85, Luck 72.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0564.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/ca60c82f17c6e2563ca77b12e",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Green Valley"
+      "value": "Fire Chasm"
     },
     {
       "trait_type": "Helmet",
@@ -18,30 +18,30 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",
-      "value": "Flowing"
+      "value": "Crystal Hair"
     },
     {
       "trait_type": "Power",
-      "value": 39,
+      "value": 71,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 46,
+      "value": 85,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 45,
+      "value": 72,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Common"
+      "value": "Epic"
     }
   ],
   "properties": {

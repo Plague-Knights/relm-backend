@@ -1,6 +1,6 @@
 {
-  "name": "Bograge",
-  "description": "A Relm Arena fighter. Power 40, Speed 40, Luck 52.",
+  "name": "Bogtide",
+  "description": "A Relm Arena fighter. Power 55, Speed 53, Luck 62.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0547.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cc2ccfc8f49faebca497ffa17",
   "attributes": [
@@ -10,15 +10,15 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Headband"
+      "value": "Steel Circlet"
     },
     {
       "trait_type": "Armor",
-      "value": "Chest Emblem"
+      "value": "Plated"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Scythe"
     },
     {
       "trait_type": "Hair",
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 40,
+      "value": 55,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 40,
+      "value": 53,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 52,
+      "value": 62,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Uncommon"
+      "value": "Rare"
     }
   ],
   "properties": {

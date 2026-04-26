@@ -1,12 +1,12 @@
 {
-  "name": "Quellborn",
-  "description": "A Relm Arena fighter. Power 34, Speed 46, Luck 39.",
+  "name": "Quellstep",
+  "description": "A Relm Arena fighter. Power 75, Speed 51, Luck 60.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0075.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c6c9fd58389a0d04882b33632",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Green Valley"
+      "value": "Fire Chasm"
     },
     {
       "trait_type": "Helmet",
@@ -14,11 +14,11 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Solid"
+      "value": "Striped"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Scythe"
     },
     {
       "trait_type": "Hair",
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 34,
+      "value": 75,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 46,
+      "value": 51,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 39,
+      "value": 60,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Common"
+      "value": "Rare"
     }
   ],
   "properties": {

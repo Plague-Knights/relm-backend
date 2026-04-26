@@ -1,16 +1,16 @@
 {
-  "name": "Ironstep",
+  "name": "Ironclaw",
   "description": "A Relm Arena fighter. Power 30, Speed 44, Luck 31.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0752.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c31dc375ad567ddd65874c688",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Nebula Void"
+      "value": "Stormfront"
     },
     {
       "trait_type": "Helmet",
-      "value": "Bare Head"
+      "value": "Headband"
     },
     {
       "trait_type": "Armor",
@@ -18,11 +18,11 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Axe"
+      "value": "Blade"
     },
     {
       "trait_type": "Hair",
-      "value": "Short"
+      "value": "Long"
     },
     {
       "trait_type": "Power",

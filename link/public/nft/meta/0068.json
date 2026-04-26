@@ -1,5 +1,5 @@
 {
-  "name": "Stormfang",
+  "name": "Stormstep",
   "description": "A Relm Arena fighter. Power 64, Speed 50, Luck 55.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0068.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cc4bd496fd07d1ddfdd013edf",
@@ -14,15 +14,15 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Inverted"
+      "value": "Mythril Weave"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",
-      "value": "Short"
+      "value": "Long"
     },
     {
       "trait_type": "Power",

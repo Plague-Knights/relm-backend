@@ -1,6 +1,6 @@
 {
-  "name": "Sablehand",
-  "description": "A Relm Arena fighter. Power 68, Speed 87, Luck 67.",
+  "name": "Sablerage",
+  "description": "A Relm Arena fighter. Power 59, Speed 52, Luck 70.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0649.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/ca6aa4eae8c8604f21ca605b7",
   "attributes": [
@@ -10,38 +10,38 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Full Plate"
+      "value": "Beast Skull"
     },
     {
       "trait_type": "Armor",
-      "value": "Scaled"
+      "value": "Chest Emblem"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",
-      "value": "Mohawk"
+      "value": "Topknot"
     },
     {
       "trait_type": "Power",
-      "value": 68,
+      "value": 59,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 87,
+      "value": 52,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 67,
+      "value": 70,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Epic"
+      "value": "Rare"
     }
   ],
   "properties": {

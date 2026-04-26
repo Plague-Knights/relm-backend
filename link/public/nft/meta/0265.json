@@ -1,5 +1,5 @@
 {
-  "name": "Sablevein",
+  "name": "Sablepact",
   "description": "A Relm Arena fighter. Power 35, Speed 52, Luck 59.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0265.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cac099af6acc190429799315c",
@@ -10,7 +10,7 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Horned Crown"
+      "value": "Skull Mask"
     },
     {
       "trait_type": "Armor",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Crossbow"
     },
     {
       "trait_type": "Hair",

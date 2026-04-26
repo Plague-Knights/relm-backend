@@ -1,5 +1,5 @@
 {
-  "name": "Ashhand",
+  "name": "Ashweave",
   "description": "A Relm Arena fighter. Power 64, Speed 61, Luck 39.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0423.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c67e4b6398d6e2824c6c1ffcb",
@@ -10,15 +10,15 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Horned Crown"
+      "value": "Skull Mask"
     },
     {
       "trait_type": "Armor",
-      "value": "Chest Emblem"
+      "value": "Plated"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Crossbow"
     },
     {
       "trait_type": "Hair",

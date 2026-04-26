@@ -1,5 +1,5 @@
 {
-  "name": "Ironstep",
+  "name": "Ironrage",
   "description": "A Relm Arena fighter. Power 33, Speed 25, Luck 28.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0144.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cc03b860e76c3a31c1a7e2f03",
@@ -14,15 +14,15 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Solid"
+      "value": "Striped"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Crossbow"
     },
     {
       "trait_type": "Hair",
-      "value": "Buzz"
+      "value": "Bald"
     },
     {
       "trait_type": "Power",

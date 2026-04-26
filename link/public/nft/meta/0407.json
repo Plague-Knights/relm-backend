@@ -1,6 +1,6 @@
 {
-  "name": "Ashhand",
-  "description": "A Relm Arena fighter. Power 48, Speed 50, Luck 63.",
+  "name": "Ashpact",
+  "description": "A Relm Arena fighter. Power 79, Speed 79, Luck 66.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0407.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cb20e40e117f92b482f7fd344",
   "attributes": [
@@ -18,30 +18,30 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Scythe"
     },
     {
       "trait_type": "Hair",
-      "value": "Bald"
+      "value": "Short"
     },
     {
       "trait_type": "Power",
-      "value": 48,
+      "value": 79,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 50,
+      "value": 79,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 63,
+      "value": 66,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Uncommon"
+      "value": "Epic"
     }
   ],
   "properties": {

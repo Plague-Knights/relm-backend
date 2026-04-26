@@ -1,5 +1,5 @@
 {
-  "name": "Hollowstep",
+  "name": "Hollowpact",
   "description": "A Relm Arena fighter. Power 30, Speed 39, Luck 50.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0050.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cde868c13aaa8a24fe60b6410",
@@ -14,15 +14,15 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Solid"
+      "value": "Striped"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",
-      "value": "Short"
+      "value": "Long"
     },
     {
       "trait_type": "Power",

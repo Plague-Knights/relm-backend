@@ -1,12 +1,12 @@
 {
-  "name": "Clinchpact",
+  "name": "Clinchweave",
   "description": "A Relm Arena fighter. Power 25, Speed 31, Luck 47.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0126.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c417c4a2e9c560407b04e737b",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Gilded Hall"
+      "value": "Sunset Mesa"
     },
     {
       "trait_type": "Helmet",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",

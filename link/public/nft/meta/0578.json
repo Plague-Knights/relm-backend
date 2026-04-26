@@ -1,5 +1,5 @@
 {
-  "name": "Hollowstep",
+  "name": "Hollowclaw",
   "description": "A Relm Arena fighter. Power 49, Speed 44, Luck 44.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0578.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c75e432b5daf3f32e3c85dc03",
@@ -14,15 +14,15 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Striped"
+      "value": "Scaled"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",
-      "value": "Short"
+      "value": "Long"
     },
     {
       "trait_type": "Power",

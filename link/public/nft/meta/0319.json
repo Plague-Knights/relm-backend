@@ -1,12 +1,12 @@
 {
-  "name": "Driftspike",
+  "name": "Driftlock",
   "description": "A Relm Arena fighter. Power 81, Speed 73, Luck 80.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0319.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c9327eae8b575b9ed0742d9ac",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Green Valley"
+      "value": "Fire Chasm"
     },
     {
       "trait_type": "Helmet",
@@ -18,11 +18,11 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Scythe"
     },
     {
       "trait_type": "Hair",
-      "value": "Flowing"
+      "value": "Dreadlocks"
     },
     {
       "trait_type": "Power",

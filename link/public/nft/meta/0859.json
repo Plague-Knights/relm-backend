@@ -1,5 +1,5 @@
 {
-  "name": "Quellvein",
+  "name": "Quellhand",
   "description": "A Relm Arena fighter. Power 37, Speed 26, Luck 50.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0859.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c38a1c3643ab80e211f179c68",
@@ -10,15 +10,15 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Visor"
     },
     {
       "trait_type": "Armor",
-      "value": "Chest Emblem"
+      "value": "Runic"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",

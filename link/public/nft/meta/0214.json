@@ -1,5 +1,5 @@
 {
-  "name": "Palefrost",
+  "name": "Palevein",
   "description": "A Relm Arena fighter. Power 34, Speed 42, Luck 36.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0214.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c31fa36253ded0a9814a1271d",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Crossbow"
     },
     {
       "trait_type": "Hair",

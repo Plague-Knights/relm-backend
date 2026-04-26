@@ -1,6 +1,6 @@
 {
-  "name": "Palefrost",
-  "description": "A Relm Arena fighter. Power 47, Speed 48, Luck 51.",
+  "name": "Paleshade",
+  "description": "A Relm Arena fighter. Power 47, Speed 43, Luck 29.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0262.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c5f1df3fe6f0e440a030262c2",
   "attributes": [
@@ -10,15 +10,15 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Visor"
+      "value": "Hooded Cowl"
     },
     {
       "trait_type": "Armor",
-      "value": "Scaled"
+      "value": "Chest Emblem"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Twin Daggers"
     },
     {
       "trait_type": "Hair",
@@ -31,17 +31,17 @@
     },
     {
       "trait_type": "Speed",
-      "value": 48,
+      "value": 43,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 51,
+      "value": 29,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Uncommon"
+      "value": "Common"
     }
   ],
   "properties": {

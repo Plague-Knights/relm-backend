@@ -1,24 +1,24 @@
 {
-  "name": "Stormlock",
-  "description": "A Relm Arena fighter. Power 44, Speed 43, Luck 63.",
+  "name": "Stormfang",
+  "description": "A Relm Arena fighter. Power 44, Speed 44, Luck 32.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0212.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c143b856cbd282f4b539f07e2",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Gilded Hall"
+      "value": "Sunset Mesa"
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Visor"
     },
     {
       "trait_type": "Armor",
-      "value": "Striped"
+      "value": "Scaled"
     },
     {
       "trait_type": "Weapon",
-      "value": "Axe"
+      "value": "Blade"
     },
     {
       "trait_type": "Hair",
@@ -31,17 +31,17 @@
     },
     {
       "trait_type": "Speed",
-      "value": 43,
+      "value": 44,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 63,
+      "value": 32,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Uncommon"
+      "value": "Common"
     }
   ],
   "properties": {

@@ -1,5 +1,5 @@
 {
-  "name": "Mirepact",
+  "name": "Mireweave",
   "description": "A Relm Arena fighter. Power 27, Speed 28, Luck 38.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0828.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c5cb12b1b5fc6294d331b7b97",
@@ -10,15 +10,15 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Visor"
     },
     {
       "trait_type": "Armor",
-      "value": "Chest Emblem"
+      "value": "Runic"
     },
     {
       "trait_type": "Weapon",
-      "value": "Axe"
+      "value": "Blade"
     },
     {
       "trait_type": "Hair",

@@ -1,12 +1,12 @@
 {
-  "name": "Vexshade",
+  "name": "Vexrage",
   "description": "A Relm Arena fighter. Power 51, Speed 43, Luck 46.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0933.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c5a64b24cb9e8245995983dfe",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Nebula Void"
+      "value": "Crystal Cave"
     },
     {
       "trait_type": "Helmet",
@@ -14,15 +14,15 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Runic"
+      "value": "Tribal"
     },
     {
       "trait_type": "Weapon",
-      "value": "Axe"
+      "value": "Blade"
     },
     {
       "trait_type": "Hair",
-      "value": "Short"
+      "value": "Long"
     },
     {
       "trait_type": "Power",

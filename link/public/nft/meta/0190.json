@@ -1,12 +1,12 @@
 {
-  "name": "Clinchclaw",
-  "description": "A Relm Arena fighter. Power 27, Speed 35, Luck 28.",
+  "name": "Clinchrage",
+  "description": "A Relm Arena fighter. Power 63, Speed 55, Luck 59.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0190.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/ce2ad662af9506ca011861003",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Green Valley"
+      "value": "Fire Chasm"
     },
     {
       "trait_type": "Helmet",
@@ -18,30 +18,30 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Scythe"
     },
     {
       "trait_type": "Hair",
-      "value": "Short"
+      "value": "Mohawk"
     },
     {
       "trait_type": "Power",
-      "value": 27,
+      "value": 63,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 35,
+      "value": 55,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 28,
+      "value": 59,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Common"
+      "value": "Rare"
     }
   ],
   "properties": {

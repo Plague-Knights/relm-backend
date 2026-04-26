@@ -1,16 +1,16 @@
 {
-  "name": "Glinttide",
+  "name": "Glintlock",
   "description": "A Relm Arena fighter. Power 25, Speed 47, Luck 39.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0634.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c295f9846702ed320d9c25e32",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Frozen Tundra"
     },
     {
       "trait_type": "Helmet",
-      "value": "Visor"
+      "value": "Horned Crown"
     },
     {
       "trait_type": "Armor",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",

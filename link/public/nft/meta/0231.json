@@ -1,24 +1,24 @@
 {
-  "name": "Ashhand",
+  "name": "Ashpact",
   "description": "A Relm Arena fighter. Power 85, Speed 75, Luck 69.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0231.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c6125c779434a1c800cd271ea",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Nebula Void"
+      "value": "Crystal Cave"
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Visor"
     },
     {
       "trait_type": "Armor",
-      "value": "Runic"
+      "value": "Tribal"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Scythe"
     },
     {
       "trait_type": "Hair",

@@ -1,16 +1,16 @@
 {
-  "name": "Driftspike",
+  "name": "Driftfang",
   "description": "A Relm Arena fighter. Power 42, Speed 42, Luck 25.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0111.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c420f6e87c83cbbbfd8a6e496",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Green Valley"
+      "value": "Fire Chasm"
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Visor"
     },
     {
       "trait_type": "Armor",
@@ -18,11 +18,11 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Crossbow"
     },
     {
       "trait_type": "Hair",
-      "value": "Bald"
+      "value": "Short"
     },
     {
       "trait_type": "Power",

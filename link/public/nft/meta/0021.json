@@ -1,6 +1,6 @@
 {
-  "name": "Vexshade",
-  "description": "A Relm Arena fighter. Power 70, Speed 87, Luck 71.",
+  "name": "Vexrage",
+  "description": "A Relm Arena fighter. Power 72, Speed 60, Luck 56.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0021.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c6f5a3ad59593f0535fa99be4",
   "attributes": [
@@ -10,15 +10,15 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Full Plate"
+      "value": "Beast Skull"
     },
     {
       "trait_type": "Armor",
-      "value": "Runic"
+      "value": "Inverted"
     },
     {
       "trait_type": "Weapon",
-      "value": "Axe"
+      "value": "Blade"
     },
     {
       "trait_type": "Hair",
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 70,
+      "value": 72,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 87,
+      "value": 60,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 71,
+      "value": 56,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Epic"
+      "value": "Rare"
     }
   ],
   "properties": {

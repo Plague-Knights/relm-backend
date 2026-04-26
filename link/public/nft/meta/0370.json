@@ -1,5 +1,5 @@
 {
-  "name": "Hollowstep",
+  "name": "Hollowfang",
   "description": "A Relm Arena fighter. Power 31, Speed 47, Luck 41.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0370.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c93ec6fd41a634479f84eb60e",
@@ -10,15 +10,15 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Bare Head"
+      "value": "Headband"
     },
     {
       "trait_type": "Armor",
-      "value": "Solid"
+      "value": "Striped"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Bow"
     },
     {
       "trait_type": "Hair",

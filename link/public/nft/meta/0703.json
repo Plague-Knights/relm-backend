@@ -1,16 +1,16 @@
 {
-  "name": "Driftspike",
+  "name": "Driftclaw",
   "description": "A Relm Arena fighter. Power 39, Speed 59, Luck 37.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0703.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c0a078beec23b599f84a8c97a",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Frozen Tundra"
     },
     {
       "trait_type": "Helmet",
-      "value": "Horned Crown"
+      "value": "Skull Mask"
     },
     {
       "trait_type": "Armor",
@@ -18,11 +18,11 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Twin Daggers"
     },
     {
       "trait_type": "Hair",
-      "value": "Short"
+      "value": "Mohawk"
     },
     {
       "trait_type": "Power",

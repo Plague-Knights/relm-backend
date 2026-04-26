@@ -1,16 +1,16 @@
 {
-  "name": "Stormlock",
+  "name": "Stormfang",
   "description": "A Relm Arena fighter. Power 26, Speed 42, Luck 30.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0964.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cfa4b65a28384359ac3bbe52e",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Frozen Tundra"
     },
     {
       "trait_type": "Helmet",
-      "value": "Visor"
+      "value": "Horned Crown"
     },
     {
       "trait_type": "Armor",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Axe"
+      "value": "Blade"
     },
     {
       "trait_type": "Hair",

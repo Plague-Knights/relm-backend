@@ -1,12 +1,12 @@
 {
-  "name": "Ironstep",
+  "name": "Ironclaw",
   "description": "A Relm Arena fighter. Power 35, Speed 50, Luck 25.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0256.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c0736a7be8956481afea16c70",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Gilded Hall"
+      "value": "Sunset Mesa"
     },
     {
       "trait_type": "Helmet",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Axe"
+      "value": "Blade"
     },
     {
       "trait_type": "Hair",

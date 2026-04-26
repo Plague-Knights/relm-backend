@@ -1,5 +1,5 @@
 {
-  "name": "Clinchpact",
+  "name": "Clinchtide",
   "description": "A Relm Arena fighter. Power 45, Speed 48, Luck 41.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0846.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c4ed774f58f7b90f6f47b3205",
@@ -18,11 +18,11 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",
-      "value": "Buzz"
+      "value": "Bald"
     },
     {
       "trait_type": "Power",

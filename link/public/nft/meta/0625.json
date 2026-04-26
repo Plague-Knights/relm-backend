@@ -1,24 +1,24 @@
 {
-  "name": "Cinderscale",
+  "name": "Cinderstep",
   "description": "A Relm Arena fighter. Power 43, Speed 50, Luck 49.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0625.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c66f16ef83f9fb458f993fd98",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Frozen Tundra"
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Visor"
     },
     {
       "trait_type": "Armor",
-      "value": "Chest Emblem"
+      "value": "Plated"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Twin Daggers"
     },
     {
       "trait_type": "Hair",

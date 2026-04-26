@@ -1,16 +1,16 @@
 {
-  "name": "Ironstep",
+  "name": "Ironspike",
   "description": "A Relm Arena fighter. Power 68, Speed 74, Luck 54.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0336.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cc22a6145c408d305a6459215",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Nebula Void"
     },
     {
       "trait_type": "Helmet",
-      "value": "Full Plate"
+      "value": "Beast Skull"
     },
     {
       "trait_type": "Armor",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Twin Daggers"
     },
     {
       "trait_type": "Hair",

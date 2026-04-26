@@ -1,12 +1,12 @@
 {
-  "name": "Clinchpact",
+  "name": "Clinchclaw",
   "description": "A Relm Arena fighter. Power 45, Speed 37, Luck 50.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0062.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cbba40767048b284f8e2b9527",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Nebula Void"
     },
     {
       "trait_type": "Helmet",
@@ -14,11 +14,11 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Striped"
+      "value": "Scaled"
     },
     {
       "trait_type": "Weapon",
-      "value": "Blade"
+      "value": "Bow"
     },
     {
       "trait_type": "Hair",

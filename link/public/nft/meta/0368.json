@@ -1,12 +1,12 @@
 {
-  "name": "Ironclaw",
-  "description": "A Relm Arena fighter. Power 46, Speed 42, Luck 46.",
+  "name": "Ironweave",
+  "description": "A Relm Arena fighter. Power 61, Speed 43, Luck 59.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0368.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c51127b4811ac14afad0e96f7",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Nebula Void"
+      "value": "Crystal Cave"
     },
     {
       "trait_type": "Helmet",
@@ -14,11 +14,11 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Chest Emblem"
+      "value": "Runic"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 46,
+      "value": 61,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 42,
+      "value": 43,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 46,
+      "value": 59,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Common"
+      "value": "Uncommon"
     }
   ],
   "properties": {

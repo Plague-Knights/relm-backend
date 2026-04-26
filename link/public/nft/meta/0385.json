@@ -1,5 +1,5 @@
 {
-  "name": "Cinderspike",
+  "name": "Cinderborn",
   "description": "A Relm Arena fighter. Power 38, Speed 48, Luck 32.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0385.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/ccf43ff9bd1ce3e9087c1175f",
@@ -14,11 +14,11 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Chest Emblem"
+      "value": "Runic"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",

@@ -1,12 +1,12 @@
 {
-  "name": "Mirepact",
-  "description": "A Relm Arena fighter. Power 29, Speed 36, Luck 39.",
+  "name": "Mirespike",
+  "description": "A Relm Arena fighter. Power 50, Speed 38, Luck 48.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0572.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cbe6c4570b5ecd00c55efe166",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Nebula Void"
     },
     {
       "trait_type": "Helmet",
@@ -14,34 +14,34 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Scaled"
+      "value": "Plated"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Crossbow"
     },
     {
       "trait_type": "Hair",
-      "value": "Bald"
+      "value": "Short"
     },
     {
       "trait_type": "Power",
-      "value": 29,
+      "value": 50,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 36,
+      "value": 38,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 39,
+      "value": 48,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Common"
+      "value": "Uncommon"
     }
   ],
   "properties": {

@@ -1,28 +1,28 @@
 {
-  "name": "Quellvein",
+  "name": "Quellshade",
   "description": "A Relm Arena fighter. Power 49, Speed 48, Luck 46.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0891.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c4b1e6ab32c67f16904faf7bd",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Gilded Hall"
+      "value": "Stormfront"
     },
     {
       "trait_type": "Helmet",
-      "value": "Bare Head"
+      "value": "Headband"
     },
     {
       "trait_type": "Armor",
-      "value": "Scaled"
+      "value": "Chest Emblem"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",
-      "value": "Mohawk"
+      "value": "Topknot"
     },
     {
       "trait_type": "Power",

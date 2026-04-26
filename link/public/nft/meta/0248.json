@@ -1,6 +1,6 @@
 {
-  "name": "Ravelfrost",
-  "description": "A Relm Arena fighter. Power 60, Speed 51, Luck 41.",
+  "name": "Ravellock",
+  "description": "A Relm Arena fighter. Power 57, Speed 77, Luck 53.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0248.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/caf4340b3b81ba438b7cb089c",
   "attributes": [
@@ -10,38 +10,38 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Bare Head"
+      "value": "Headband"
     },
     {
       "trait_type": "Armor",
-      "value": "Chest Emblem"
+      "value": "Plated"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",
-      "value": "Short"
+      "value": "Mohawk"
     },
     {
       "trait_type": "Power",
-      "value": 60,
+      "value": 57,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 51,
+      "value": 77,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 41,
+      "value": 53,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Uncommon"
+      "value": "Rare"
     }
   ],
   "properties": {

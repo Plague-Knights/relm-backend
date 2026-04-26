@@ -1,5 +1,5 @@
 {
-  "name": "Briskborn",
+  "name": "Briskhand",
   "description": "A Relm Arena fighter. Power 27, Speed 29, Luck 28.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0973.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cb9bd7158a029cce98471f2e0",
@@ -10,7 +10,7 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Hooded Cowl"
     },
     {
       "trait_type": "Armor",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",

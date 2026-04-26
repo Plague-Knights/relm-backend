@@ -1,12 +1,12 @@
 {
-  "name": "Stormlock",
-  "description": "A Relm Arena fighter. Power 42, Speed 40, Luck 56.",
+  "name": "Stormvein",
+  "description": "A Relm Arena fighter. Power 69, Speed 59, Luck 62.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0932.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/caa10b5338e801e06c6346570",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Gilded Hall"
+      "value": "Stormfront"
     },
     {
       "trait_type": "Helmet",
@@ -14,11 +14,11 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Scaled"
+      "value": "Chest Emblem"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Scythe"
     },
     {
       "trait_type": "Hair",
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 42,
+      "value": 69,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 40,
+      "value": 59,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 56,
+      "value": 62,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Uncommon"
+      "value": "Rare"
     }
   ],
   "properties": {

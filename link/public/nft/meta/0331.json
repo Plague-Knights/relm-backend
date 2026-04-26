@@ -1,5 +1,5 @@
 {
-  "name": "Quellborn",
+  "name": "Quellclaw",
   "description": "A Relm Arena fighter. Power 65, Speed 62, Luck 39.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0331.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cdb2f1427ded2f3394f644383",
@@ -10,19 +10,19 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Visor"
+      "value": "Horned Crown"
     },
     {
       "trait_type": "Armor",
-      "value": "Chest Emblem"
+      "value": "Plated"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Crossbow"
     },
     {
       "trait_type": "Hair",
-      "value": "Buzz"
+      "value": "Bald"
     },
     {
       "trait_type": "Power",

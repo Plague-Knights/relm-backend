@@ -1,16 +1,16 @@
 {
-  "name": "Raveltide",
+  "name": "Ravelborn",
   "description": "A Relm Arena fighter. Power 55, Speed 42, Luck 40.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0520.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c3700d94b7a08b581ab228023",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Gilded Hall"
+      "value": "Stormfront"
     },
     {
       "trait_type": "Helmet",
-      "value": "Visor"
+      "value": "Hooded Cowl"
     },
     {
       "trait_type": "Armor",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Crossbow"
     },
     {
       "trait_type": "Hair",

@@ -1,16 +1,16 @@
 {
-  "name": "Vexshade",
-  "description": "A Relm Arena fighter. Power 38, Speed 52, Luck 60.",
+  "name": "Vexspike",
+  "description": "A Relm Arena fighter. Power 77, Speed 67, Luck 80.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0613.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c500faf6c438bb893f9b4b692",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Frozen Tundra"
     },
     {
       "trait_type": "Helmet",
-      "value": "Visor"
+      "value": "Horned Crown"
     },
     {
       "trait_type": "Armor",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Soulblade"
     },
     {
       "trait_type": "Hair",
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 38,
+      "value": 77,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 52,
+      "value": 67,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 60,
+      "value": 80,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Uncommon"
+      "value": "Epic"
     }
   ],
   "properties": {

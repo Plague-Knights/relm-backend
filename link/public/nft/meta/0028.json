@@ -1,47 +1,47 @@
 {
-  "name": "Mireweave",
-  "description": "A Relm Arena fighter. Power 74, Speed 73, Luck 85.",
+  "name": "Mirefrost",
+  "description": "A Relm Arena fighter. Power 43, Speed 47, Luck 54.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0028.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c484b02e38671560077531a54",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Arena Stone"
+      "value": "Green Valley"
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Visor"
     },
     {
       "trait_type": "Armor",
-      "value": "Inverted"
+      "value": "Tribal"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",
-      "value": "Buzz"
+      "value": "Bald"
     },
     {
       "trait_type": "Power",
-      "value": 74,
+      "value": 43,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 73,
+      "value": 47,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 85,
+      "value": 54,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Epic"
+      "value": "Uncommon"
     }
   ],
   "properties": {

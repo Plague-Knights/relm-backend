@@ -1,12 +1,12 @@
 {
-  "name": "Palelock",
+  "name": "Palestep",
   "description": "A Relm Arena fighter. Power 41, Speed 43, Luck 29.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0038.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/ca96d27071a3e7c632144251d",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Arena Stone"
+      "value": "Green Valley"
     },
     {
       "trait_type": "Helmet",
@@ -14,11 +14,11 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Striped"
+      "value": "Scaled"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",

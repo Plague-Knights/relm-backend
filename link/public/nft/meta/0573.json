@@ -1,5 +1,5 @@
 {
-  "name": "Briskborn",
+  "name": "Briskburn",
   "description": "A Relm Arena fighter. Power 43, Speed 38, Luck 34.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0573.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cb457354add31f43f4824027d",
@@ -10,7 +10,7 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Visor"
     },
     {
       "trait_type": "Armor",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Blade"
+      "value": "Bow"
     },
     {
       "trait_type": "Hair",

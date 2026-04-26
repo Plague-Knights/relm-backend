@@ -1,12 +1,12 @@
 {
-  "name": "Clinchclaw",
-  "description": "A Relm Arena fighter. Power 83, Speed 65, Luck 88.",
+  "name": "Clinchburn",
+  "description": "A Relm Arena fighter. Power 60, Speed 60, Luck 63.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0606.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cf4486c06f242b2ac0c22588d",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Nebula Void"
     },
     {
       "trait_type": "Helmet",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Twin Daggers"
     },
     {
       "trait_type": "Hair",
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 83,
+      "value": 60,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 65,
+      "value": 60,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 88,
+      "value": 63,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Epic"
+      "value": "Uncommon"
     }
   ],
   "properties": {

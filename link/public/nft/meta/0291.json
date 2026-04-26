@@ -1,12 +1,12 @@
 {
-  "name": "Bograge",
+  "name": "Bogscale",
   "description": "A Relm Arena fighter. Power 43, Speed 32, Luck 50.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0291.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c3e3c70d4df7f3bb301db2ed9",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Arena Stone"
+      "value": "Green Valley"
     },
     {
       "trait_type": "Helmet",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Axe"
+      "value": "Blade"
     },
     {
       "trait_type": "Hair",

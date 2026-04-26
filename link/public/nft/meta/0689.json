@@ -1,12 +1,12 @@
 {
-  "name": "Cinderscale",
-  "description": "A Relm Arena fighter. Power 94, Speed 91, Luck 83.",
+  "name": "Cinderfrost",
+  "description": "A Relm Arena fighter. Power 67, Speed 71, Luck 72.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0689.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cf450c79287e9553d667dc9df",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Gilded Hall"
+      "value": "Sunset Mesa"
     },
     {
       "trait_type": "Helmet",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Scythe"
     },
     {
       "trait_type": "Hair",
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 94,
+      "value": 67,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 91,
+      "value": 71,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 83,
+      "value": 72,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Legendary"
+      "value": "Epic"
     }
   ],
   "properties": {

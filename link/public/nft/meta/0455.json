@@ -1,6 +1,6 @@
 {
   "name": "Ashshade",
-  "description": "A Relm Arena fighter. Power 54, Speed 54, Luck 51.",
+  "description": "A Relm Arena fighter. Power 41, Speed 41, Luck 49.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0455.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c782ca5b2ae7616ca19e56fcc",
   "attributes": [
@@ -10,38 +10,38 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Visor"
+      "value": "Horned Crown"
     },
     {
       "trait_type": "Armor",
-      "value": "Runic"
+      "value": "Inverted"
     },
     {
       "trait_type": "Weapon",
-      "value": "Blade"
+      "value": "Staff"
     },
     {
       "trait_type": "Hair",
-      "value": "Flowing"
+      "value": "Topknot"
     },
     {
       "trait_type": "Power",
-      "value": 54,
+      "value": 41,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 54,
+      "value": 41,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 51,
+      "value": 49,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Rare"
+      "value": "Uncommon"
     }
   ],
   "properties": {

@@ -1,47 +1,47 @@
 {
-  "name": "Sablehand",
-  "description": "A Relm Arena fighter. Power 75, Speed 74, Luck 52.",
+  "name": "Sableshade",
+  "description": "A Relm Arena fighter. Power 52, Speed 64, Luck 59.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0745.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c97e799b0ccca55b764fdbdb8",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Nebula Void"
+      "value": "Crystal Cave"
     },
     {
       "trait_type": "Helmet",
-      "value": "Headband"
+      "value": "Steel Circlet"
     },
     {
       "trait_type": "Armor",
-      "value": "Runic"
+      "value": "Tribal"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",
-      "value": "Bald"
+      "value": "Short"
     },
     {
       "trait_type": "Power",
-      "value": 75,
-      "max_value": 100
-    },
-    {
-      "trait_type": "Speed",
-      "value": 74,
-      "max_value": 100
-    },
-    {
-      "trait_type": "Luck",
       "value": 52,
       "max_value": 100
     },
     {
+      "trait_type": "Speed",
+      "value": 64,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Luck",
+      "value": 59,
+      "max_value": 100
+    },
+    {
       "trait_type": "Rarity",
-      "value": "Rare"
+      "value": "Uncommon"
     }
   ],
   "properties": {

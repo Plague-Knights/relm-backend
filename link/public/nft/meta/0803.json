@@ -1,12 +1,12 @@
 {
-  "name": "Bograge",
+  "name": "Bogburn",
   "description": "A Relm Arena fighter. Power 31, Speed 40, Luck 43.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0803.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c98d881cfce132c3a5788b2c2",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Green Valley"
+      "value": "Fire Chasm"
     },
     {
       "trait_type": "Helmet",
@@ -14,11 +14,11 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Striped"
+      "value": "Scaled"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",

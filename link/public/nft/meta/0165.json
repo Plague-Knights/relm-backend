@@ -1,12 +1,12 @@
 {
-  "name": "Vexshade",
+  "name": "Vextide",
   "description": "A Relm Arena fighter. Power 38, Speed 61, Luck 49.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0165.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c49e2b3bf3d1f034fed0cfbcc",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Nebula Void"
     },
     {
       "trait_type": "Helmet",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Crossbow"
     },
     {
       "trait_type": "Hair",

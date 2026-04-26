@@ -1,6 +1,6 @@
 {
-  "name": "Sablevein",
-  "description": "A Relm Arena fighter. Power 32, Speed 50, Luck 31.",
+  "name": "Sablerage",
+  "description": "A Relm Arena fighter. Power 70, Speed 80, Luck 80.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0121.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c0cd7840c4fa7db9e4a5db5cd",
   "attributes": [
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Soulblade"
     },
     {
       "trait_type": "Hair",
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 32,
+      "value": 70,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 50,
+      "value": 80,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 31,
+      "value": 80,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Common"
+      "value": "Epic"
     }
   ],
   "properties": {

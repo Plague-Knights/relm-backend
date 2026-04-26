@@ -1,12 +1,12 @@
 {
-  "name": "Ashshade",
+  "name": "Ashscale",
   "description": "A Relm Arena fighter. Power 50, Speed 27, Luck 42.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0023.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cf181326f611cdd6b00a9a98d",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Nebula Void"
+      "value": "Stormfront"
     },
     {
       "trait_type": "Helmet",
@@ -18,11 +18,11 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",
-      "value": "Bald"
+      "value": "Short"
     },
     {
       "trait_type": "Power",

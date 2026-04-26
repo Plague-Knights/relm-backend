@@ -1,28 +1,28 @@
 {
-  "name": "Glintweave",
+  "name": "Glintburn",
   "description": "A Relm Arena fighter. Power 59, Speed 47, Luck 44.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0330.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cd8520f6c3ec3f608050d1f7a",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Nebula Void"
     },
     {
       "trait_type": "Helmet",
-      "value": "Visor"
+      "value": "Hooded Cowl"
     },
     {
       "trait_type": "Armor",
-      "value": "Chest Emblem"
+      "value": "Plated"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Crossbow"
     },
     {
       "trait_type": "Hair",
-      "value": "Bald"
+      "value": "Short"
     },
     {
       "trait_type": "Power",

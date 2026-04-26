@@ -1,6 +1,6 @@
 {
-  "name": "Cinderscale",
-  "description": "A Relm Arena fighter. Power 33, Speed 29, Luck 41.",
+  "name": "Cinderspike",
+  "description": "A Relm Arena fighter. Power 79, Speed 75, Luck 77.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0513.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c0a1878de2dfe2b39fead488f",
   "attributes": [
@@ -14,34 +14,34 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Striped"
+      "value": "Scaled"
     },
     {
       "trait_type": "Weapon",
-      "value": "Axe"
+      "value": "Blade"
     },
     {
       "trait_type": "Hair",
-      "value": "Flowing"
+      "value": "Crystal Hair"
     },
     {
       "trait_type": "Power",
-      "value": 33,
+      "value": 79,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 29,
+      "value": 75,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 41,
+      "value": 77,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Common"
+      "value": "Epic"
     }
   ],
   "properties": {

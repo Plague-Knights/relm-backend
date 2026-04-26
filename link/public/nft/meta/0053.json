@@ -1,5 +1,5 @@
 {
-  "name": "Vexrage",
+  "name": "Vexspike",
   "description": "A Relm Arena fighter. Power 37, Speed 28, Luck 50.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0053.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cb66fea19019a3d1722844b7a",
@@ -10,15 +10,15 @@
     },
     {
       "trait_type": "Helmet",
-      "value": "Headband"
+      "value": "Steel Circlet"
     },
     {
       "trait_type": "Armor",
-      "value": "Scaled"
+      "value": "Chest Emblem"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",

@@ -1,5 +1,5 @@
 {
-  "name": "Mirepact",
+  "name": "Mireborn",
   "description": "A Relm Arena fighter. Power 42, Speed 46, Luck 35.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0140.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c5f945743b477d94047b10130",
@@ -18,11 +18,11 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Twin Daggers"
     },
     {
       "trait_type": "Hair",
-      "value": "Bald"
+      "value": "Short"
     },
     {
       "trait_type": "Power",

@@ -1,24 +1,24 @@
 {
-  "name": "Bogscale",
-  "description": "A Relm Arena fighter. Power 65, Speed 75, Luck 66.",
+  "name": "Bogburn",
+  "description": "A Relm Arena fighter. Power 45, Speed 60, Luck 57.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0995.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cdc54b35aa4d5780a81128589",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Nebula Void"
+      "value": "Stormfront"
     },
     {
       "trait_type": "Helmet",
-      "value": "Visor"
+      "value": "Horned Crown"
     },
     {
       "trait_type": "Armor",
-      "value": "Scaled"
+      "value": "Plated"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 65,
+      "value": 45,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 75,
+      "value": 60,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 66,
+      "value": 57,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Rare"
+      "value": "Uncommon"
     }
   ],
   "properties": {

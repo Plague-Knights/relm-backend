@@ -1,12 +1,12 @@
 {
-  "name": "Ravelfrost",
+  "name": "Ravellock",
   "description": "A Relm Arena fighter. Power 28, Speed 50, Luck 37.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0072.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cb9e68ce19184d255b6f83e82",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Arena Stone"
+      "value": "Green Valley"
     },
     {
       "trait_type": "Helmet",
@@ -14,15 +14,15 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Solid"
+      "value": "Striped"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",
-      "value": "Bald"
+      "value": "Short"
     },
     {
       "trait_type": "Power",

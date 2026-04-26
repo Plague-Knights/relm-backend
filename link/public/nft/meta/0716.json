@@ -1,12 +1,12 @@
 {
-  "name": "Mireweave",
+  "name": "Mirefrost",
   "description": "A Relm Arena fighter. Power 35, Speed 63, Luck 63.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0716.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c712381feb1a736c64873fc7a",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Nebula Void"
+      "value": "Stormfront"
     },
     {
       "trait_type": "Helmet",
@@ -14,11 +14,11 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Striped"
+      "value": "Scaled"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Warhammer"
     },
     {
       "trait_type": "Hair",

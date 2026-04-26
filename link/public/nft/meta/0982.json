@@ -1,5 +1,5 @@
 {
-  "name": "Palelock",
+  "name": "Palefang",
   "description": "A Relm Arena fighter. Power 31, Speed 43, Luck 47.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0982.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c4bfa5eab809c077ff784a587",
@@ -18,11 +18,11 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",
-      "value": "Short"
+      "value": "Long"
     },
     {
       "trait_type": "Power",

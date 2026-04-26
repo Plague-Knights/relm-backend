@@ -1,12 +1,12 @@
 {
-  "name": "Sablevein",
+  "name": "Sabletide",
   "description": "A Relm Arena fighter. Power 43, Speed 55, Luck 55.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0009.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cae1834ee519b978d84026199",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Green Valley"
+      "value": "Fire Chasm"
     },
     {
       "trait_type": "Helmet",
@@ -14,11 +14,11 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Runic"
+      "value": "Inverted"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Twin Daggers"
     },
     {
       "trait_type": "Hair",

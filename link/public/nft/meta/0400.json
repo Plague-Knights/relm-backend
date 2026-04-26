@@ -1,24 +1,24 @@
 {
-  "name": "Ironstep",
+  "name": "Ironrage",
   "description": "A Relm Arena fighter. Power 59, Speed 48, Luck 59.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0400.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cf95671ca342124c3d903f8fc",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Nebula Void"
+      "value": "Stormfront"
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Visor"
     },
     {
       "trait_type": "Armor",
-      "value": "Striped"
+      "value": "Scaled"
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Crossbow"
     },
     {
       "trait_type": "Hair",

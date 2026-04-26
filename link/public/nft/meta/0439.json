@@ -1,5 +1,5 @@
 {
-  "name": "Ashshade",
+  "name": "Ashrage",
   "description": "A Relm Arena fighter. Power 26, Speed 38, Luck 37.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0439.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cbdb1531734f7fb8915b56993",
@@ -18,7 +18,7 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",

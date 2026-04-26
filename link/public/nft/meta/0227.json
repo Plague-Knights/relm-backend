@@ -1,24 +1,24 @@
 {
-  "name": "Bogscale",
+  "name": "Bogspike",
   "description": "A Relm Arena fighter. Power 46, Speed 43, Luck 36.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0227.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/ced82538a5a0888dc44df6a8b",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Gilded Hall"
+      "value": "Sunset Mesa"
     },
     {
       "trait_type": "Helmet",
-      "value": "Steel Circlet"
+      "value": "Visor"
     },
     {
       "trait_type": "Armor",
-      "value": "Scaled"
+      "value": "Chest Emblem"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",

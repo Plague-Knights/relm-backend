@@ -1,12 +1,12 @@
 {
-  "name": "Driftburn",
-  "description": "A Relm Arena fighter. Power 87, Speed 74, Luck 75.",
+  "name": "Driftborn",
+  "description": "A Relm Arena fighter. Power 63, Speed 48, Luck 55.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0383.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c182d1d5f34f8d40e8714a4c5",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Nebula Void"
+      "value": "Crystal Cave"
     },
     {
       "trait_type": "Helmet",
@@ -14,11 +14,11 @@
     },
     {
       "trait_type": "Armor",
-      "value": "Inverted"
+      "value": "Tribal"
     },
     {
       "trait_type": "Weapon",
-      "value": "Staff"
+      "value": "Pickaxe"
     },
     {
       "trait_type": "Hair",
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 87,
+      "value": 63,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 74,
+      "value": 48,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 75,
+      "value": 55,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Epic"
+      "value": "Uncommon"
     }
   ],
   "properties": {

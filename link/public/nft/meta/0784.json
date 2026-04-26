@@ -1,47 +1,47 @@
 {
   "name": "Ironclaw",
-  "description": "A Relm Arena fighter. Power 41, Speed 64, Luck 65.",
+  "description": "A Relm Arena fighter. Power 31, Speed 29, Luck 35.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0784.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cc455c6d65b7d00ce296abdba",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Fire Chasm"
+      "value": "Nebula Void"
     },
     {
       "trait_type": "Helmet",
-      "value": "Visor"
+      "value": "Hooded Cowl"
     },
     {
       "trait_type": "Armor",
-      "value": "Scaled"
+      "value": "Plated"
     },
     {
       "trait_type": "Weapon",
-      "value": "Blade"
+      "value": "Staff"
     },
     {
       "trait_type": "Hair",
-      "value": "Short"
+      "value": "Long"
     },
     {
       "trait_type": "Power",
-      "value": 41,
+      "value": 31,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 64,
+      "value": 29,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 65,
+      "value": 35,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Uncommon"
+      "value": "Common"
     }
   ],
   "properties": {

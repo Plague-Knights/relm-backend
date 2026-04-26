@@ -1,12 +1,12 @@
 {
-  "name": "Bograge",
-  "description": "A Relm Arena fighter. Power 46, Speed 28, Luck 39.",
+  "name": "Bogfang",
+  "description": "A Relm Arena fighter. Power 61, Speed 55, Luck 46.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0851.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c913a13236c7255ddf90c7021",
   "attributes": [
     {
       "trait_type": "Background",
-      "value": "Green Valley"
+      "value": "Fire Chasm"
     },
     {
       "trait_type": "Helmet",
@@ -18,30 +18,30 @@
     },
     {
       "trait_type": "Weapon",
-      "value": "Bow"
+      "value": "Twin Daggers"
     },
     {
       "trait_type": "Hair",
-      "value": "Flowing"
+      "value": "Dreadlocks"
     },
     {
       "trait_type": "Power",
-      "value": 46,
+      "value": 61,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 28,
+      "value": 55,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 39,
+      "value": 46,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Common"
+      "value": "Uncommon"
     }
   ],
   "properties": {
