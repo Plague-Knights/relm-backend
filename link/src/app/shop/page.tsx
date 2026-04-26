@@ -68,15 +68,24 @@ export default function ShopPage() {
       padding: "44px 24px 80px",
       fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, system-ui, sans-serif",
     }}>
-      <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-        <h1 style={{
-          fontSize: 38, fontWeight: 800, letterSpacing: "-0.03em", margin: 0,
-          background: "linear-gradient(90deg, #fff 0%, #ffd040 70%, #ff8a3d 100%)",
-          WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-        }}>Shop</h1>
-        <p style={{ opacity: 0.7, fontSize: 14, marginTop: 12, marginBottom: 22, maxWidth: 720 }}>
-          Cosmetic items for your in-game character. One-time purchases via Stripe.
-          Cosmetic only — no pay-to-win.
+      <div style={{ maxWidth: 1180, margin: "0 auto" }}>
+        <div style={{ display: "flex", alignItems: "baseline", gap: 16, flexWrap: "wrap", marginBottom: 6 }}>
+          <h1 style={{
+            fontSize: 44, fontWeight: 800, letterSpacing: "-0.03em", margin: 0,
+            background: "linear-gradient(90deg, #fff 0%, #ffd040 70%, #ff8a3d 100%)",
+            WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+          }}>Shop</h1>
+          <span style={{
+            padding: "4px 12px", borderRadius: 999,
+            background: "rgba(127,255,155,0.12)",
+            border: "1px solid rgba(127,255,155,0.3)",
+            color: "#7fff9b", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em",
+            textTransform: "uppercase",
+          }}>● cosmetics only</span>
+        </div>
+        <p style={{ opacity: 0.65, fontSize: 14, marginTop: 8, marginBottom: 26, maxWidth: 680, lineHeight: 1.6 }}>
+          Customize your character with capes, trails, pickaxe skins, and name colors.
+          One-time purchases via Stripe. <b>Cosmetic only — no pay-to-win.</b>
         </p>
 
         {justBought && (
@@ -99,71 +108,107 @@ export default function ShopPage() {
         {items && (
           <div style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
-            gap: 14,
+            gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+            gap: 16,
           }}>
             {items.map((t) => {
               const accent = RARITY_COLORS[t.rarity] ?? "#9aa0a6";
+              const isLegendary = t.rarity === "legendary";
               return (
-                <div key={t.id} style={{
-                  background: "rgba(255,255,255,0.04)",
-                  border: `1px solid ${accent}33`,
-                  boxShadow: t.rarity === "legendary" ? `0 0 30px ${accent}44` : undefined,
-                  borderRadius: 14,
-                  padding: 14,
-                  display: "flex", flexDirection: "column", gap: 8,
+                <div key={t.id} className="shop-card" style={{
+                  background: isLegendary
+                    ? `linear-gradient(180deg, rgba(255,208,64,0.08) 0%, rgba(255,255,255,0.04) 100%)`
+                    : "rgba(255,255,255,0.04)",
+                  border: `1px solid ${accent}55`,
+                  boxShadow: isLegendary ? `0 0 40px ${accent}66, inset 0 0 30px ${accent}11` : undefined,
+                  borderRadius: 16,
+                  padding: 0,
+                  display: "flex", flexDirection: "column",
                   position: "relative",
+                  overflow: "hidden",
+                  transition: "transform 160ms ease, border-color 160ms ease",
                 }}>
+                  {/* Rarity stripe at top */}
+                  <div style={{
+                    height: 4, width: "100%",
+                    background: `linear-gradient(90deg, ${accent}, ${accent}88)`,
+                  }} />
+
+                  {/* Image area — bigger, with gradient backdrop matching rarity */}
                   <div style={{
                     width: "100%", aspectRatio: "1 / 1",
-                    background: "rgba(0,0,0,0.3)", borderRadius: 10,
+                    background: `radial-gradient(circle at 50% 40%, ${accent}22 0%, rgba(0,0,0,0.45) 75%)`,
                     display: "flex", alignItems: "center", justifyContent: "center",
                     overflow: "hidden",
+                    position: "relative",
                   }}>
                     <img src={t.image} alt={t.name} style={{
-                      maxWidth: "75%", maxHeight: "75%",
+                      maxWidth: "70%", maxHeight: "70%",
                       objectFit: "contain", imageRendering: "pixelated",
+                      filter: isLegendary ? `drop-shadow(0 0 16px ${accent}aa)` : undefined,
                     }} onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
+                    <div style={{
+                      position: "absolute", top: 12, right: 12,
+                      padding: "3px 9px", borderRadius: 6,
+                      background: "rgba(0,0,0,0.6)",
+                      backdropFilter: "blur(4px)",
+                      color: accent,
+                      fontSize: 10, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase",
+                    }}>{t.rarity}</div>
+                    <div style={{
+                      position: "absolute", top: 12, left: 12,
+                      padding: "3px 9px", borderRadius: 6,
+                      background: "rgba(0,0,0,0.6)",
+                      backdropFilter: "blur(4px)",
+                      color: "#ddd",
+                      fontSize: 10, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase",
+                    }}>{t.slot.replace("_", " ")}</div>
                   </div>
-                  <div style={{ position: "absolute", top: 18, right: 18,
-                    padding: "2px 7px", borderRadius: 4,
-                    background: "rgba(0,0,0,0.55)", color: accent,
-                    fontSize: 9, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase",
-                  }}>{t.rarity}</div>
-                  <div style={{ fontSize: 14, fontWeight: 700, marginTop: 2 }}>{t.name}</div>
-                  <div style={{ fontSize: 12, opacity: 0.65, lineHeight: 1.5 }}>{t.description}</div>
-                  {t.perks.length > 0 && (
-                    <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
-                      {t.perks.map((p) => (
-                        <span key={p} style={{
-                          fontSize: 9, padding: "2px 6px", borderRadius: 4,
-                          background: "rgba(127,195,255,0.15)", color: "#7fc3ff",
-                          letterSpacing: "0.06em", textTransform: "uppercase", fontWeight: 600,
-                        }}>{p}</span>
-                      ))}
-                    </div>
-                  )}
-                  <button
-                    onClick={() => buy(t)}
-                    disabled={!t.buyable || busy !== null}
-                    style={{
-                      marginTop: 6, padding: "10px 14px",
-                      background: t.buyable
-                        ? "linear-gradient(135deg, #ffd040, #ff8a3d)"
-                        : "rgba(255,255,255,0.08)",
-                      color: t.buyable ? "#1a0a05" : "#aaa",
-                      fontWeight: 700, fontSize: 14,
-                      border: "none", borderRadius: 8,
-                      cursor: t.buyable ? "pointer" : "not-allowed",
-                    }}
-                  >
-                    {busy === t.id ? "…" : t.buyable ? `$${t.priceUsd.toFixed(2)}` : "coming soon"}
-                  </button>
+
+                  {/* Content + CTA */}
+                  <div style={{ padding: "16px 18px 18px", display: "flex", flexDirection: "column", gap: 8 }}>
+                    <div style={{ fontSize: 17, fontWeight: 700, letterSpacing: "-0.01em" }}>{t.name}</div>
+                    <div style={{ fontSize: 13, opacity: 0.65, lineHeight: 1.5, minHeight: 40 }}>{t.description}</div>
+                    {t.perks.length > 0 && (
+                      <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginTop: 2 }}>
+                        {t.perks.map((p) => (
+                          <span key={p} style={{
+                            fontSize: 9.5, padding: "3px 8px", borderRadius: 4,
+                            background: "rgba(127,195,255,0.12)", color: "#7fc3ff",
+                            letterSpacing: "0.06em", textTransform: "uppercase", fontWeight: 600,
+                          }}>{p}</span>
+                        ))}
+                      </div>
+                    )}
+                    <button
+                      onClick={() => buy(t)}
+                      disabled={!t.buyable || busy !== null}
+                      style={{
+                        marginTop: 10, padding: "12px 16px",
+                        background: t.buyable
+                          ? "linear-gradient(135deg, #ffd040, #ff8a3d)"
+                          : "rgba(255,255,255,0.06)",
+                        color: t.buyable ? "#1a0a05" : "#888",
+                        fontWeight: 700, fontSize: 15,
+                        border: "none", borderRadius: 10,
+                        cursor: t.buyable ? "pointer" : "not-allowed",
+                        transition: "transform 100ms",
+                      }}
+                    >
+                      {busy === t.id ? "…" : t.buyable ? `Buy · $${t.priceUsd.toFixed(2)}` : "Coming soon"}
+                    </button>
+                  </div>
                 </div>
               );
             })}
           </div>
         )}
+
+        <style>{`
+          .shop-card:hover {
+            transform: translateY(-3px);
+          }
+        `}</style>
 
         <div style={{ marginTop: 36, fontSize: 12, opacity: 0.45, textAlign: "center" }}>
           purchased items appear on your in-game character automatically on next join · stripe billing · refunds within 14 days
