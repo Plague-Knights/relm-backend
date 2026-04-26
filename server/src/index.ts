@@ -8,6 +8,7 @@ import { landRouter } from "./routes/land.js";
 import { arenaRouter } from "./routes/arena.js";
 import { fightersRouter } from "./routes/fighters.js";
 import { botMatchRouter } from "./routes/botMatch.js";
+import { economyRouter } from "./routes/economy.js";
 import { startScorer } from "./workers/scorer.js";
 import { startMinter } from "./workers/minter.js";
 import { startRefillWatcher } from "./workers/refillWatcher.js";
@@ -32,6 +33,7 @@ app.use("/api/land", landRouter);
 app.use("/api/arena", arenaRouter);
 app.use("/api/fighters", fightersRouter);
 app.use("/api/bot-match", botMatchRouter);
+app.use("/api/economy", economyRouter);
 
 const PORT = Number(process.env.PORT ?? 3000);
 app.listen(PORT, () => {
