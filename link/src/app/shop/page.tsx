@@ -1,311 +1,173 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { useAccount, useChainId, useSwitchChain, useWriteContract, useWaitForTransactionReceipt, useReadContract } from "wagmi";
-import { formatEther } from "viem";
-import { soneiumMinato } from "@/config/chains";
-import { RELM_COSMETIC_ADDRESS, RELM_COSMETIC_ABI, RELM_TOKEN_ADDRESS, RELM_TOKEN_ABI } from "@/config/contracts";
+// /shop — Stripe-paid cosmetic store. No wallet, no on-chain mint.
+// Items render with USD prices, click → enter username → Stripe
+// Checkout → webhook credits the cosmetic. Lua mod fetches owned
+// cosmetics via /api/shop/owned/:player on join.
 
-type CosmeticType = {
-  id: number;
-  priceWei: string;
-  priceRelm: string;
-  active: boolean;
-  metadataURI: string;
-  maxSupply: number;
-  minted: number;
-  itemId: string;
-  perks: number;
-  perksList: string[];
-  meta: {
-    name: string;
-    description: string;
-    image: string;
-    attributes: { trait_type: string; value: string }[];
-  } | null;
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+
+type Item = {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  slot: string;
+  rarity: string;
+  priceUsd: number;
+  perks: string[];
+  buyable: boolean;
 };
 
-const PERK_LABELS: Record<string, string> = {
-  unbreakable: "Unbreakable",
-  keep_on_death: "Keep on Death",
-  soulbound: "Soulbound",
-  auto_pickup: "Auto-pickup",
+const RARITY_COLORS: Record<string, string> = {
+  common:    "#9aa0a6",
+  uncommon:  "#7fff9b",
+  rare:      "#7fc3ff",
+  epic:      "#c97fff",
+  legendary: "#ffd040",
 };
 
 export default function ShopPage() {
-  const [items, setItems] = useState<CosmeticType[] | null>(null);
+  const params = useSearchParams();
+  const justBought = params?.get("bought");
+  const [items, setItems] = useState<Item[] | null>(null);
+  const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [activeTypeId, setActiveTypeId] = useState<number | null>(null);
-  const [activeMode, setActiveMode] = useState<"eth" | "relm" | null>(null);
-  const [inGameBalanceBps, setInGameBalanceBps] = useState<number | null>(null);
-  const [econ, setEcon] = useState<{ minted: number; burned: number; treasury: number; circulating: number } | null>(null);
-  const [buying, setBuying] = useState<number | null>(null);
-  const [buyMsg, setBuyMsg] = useState<string | null>(null);
-
-  const { address, isConnected } = useAccount();
-  const chainId = useChainId();
-  const { switchChain, isPending: switching } = useSwitchChain();
-  const { writeContract, data: txHash, error: writeErr, isPending: writing, reset } = useWriteContract();
-  const { isLoading: confirming, isSuccess: confirmed } = useWaitForTransactionReceipt({ hash: txHash });
-
-  const wrongChain = isConnected && chainId !== soneiumMinato.id;
-
-  const { data: relmAllowance, refetch: refetchAllowance } = useReadContract({
-    address: RELM_TOKEN_ADDRESS,
-    abi: RELM_TOKEN_ABI,
-    functionName: "allowance",
-    args: address ? [address, RELM_COSMETIC_ADDRESS] : undefined,
-    query: { enabled: !!address },
-  });
 
   useEffect(() => {
-    fetch("/api/cosmetics/list")
-      .then(r => r.ok ? r.json() : Promise.reject(`status ${r.status}`))
-      .then(d => setItems(d.types))
-      .catch(e => setError(String(e)));
-    fetch("/api/cosmetics/econ/stats").then(r => r.json()).then(setEcon).catch(() => {});
+    fetch("/api/shop/list").then((r) => r.json()).then((d) => setItems(d.items)).catch((e) => setError(String(e)));
   }, []);
 
-  // Pull in-game RELM balance whenever the connected wallet changes.
-  useEffect(() => {
-    if (!address) { setInGameBalanceBps(null); return; }
-    fetch(`/api/cosmetics/balance/${address}`).then(r => r.json()).then(d => {
-      setInGameBalanceBps(typeof d.balanceBps === "number" ? d.balanceBps : 0);
-    }).catch(() => setInGameBalanceBps(0));
-  }, [address]);
-
-  async function buyInGame(t: CosmeticType) {
-    if (!address) return;
-    setBuying(t.id);
-    setBuyMsg(null);
+  async function buy(item: Item) {
+    setBusy(item.id);
+    setError(null);
     try {
-      const r = await fetch("/api/cosmetics/buy", {
+      const player = window.prompt("Enter your in-game username:") ?? "";
+      if (!player.trim()) { setBusy(null); return; }
+      const r = await fetch("/api/shop/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ address, typeId: t.id }),
+        body: JSON.stringify({ player: player.trim(), cosmeticId: item.id }),
       });
       const d = await r.json();
-      if (!r.ok) {
-        setBuyMsg(d.error ?? `error ${r.status}`);
-      } else {
-        setBuyMsg(`bought · burned ${d.burnedBps} bps · new balance ${d.balanceBps} bps`);
-        setInGameBalanceBps(d.balanceBps);
-        fetch("/api/cosmetics/econ/stats").then(rr => rr.json()).then(setEcon).catch(() => {});
-      }
+      if (d.url) { window.location.href = d.url; return; }
+      setError(d.error ?? `error ${r.status}`);
     } catch (e) {
-      setBuyMsg((e as Error).message);
+      setError((e as Error).message);
     } finally {
-      setBuying(null);
+      setBusy(null);
     }
   }
-
-  useEffect(() => {
-    if (confirmed) {
-      fetch("/api/cosmetics/list").then(r => r.json()).then(d => setItems(d.types)).catch(() => {});
-      refetchAllowance();
-      setActiveTypeId(null);
-      setActiveMode(null);
-      reset();
-    }
-  }, [confirmed, reset, refetchAllowance]);
-
-  const writeMessage = useMemo(() => {
-    if (writeErr) return writeErr.message;
-    if (writing) return "Confirm in wallet…";
-    if (confirming) return "Waiting for transaction…";
-    if (confirmed) return "Minted ✓";
-    return null;
-  }, [writeErr, writing, confirming, confirmed]);
-
-  function buyEth(t: CosmeticType) {
-    setActiveTypeId(t.id);
-    setActiveMode("eth");
-    writeContract({
-      address: RELM_COSMETIC_ADDRESS,
-      abi: RELM_COSMETIC_ABI,
-      functionName: "mint",
-      args: [BigInt(t.id)],
-      value: BigInt(t.priceWei),
-    });
-  }
-
-  function buyRelm(t: CosmeticType) {
-    setActiveTypeId(t.id);
-    setActiveMode("relm");
-    const need = BigInt(t.priceRelm);
-    if ((relmAllowance as bigint | undefined ?? 0n) < need) {
-      writeContract({
-        address: RELM_TOKEN_ADDRESS,
-        abi: RELM_TOKEN_ABI,
-        functionName: "approve",
-        args: [RELM_COSMETIC_ADDRESS, need],
-      });
-      return;
-    }
-    writeContract({
-      address: RELM_COSMETIC_ADDRESS,
-      abi: RELM_COSMETIC_ABI,
-      functionName: "mintWithRelm",
-      args: [BigInt(t.id)],
-    });
-  }
-
-  // After approve confirms, fire the mintWithRelm.
-  useEffect(() => {
-    if (!confirmed || activeMode !== "relm" || activeTypeId == null || !items) return;
-    const t = items.find(x => x.id === activeTypeId);
-    if (!t) return;
-    if ((relmAllowance as bigint | undefined ?? 0n) >= BigInt(t.priceRelm)) return; // approve might have flipped state; fall through
-  }, [confirmed, activeMode, activeTypeId, items, relmAllowance]);
 
   return (
-    <div style={{ width: "100%", maxWidth: 1080 }}>
-      <div className="card" style={{ maxWidth: "none" }}>
-        <h1 className="title">Relm · Shop</h1>
-        <p className="subtitle">
-          Pay in <b>ETH</b> for premium / founder items, or in <b>RELM</b> (the
-          gameplay token you earn by mining and crafting). Every cosmetic has a
-          perk profile — items with utility are explicitly noted, the rest are
-          purely visual. Items render in-game once your wallet is linked via
-          {" "}<a href="/link" style={{ color: "var(--accent)" }}>/link</a>.
+    <div style={{
+      minHeight: "100vh",
+      background: "radial-gradient(circle at 50% 0%, #281121 0%, #0a0810 60%)",
+      color: "#fff",
+      padding: "44px 24px 80px",
+      fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, system-ui, sans-serif",
+    }}>
+      <div style={{ maxWidth: 1080, margin: "0 auto" }}>
+        <h1 style={{
+          fontSize: 38, fontWeight: 800, letterSpacing: "-0.03em", margin: 0,
+          background: "linear-gradient(90deg, #fff 0%, #ffd040 70%, #ff8a3d 100%)",
+          WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+        }}>Shop</h1>
+        <p style={{ opacity: 0.7, fontSize: 14, marginTop: 12, marginBottom: 22, maxWidth: 720 }}>
+          Cosmetic items for your in-game character. One-time purchases via Stripe.
+          Cosmetic only — no pay-to-win.
         </p>
 
-        <div className="row">
-          <ConnectButton chainStatus="icon" />
-        </div>
-
-        {inGameBalanceBps !== null && (
-          <div className="row" style={{ fontSize: 13, opacity: 0.85 }}>
-            in-game balance: <b style={{ marginLeft: 6 }}>{(inGameBalanceBps / 10000).toFixed(4)} RELM</b>
-            <span style={{ marginLeft: 6, opacity: 0.5 }}>(earned by mining; spendable below)</span>
+        {justBought && (
+          <div style={{
+            padding: 14, background: "rgba(127,255,155,0.08)",
+            border: "1px solid rgba(127,255,155,0.3)",
+            borderRadius: 10, color: "#7fff9b", marginBottom: 20, fontSize: 14,
+          }}>
+            ✓ Purchased <b>{justBought}</b>. It'll appear on your in-game character on next join.
           </div>
         )}
-
-        {econ && (
-          <div className="row" style={{ fontSize: 12, opacity: 0.7, gap: 12, display: "flex" }}>
-            <span>minted {(econ.minted/10000).toFixed(0)}</span>
-            <span style={{ color: "#ff8a8a" }}>burned {(econ.burned/10000).toFixed(0)}</span>
-            <span style={{ color: "#ffd040" }}>treasury {(econ.treasury/10000).toFixed(0)}</span>
-            <span>circulating {(econ.circulating/10000).toFixed(0)}</span>
-          </div>
+        {error && (
+          <div style={{ padding: 12, background: "rgba(255,122,122,0.08)",
+            border: "1px solid rgba(255,122,122,0.3)", borderRadius: 10,
+            color: "#ff7a7a", marginBottom: 20, fontSize: 14 }}>{error}</div>
         )}
 
-        {buyMsg && (
-          <div className="row" style={{ fontSize: 13, color: "var(--accent)" }}>{buyMsg}</div>
-        )}
-
-        {wrongChain && (
-          <div className="row">
-            <button className="btn" onClick={() => switchChain({ chainId: soneiumMinato.id })} disabled={switching}>
-              {switching ? "Switching…" : "Switch to Soneium Minato"}
-            </button>
-          </div>
-        )}
-
-        {writeMessage && (
-          <div className="row" style={{ color: writeErr ? "#ff7474" : "var(--accent)" }}>
-            {writeMessage}
-          </div>
-        )}
-
-        {error && <div className="row status-err">Error: {error}</div>}
-        {!error && !items && <div className="row">Loading shop…</div>}
+        {!items && <div style={{ opacity: 0.6 }}>loading shop…</div>}
 
         {items && (
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 14, marginTop: 18 }}>
-            {items.map(t => {
-              const soldOut = t.maxSupply !== 0 && t.minted >= t.maxSupply;
-              const ethEnabled = BigInt(t.priceWei) > 0n;
-              const relmEnabled = BigInt(t.priceRelm) > 0n;
-              const baseDisabled = !isConnected || wrongChain || writing || confirming || soldOut || !t.active;
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+            gap: 14,
+          }}>
+            {items.map((t) => {
+              const accent = RARITY_COLORS[t.rarity] ?? "#9aa0a6";
               return (
                 <div key={t.id} style={{
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid var(--border)",
-                  borderRadius: 12,
+                  background: "rgba(255,255,255,0.04)",
+                  border: `1px solid ${accent}33`,
+                  boxShadow: t.rarity === "legendary" ? `0 0 30px ${accent}44` : undefined,
+                  borderRadius: 14,
                   padding: 14,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 8,
+                  display: "flex", flexDirection: "column", gap: 8,
+                  position: "relative",
                 }}>
-                  {t.meta?.image && (
-                    <img src={t.meta.image} alt={t.meta.name}
-                         style={{ width: "100%", height: 140, objectFit: "contain", background: "rgba(0,0,0,0.25)", borderRadius: 8 }} />
-                  )}
-                  <div style={{ fontWeight: 700 }}>{t.meta?.name ?? `Type #${t.id}`}</div>
-                  {t.itemId && (
-                    <div className="mono" style={{ fontSize: 11, opacity: 0.7 }}>
-                      skins {t.itemId}
-                    </div>
-                  )}
-                  <div className="subtitle" style={{ margin: 0, fontSize: 12 }}>{t.meta?.description}</div>
-
-                  {t.perksList.length > 0 && (
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 4, marginTop: 4 }}>
-                      {t.perksList.map(p => (
+                  <div style={{
+                    width: "100%", aspectRatio: "1 / 1",
+                    background: "rgba(0,0,0,0.3)", borderRadius: 10,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    overflow: "hidden",
+                  }}>
+                    <img src={t.image} alt={t.name} style={{
+                      maxWidth: "75%", maxHeight: "75%",
+                      objectFit: "contain", imageRendering: "pixelated",
+                    }} onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
+                  </div>
+                  <div style={{ position: "absolute", top: 18, right: 18,
+                    padding: "2px 7px", borderRadius: 4,
+                    background: "rgba(0,0,0,0.55)", color: accent,
+                    fontSize: 9, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase",
+                  }}>{t.rarity}</div>
+                  <div style={{ fontSize: 14, fontWeight: 700, marginTop: 2 }}>{t.name}</div>
+                  <div style={{ fontSize: 12, opacity: 0.65, lineHeight: 1.5 }}>{t.description}</div>
+                  {t.perks.length > 0 && (
+                    <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
+                      {t.perks.map((p) => (
                         <span key={p} style={{
-                          fontSize: 10,
-                          padding: "3px 7px",
-                          borderRadius: 999,
-                          background: "rgba(127,227,255,0.12)",
-                          color: "var(--accent)",
-                          letterSpacing: "0.04em",
-                          textTransform: "uppercase",
-                          fontWeight: 600,
-                        }}>{PERK_LABELS[p] ?? p}</span>
+                          fontSize: 9, padding: "2px 6px", borderRadius: 4,
+                          background: "rgba(127,195,255,0.15)", color: "#7fc3ff",
+                          letterSpacing: "0.06em", textTransform: "uppercase", fontWeight: 600,
+                        }}>{p}</span>
                       ))}
                     </div>
                   )}
-
-                  <div className="subtitle" style={{ margin: "6px 0 0", fontSize: 12 }}>
-                    {t.maxSupply === 0
-                      ? `${t.minted} minted`
-                      : `${t.minted} / ${t.maxSupply} minted${soldOut ? " · sold out" : ""}`}
-                  </div>
-
-                  <div style={{ display: "flex", gap: 6, marginTop: 4 }}>
-                    {ethEnabled && (
-                      <button
-                        className="btn"
-                        style={{ flex: 1, fontSize: 13 }}
-                        onClick={() => buyEth(t)}
-                        disabled={baseDisabled || (activeTypeId !== null && activeTypeId !== t.id)}
-                      >
-                        {Number(formatEther(BigInt(t.priceWei))).toFixed(4)} ETH
-                      </button>
-                    )}
-                    {relmEnabled && (
-                      <button
-                        className="btn"
-                        style={{ flex: 1, fontSize: 13, background: "#9c7cff" }}
-                        onClick={() => buyRelm(t)}
-                        disabled={baseDisabled || (activeTypeId !== null && activeTypeId !== t.id)}
-                      >
-                        {Math.round(Number(formatEther(BigInt(t.priceRelm))))} RELM
-                      </button>
-                    )}
-                    {relmEnabled && (
-                      <button
-                        className="btn"
-                        style={{ flex: 1, fontSize: 13, background: "#3a8e3a" }}
-                        onClick={() => buyInGame(t)}
-                        disabled={!isConnected || soldOut || buying !== null
-                          || (inGameBalanceBps !== null && inGameBalanceBps < Number(BigInt(t.priceRelm) / 10n ** 14n))}
-                        title="Spend in-game RELM (earned by mining). 50% burned, 50% to prize-pool treasury."
-                      >
-                        {buying === t.id ? "…" : `${Math.round(Number(formatEther(BigInt(t.priceRelm))))} in-game`}
-                      </button>
-                    )}
-                  </div>
-                  {!ethEnabled && !relmEnabled && (
-                    <div className="subtitle" style={{ margin: 0, fontSize: 12, opacity: 0.6 }}>Not for sale</div>
-                  )}
+                  <button
+                    onClick={() => buy(t)}
+                    disabled={!t.buyable || busy !== null}
+                    style={{
+                      marginTop: 6, padding: "10px 14px",
+                      background: t.buyable
+                        ? "linear-gradient(135deg, #ffd040, #ff8a3d)"
+                        : "rgba(255,255,255,0.08)",
+                      color: t.buyable ? "#1a0a05" : "#aaa",
+                      fontWeight: 700, fontSize: 14,
+                      border: "none", borderRadius: 8,
+                      cursor: t.buyable ? "pointer" : "not-allowed",
+                    }}
+                  >
+                    {busy === t.id ? "…" : t.buyable ? `$${t.priceUsd.toFixed(2)}` : "coming soon"}
+                  </button>
                 </div>
               );
             })}
           </div>
         )}
+
+        <div style={{ marginTop: 36, fontSize: 12, opacity: 0.45, textAlign: "center" }}>
+          purchased items appear on your in-game character automatically on next join · stripe billing · refunds within 14 days
+        </div>
       </div>
     </div>
   );

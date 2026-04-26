@@ -67,7 +67,25 @@ billingRouter.post("/webhook", async (req: Request, res: Response) => {
   try {
     if (event.type === "checkout.session.completed") {
       const s = event.data.object as Stripe.Checkout.Session;
-      const player = s.client_reference_id ?? "";
+      // Two flows hit this event: subscription mode (player as
+      // client_reference_id) and shop one-time mode (cosmetic:<id>:<player>).
+      const ref = s.client_reference_id ?? "";
+      if (ref.startsWith("cosmetic:")) {
+        // One-time cosmetic purchase. Credit ownership.
+        const [, cosmeticId, player] = ref.split(":");
+        if (cosmeticId && player) {
+          const pi = typeof s.payment_intent === "string"
+            ? s.payment_intent
+            : s.payment_intent?.id ?? null;
+          await prisma.playerCosmetic.upsert({
+            where: { player_cosmeticId: { player, cosmeticId } },
+            create: { player, cosmeticId, stripePaymentIntent: pi },
+            update: { stripePaymentIntent: pi },
+          });
+        }
+        return res.json({ received: true });
+      }
+      const player = ref;
       const subId = typeof s.subscription === "string" ? s.subscription : s.subscription?.id ?? "";
       if (player && subId && stripe) {
         const sub = await stripe.subscriptions.retrieve(subId);

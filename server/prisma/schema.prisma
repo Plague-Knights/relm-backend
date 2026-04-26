@@ -351,6 +351,20 @@ model RefClick {
   @@index([niche, createdAt])
 }
 
+// Cosmetic ownership. One row per (player, cosmetic) — created by the
+// stripe webhook on a successful one-time payment. Lua mod fetches
+// owned ids on join and applies them.
+model PlayerCosmetic {
+  id          String   @id @default(cuid())
+  player      String
+  cosmeticId  String                              // matches CATALOG ids in routes/shop.ts
+  stripePaymentIntent String?
+  acquiredAt  DateTime @default(now())
+
+  @@unique([player, cosmeticId])
+  @@index([player])
+}
+
 // Stripe subscription state. One row per (player, stripe_subscription)
 // pair. Tier is the resolved entitlement we show in-game.
 model Subscription {

@@ -11,6 +11,7 @@ import { botMatchRouter } from "./routes/botMatch.js";
 import { economyRouter } from "./routes/economy.js";
 import { goRouter } from "./routes/go.js";
 import { billingRouter, membershipRouter } from "./routes/billing.js";
+import { shopRouter } from "./routes/shop.js";
 import express2 from "express";
 import { startScorer } from "./workers/scorer.js";
 import { startMinter } from "./workers/minter.js";
@@ -44,6 +45,7 @@ app.use("/api/economy", economyRouter);
 app.use("/go", goRouter);
 app.use("/api/billing", billingRouter);
 app.use("/api/membership", membershipRouter);
+app.use("/api/shop", shopRouter);
 
 const PORT = Number(process.env.PORT ?? 3000);
 app.listen(PORT, () => {
