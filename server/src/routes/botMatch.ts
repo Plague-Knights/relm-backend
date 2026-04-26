@@ -306,6 +306,7 @@ botMatchRouter.post("/in-engine/tick", async (req: Request, res: Response) => {
     const o = raw as Record<string, unknown>;
     const name = String(o.name ?? "").slice(0, 64);
     if (!name || !PLAYER_RE.test(name.replace(/[^A-Za-z0-9_-]/g, ""))) continue;
+    const pace = String(o.pace ?? "normal");
     observations.push({
       name,
       power: Number(o.power) || 50,
@@ -318,6 +319,9 @@ botMatchRouter.post("/in-engine/tick", async (req: Request, res: Response) => {
       nearbyBots: Array.isArray(o.nearbyBots)
         ? o.nearbyBots.map((x) => String(x).slice(0, 64)).slice(0, 8)
         : [],
+      stamina: typeof o.stamina === "number" ? Math.max(0, Math.min(100, o.stamina)) : 100,
+      idleSec: typeof o.idleSec === "number" ? Math.max(0, o.idleSec) : 0,
+      pace: ["fast", "normal", "slow", "rest"].includes(pace) ? (pace as "fast" | "normal" | "slow" | "rest") : "normal",
       lastChat: typeof o.lastChat === "string" ? o.lastChat.slice(0, 200) : undefined,
     });
   }
