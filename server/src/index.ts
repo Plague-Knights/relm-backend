@@ -10,6 +10,8 @@ import { fightersRouter } from "./routes/fighters.js";
 import { botMatchRouter } from "./routes/botMatch.js";
 import { economyRouter } from "./routes/economy.js";
 import { goRouter } from "./routes/go.js";
+import { billingRouter, membershipRouter } from "./routes/billing.js";
+import express2 from "express";
 import { startScorer } from "./workers/scorer.js";
 import { startMinter } from "./workers/minter.js";
 import { startRefillWatcher } from "./workers/refillWatcher.js";
@@ -22,6 +24,10 @@ const app = express();
 // Trust the Railway edge proxy so rate-limiting keys off the real
 // client IP rather than the Railway-internal address.
 app.set("trust proxy", 1);
+// Stripe webhook needs the raw body for signature verification, so it
+// must be mounted BEFORE express.json swallows it. Same path is then
+// re-handled by the JSON parser for any other route.
+app.post("/api/billing/webhook", express2.raw({ type: "application/json" }), (req, res, next) => next());
 app.use(express.json({ limit: "1mb" }));
 
 app.get("/healthz", (_req, res) => res.json({ ok: true }));
@@ -36,6 +42,8 @@ app.use("/api/fighters", fightersRouter);
 app.use("/api/bot-match", botMatchRouter);
 app.use("/api/economy", economyRouter);
 app.use("/go", goRouter);
+app.use("/api/billing", billingRouter);
+app.use("/api/membership", membershipRouter);
 
 const PORT = Number(process.env.PORT ?? 3000);
 app.listen(PORT, () => {

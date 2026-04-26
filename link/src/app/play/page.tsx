@@ -6,10 +6,31 @@
 // regulatory-friendly. Tournaments still happen but are run manually
 // off-platform with announced prize pools.
 
+import { useState } from "react";
+
 const PRICE_GAMBLER = "$9.99";
 const PRICE_VIP = "$29.99";
 
+async function startCheckout(tier: "premium" | "vip") {
+  const player = window.prompt("Enter your in-game username:") ?? "";
+  if (!player.trim()) return;
+  const r = await fetch("/api/billing/checkout", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ player: player.trim(), tier }),
+  });
+  const d = await r.json();
+  if (d.url) window.location.href = d.url;
+  else alert(d.error ?? "Checkout failed");
+}
+
 export default function PlayPage() {
+  const [busy, setBusy] = useState<string | null>(null);
+  const click = async (tier: "premium" | "vip") => {
+    setBusy(tier);
+    try { await startCheckout(tier); }
+    finally { setBusy(null); }
+  };
   return (
     <>
       <style>{`
@@ -129,7 +150,11 @@ export default function PlayPage() {
                   <li>Custom name color</li>
                   <li>Cosmetic skin pack</li>
                 </ul>
-                <a className="play-cta" href="#" style={{ marginTop: 6, textAlign: "center" }}>Subscribe</a>
+                <button className="play-cta" disabled={busy !== null}
+                  onClick={() => click("premium")}
+                  style={{ marginTop: 6, textAlign: "center", border: "none", cursor: "pointer" }}>
+                  {busy === "premium" ? "Loading…" : "Subscribe"}
+                </button>
               </div>
               <div className="play-tier">
                 <div style={{ fontSize: 12, opacity: 0.55, textTransform: "uppercase", letterSpacing: "0.12em" }}>vip</div>
@@ -142,11 +167,15 @@ export default function PlayPage() {
                   <li>Discord VIP channel</li>
                   <li>Tournament invite priority</li>
                 </ul>
-                <a className="play-cta" href="#" style={{
-                  marginTop: 6, textAlign: "center",
-                  background: "rgba(255,255,255,0.08)", color: "#fff",
-                  border: "1px solid rgba(255,255,255,0.12)",
-                }}>Subscribe</a>
+                <button className="play-cta" disabled={busy !== null}
+                  onClick={() => click("vip")}
+                  style={{
+                    marginTop: 6, textAlign: "center",
+                    background: "rgba(255,255,255,0.08)", color: "#fff",
+                    border: "1px solid rgba(255,255,255,0.12)", cursor: "pointer",
+                  }}>
+                  {busy === "vip" ? "Loading…" : "Subscribe"}
+                </button>
               </div>
             </div>
             <div style={{ fontSize: 12, opacity: 0.45, marginTop: 12 }}>

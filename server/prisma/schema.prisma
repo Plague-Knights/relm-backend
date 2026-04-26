@@ -351,6 +351,26 @@ model RefClick {
   @@index([niche, createdAt])
 }
 
+// Stripe subscription state. One row per (player, stripe_subscription)
+// pair. Tier is the resolved entitlement we show in-game.
+model Subscription {
+  id                   String   @id @default(cuid())
+  player               String
+  email                String?
+  tier                 String                              // free | premium | vip
+  status               String                              // active | past_due | canceled | incomplete
+  stripeCustomerId     String?
+  stripeSubscriptionId String?  @unique
+  stripePriceId        String?
+  currentPeriodEnd     DateTime?
+  cancelAtPeriodEnd    Boolean  @default(false)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@index([player])
+  @@index([status])
+}
+
 model EconLedger {
   id        String   @id @default(cuid())
   // mint | burn | treasury | shop_buy | land_tax | tournament_fee | refund
