@@ -1,6 +1,6 @@
 {
   "name": "Briskborn",
-  "description": "A Relm Arena fighter. Power 77, Speed 32, Luck 88.",
+  "description": "A Relm Arena fighter. Power 30, Speed 46, Luck 33.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0557.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c2073748a0e629a31aa662950",
   "attributes": [
@@ -26,17 +26,17 @@
     },
     {
       "trait_type": "Power",
-      "value": 77,
+      "value": 30,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 32,
+      "value": 46,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 88,
+      "value": 33,
       "max_value": 100
     },
     {

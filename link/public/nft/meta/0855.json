@@ -1,6 +1,6 @@
 {
   "name": "Ashhand",
-  "description": "A Relm Arena fighter. Power 33, Speed 87, Luck 95.",
+  "description": "A Relm Arena fighter. Power 38, Speed 25, Luck 45.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0855.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c0f4ec945e7556b167bce0c17",
   "attributes": [
@@ -26,17 +26,17 @@
     },
     {
       "trait_type": "Power",
-      "value": 33,
+      "value": 38,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 87,
+      "value": 25,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 95,
+      "value": 45,
       "max_value": 100
     },
     {

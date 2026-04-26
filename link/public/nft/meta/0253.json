@@ -1,6 +1,6 @@
 {
   "name": "Briskburn",
-  "description": "A Relm Arena fighter. Power 47, Speed 32, Luck 89.",
+  "description": "A Relm Arena fighter. Power 43, Speed 31, Luck 46.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0253.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cb5175a3ac53996c0cd41a791",
   "attributes": [
@@ -26,17 +26,17 @@
     },
     {
       "trait_type": "Power",
-      "value": 47,
+      "value": 43,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 32,
+      "value": 31,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 89,
+      "value": 46,
       "max_value": 100
     },
     {

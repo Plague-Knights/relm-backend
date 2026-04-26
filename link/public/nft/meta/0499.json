@@ -1,6 +1,6 @@
 {
   "name": "Bograge",
-  "description": "A Relm Arena fighter. Power 61, Speed 39, Luck 68.",
+  "description": "A Relm Arena fighter. Power 73, Speed 87, Luck 74.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0499.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c431bde285ba822af2922a00d",
   "attributes": [
@@ -26,17 +26,17 @@
     },
     {
       "trait_type": "Power",
-      "value": 61,
+      "value": 73,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 39,
+      "value": 87,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 68,
+      "value": 74,
       "max_value": 100
     },
     {

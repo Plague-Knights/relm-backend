@@ -1,6 +1,6 @@
 {
   "name": "Quellborn",
-  "description": "A Relm Arena fighter. Power 88, Speed 46, Luck 26.",
+  "description": "A Relm Arena fighter. Power 48, Speed 46, Luck 37.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0427.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c4fb15c9a3f47210402396980",
   "attributes": [
@@ -26,7 +26,7 @@
     },
     {
       "trait_type": "Power",
-      "value": 88,
+      "value": 48,
       "max_value": 100
     },
     {
@@ -36,7 +36,7 @@
     },
     {
       "trait_type": "Luck",
-      "value": 26,
+      "value": 37,
       "max_value": 100
     },
     {

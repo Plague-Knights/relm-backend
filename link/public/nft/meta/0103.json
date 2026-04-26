@@ -1,6 +1,6 @@
 {
   "name": "Ashshade",
-  "description": "A Relm Arena fighter. Power 68, Speed 53, Luck 30.",
+  "description": "A Relm Arena fighter. Power 77, Speed 81, Luck 65.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0103.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c16612116f4d6a39726766c82",
   "attributes": [
@@ -26,17 +26,17 @@
     },
     {
       "trait_type": "Power",
-      "value": 68,
+      "value": 77,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 53,
+      "value": 81,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 30,
+      "value": 65,
       "max_value": 100
     },
     {

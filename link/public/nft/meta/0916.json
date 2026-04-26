@@ -1,6 +1,6 @@
 {
   "name": "Stormlock",
-  "description": "A Relm Arena fighter. Power 57, Speed 86, Luck 62.",
+  "description": "A Relm Arena fighter. Power 32, Speed 37, Luck 28.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0916.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c5cc99ef077af42af0e253284",
   "attributes": [
@@ -26,17 +26,17 @@
     },
     {
       "trait_type": "Power",
-      "value": 57,
+      "value": 32,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 86,
+      "value": 37,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 62,
+      "value": 28,
       "max_value": 100
     },
     {

@@ -1,9 +1,9 @@
 {
   "count": 1000,
-  "generatedAt": "2026-04-26T18:05:34.896Z",
+  "generatedAt": "2026-04-26T18:09:37.985Z",
   "rarityDistribution": {
-    "Uncommon": 250,
-    "Common": 600,
+    "Uncommon": 251,
+    "Common": 599,
     "Rare": 100,
     "Epic": 40,
     "Legendary": 10
@@ -215,7 +215,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0016.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0016.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0016.json",
-      "tier": "Uncommon"
+      "tier": "Rare"
     },
     {
       "tokenId": 17,
@@ -280,7 +280,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0021.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0021.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0021.json",
-      "tier": "Rare"
+      "tier": "Epic"
     },
     {
       "tokenId": 22,
@@ -566,7 +566,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0043.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0043.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0043.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 44,
@@ -670,7 +670,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0051.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0051.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0051.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 52,
@@ -761,7 +761,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0058.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0058.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0058.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 59,
@@ -878,7 +878,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0067.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0067.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0067.json",
-      "tier": "Epic"
+      "tier": "Rare"
     },
     {
       "tokenId": 68,
@@ -1463,7 +1463,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0112.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0112.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0112.json",
-      "tier": "Uncommon"
+      "tier": "Rare"
     },
     {
       "tokenId": 113,
@@ -1762,7 +1762,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0135.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0135.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0135.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 136,
@@ -2113,7 +2113,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0162.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0162.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0162.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 163,
@@ -2191,7 +2191,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0168.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0168.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0168.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 169,
@@ -2256,7 +2256,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0173.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0173.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0173.json",
-      "tier": "Uncommon"
+      "tier": "Rare"
     },
     {
       "tokenId": 174,
@@ -2386,7 +2386,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0183.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0183.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0183.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 184,
@@ -3114,7 +3114,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0239.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0239.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0239.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 240,
@@ -3218,7 +3218,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0247.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0247.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0247.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 248,
@@ -3426,7 +3426,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0263.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0263.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0263.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 264,
@@ -3439,7 +3439,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0264.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0264.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0264.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 265,
@@ -3517,7 +3517,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0270.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0270.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0270.json",
-      "tier": "Uncommon"
+      "tier": "Rare"
     },
     {
       "tokenId": 271,
@@ -3595,7 +3595,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0276.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0276.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0276.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 277,
@@ -3803,7 +3803,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0292.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0292.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0292.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 293,
@@ -3907,7 +3907,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0300.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0300.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0300.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 301,
@@ -4011,7 +4011,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0308.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0308.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0308.json",
-      "tier": "Rare"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 309,
@@ -4089,7 +4089,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0314.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0314.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0314.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 315,
@@ -4245,7 +4245,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0326.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0326.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0326.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 327,
@@ -4375,7 +4375,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0336.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0336.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0336.json",
-      "tier": "Epic"
+      "tier": "Rare"
     },
     {
       "tokenId": 337,
@@ -4518,7 +4518,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0347.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0347.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0347.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 348,
@@ -4674,7 +4674,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0359.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0359.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0359.json",
-      "tier": "Uncommon"
+      "tier": "Rare"
     },
     {
       "tokenId": 360,
@@ -4791,7 +4791,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0368.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0368.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0368.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 369,
@@ -5025,7 +5025,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0386.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0386.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0386.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 387,
@@ -5090,7 +5090,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0391.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0391.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0391.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 392,
@@ -5220,7 +5220,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0401.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0401.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0401.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 402,
@@ -5272,7 +5272,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0405.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0405.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0405.json",
-      "tier": "Rare"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 406,
@@ -5311,7 +5311,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0408.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0408.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0408.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 409,
@@ -5428,7 +5428,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0417.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0417.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0417.json",
-      "tier": "Uncommon"
+      "tier": "Rare"
     },
     {
       "tokenId": 418,
@@ -5753,7 +5753,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0442.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0442.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0442.json",
-      "tier": "Uncommon"
+      "tier": "Rare"
     },
     {
       "tokenId": 443,
@@ -5818,7 +5818,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0447.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0447.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0447.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 448,
@@ -6026,7 +6026,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0463.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0463.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0463.json",
-      "tier": "Uncommon"
+      "tier": "Rare"
     },
     {
       "tokenId": 464,
@@ -6247,7 +6247,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0480.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0480.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0480.json",
-      "tier": "Uncommon"
+      "tier": "Rare"
     },
     {
       "tokenId": 481,
@@ -6273,7 +6273,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0482.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0482.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0482.json",
-      "tier": "Rare"
+      "tier": "Epic"
     },
     {
       "tokenId": 483,
@@ -6403,7 +6403,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0492.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0492.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0492.json",
-      "tier": "Rare"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 493,
@@ -6702,7 +6702,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0515.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0515.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0515.json",
-      "tier": "Rare"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 516,
@@ -6871,7 +6871,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0528.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0528.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0528.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 529,
@@ -7014,7 +7014,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0539.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0539.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0539.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 540,
@@ -7079,7 +7079,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0544.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0544.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0544.json",
-      "tier": "Uncommon"
+      "tier": "Rare"
     },
     {
       "tokenId": 545,
@@ -7105,7 +7105,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0546.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0546.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0546.json",
-      "tier": "Rare"
+      "tier": "Epic"
     },
     {
       "tokenId": 547,
@@ -7131,7 +7131,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0548.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0548.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0548.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 549,
@@ -7274,7 +7274,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0559.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0559.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0559.json",
-      "tier": "Epic"
+      "tier": "Rare"
     },
     {
       "tokenId": 560,
@@ -7365,7 +7365,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0566.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0566.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0566.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 567,
@@ -7443,7 +7443,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0572.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0572.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0572.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 573,
@@ -7833,7 +7833,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0602.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0602.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0602.json",
-      "tier": "Rare"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 603,
@@ -7924,7 +7924,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0609.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0609.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0609.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 610,
@@ -8210,7 +8210,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0631.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0631.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0631.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 632,
@@ -8730,7 +8730,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0671.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0671.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0671.json",
-      "tier": "Epic"
+      "tier": "Rare"
     },
     {
       "tokenId": 672,
@@ -8782,7 +8782,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0675.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0675.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0675.json",
-      "tier": "Rare"
+      "tier": "Epic"
     },
     {
       "tokenId": 676,
@@ -8951,7 +8951,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0688.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0688.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0688.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 689,
@@ -9029,7 +9029,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0694.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0694.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0694.json",
-      "tier": "Rare"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 695,
@@ -9146,7 +9146,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0703.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0703.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0703.json",
-      "tier": "Rare"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 704,
@@ -9159,7 +9159,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0704.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0704.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0704.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 705,
@@ -9380,7 +9380,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0721.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0721.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0721.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 722,
@@ -9822,7 +9822,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0755.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0755.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0755.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 756,
@@ -9874,7 +9874,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0759.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0759.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0759.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 760,
@@ -10004,7 +10004,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0769.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0769.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0769.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 770,
@@ -10043,7 +10043,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0772.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0772.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0772.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 773,
@@ -10277,7 +10277,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0790.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0790.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0790.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 791,
@@ -10342,7 +10342,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0795.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0795.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0795.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 796,
@@ -10498,7 +10498,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0807.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0807.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0807.json",
-      "tier": "Rare"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 808,
@@ -10628,7 +10628,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0817.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0817.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0817.json",
-      "tier": "Epic"
+      "tier": "Legendary"
     },
     {
       "tokenId": 818,
@@ -10693,7 +10693,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0822.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0822.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0822.json",
-      "tier": "Legendary"
+      "tier": "Epic"
     },
     {
       "tokenId": 823,
@@ -11083,7 +11083,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0852.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0852.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0852.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 853,
@@ -11278,7 +11278,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0867.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0867.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0867.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 868,
@@ -11356,7 +11356,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0873.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0873.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0873.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 874,
@@ -11434,7 +11434,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0879.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0879.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0879.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 880,
@@ -11486,7 +11486,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0883.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0883.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0883.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 884,
@@ -11564,7 +11564,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0889.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0889.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0889.json",
-      "tier": "Rare"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 890,
@@ -11629,7 +11629,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0894.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0894.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0894.json",
-      "tier": "Rare"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 895,
@@ -11668,7 +11668,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0897.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0897.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0897.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 898,
@@ -11850,7 +11850,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0911.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0911.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0911.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 912,
@@ -12097,7 +12097,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0930.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0930.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0930.json",
-      "tier": "Rare"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 931,
@@ -12214,7 +12214,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0939.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0939.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0939.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 940,
@@ -12643,7 +12643,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0972.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0972.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0972.json",
-      "tier": "Uncommon"
+      "tier": "Common"
     },
     {
       "tokenId": 973,
@@ -12786,7 +12786,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0983.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0983.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0983.json",
-      "tier": "Common"
+      "tier": "Uncommon"
     },
     {
       "tokenId": 984,
@@ -12942,7 +12942,7 @@
       "avatar": "https://relm-link-production.up.railway.app/nft/img/0995.png",
       "skin": "https://relm-link-production.up.railway.app/nft/skin/0995.png",
       "metadata": "https://relm-link-production.up.railway.app/nft/meta/0995.json",
-      "tier": "Uncommon"
+      "tier": "Rare"
     },
     {
       "tokenId": 996,

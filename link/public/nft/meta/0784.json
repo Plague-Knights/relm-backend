@@ -1,6 +1,6 @@
 {
   "name": "Ironclaw",
-  "description": "A Relm Arena fighter. Power 79, Speed 36, Luck 85.",
+  "description": "A Relm Arena fighter. Power 41, Speed 64, Luck 65.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0784.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cc455c6d65b7d00ce296abdba",
   "attributes": [
@@ -26,17 +26,17 @@
     },
     {
       "trait_type": "Power",
-      "value": 79,
+      "value": 41,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 36,
+      "value": 64,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 85,
+      "value": 65,
       "max_value": 100
     },
     {

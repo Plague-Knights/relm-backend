@@ -1,6 +1,6 @@
 {
   "name": "Ironstep",
-  "description": "A Relm Arena fighter. Power 86, Speed 87, Luck 34.",
+  "description": "A Relm Arena fighter. Power 27, Speed 49, Luck 46.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0224.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c70ac565289b32a4c9b3f6801",
   "attributes": [
@@ -26,17 +26,17 @@
     },
     {
       "trait_type": "Power",
-      "value": 86,
+      "value": 27,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 87,
+      "value": 49,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 34,
+      "value": 46,
       "max_value": 100
     },
     {

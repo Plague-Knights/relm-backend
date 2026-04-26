@@ -1,6 +1,6 @@
 {
   "name": "Hollowfang",
-  "description": "A Relm Arena fighter. Power 28, Speed 71, Luck 57.",
+  "description": "A Relm Arena fighter. Power 69, Speed 76, Luck 78.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0226.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c26dd99a1ce6de1ee961555d2",
   "attributes": [
@@ -26,17 +26,17 @@
     },
     {
       "trait_type": "Power",
-      "value": 28,
+      "value": 69,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 71,
+      "value": 76,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 57,
+      "value": 78,
       "max_value": 100
     },
     {

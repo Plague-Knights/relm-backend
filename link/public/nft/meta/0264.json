@@ -1,6 +1,6 @@
 {
   "name": "Raveltide",
-  "description": "A Relm Arena fighter. Power 88, Speed 67, Luck 90.",
+  "description": "A Relm Arena fighter. Power 47, Speed 36, Luck 45.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0264.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cb432151109b24588807b3e73",
   "attributes": [
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 88,
+      "value": 47,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 67,
+      "value": 36,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 90,
+      "value": 45,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Uncommon"
+      "value": "Common"
     }
   ],
   "properties": {

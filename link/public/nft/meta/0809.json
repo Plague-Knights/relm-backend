@@ -1,6 +1,6 @@
 {
   "name": "Sablevein",
-  "description": "A Relm Arena fighter. Power 31, Speed 82, Luck 73.",
+  "description": "A Relm Arena fighter. Power 61, Speed 45, Luck 51.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0809.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cf2f42b359043f435a9414940",
   "attributes": [
@@ -26,17 +26,17 @@
     },
     {
       "trait_type": "Power",
-      "value": 31,
+      "value": 61,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 82,
+      "value": 45,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 73,
+      "value": 51,
       "max_value": 100
     },
     {

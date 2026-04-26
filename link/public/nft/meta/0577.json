@@ -1,6 +1,6 @@
 {
   "name": "Cinderspike",
-  "description": "A Relm Arena fighter. Power 28, Speed 91, Luck 81.",
+  "description": "A Relm Arena fighter. Power 32, Speed 31, Luck 28.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0577.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cc916e5092f7d792dcde17f0c",
   "attributes": [
@@ -26,17 +26,17 @@
     },
     {
       "trait_type": "Power",
-      "value": 28,
+      "value": 32,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 91,
+      "value": 31,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 81,
+      "value": 28,
       "max_value": 100
     },
     {

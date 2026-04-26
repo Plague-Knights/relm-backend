@@ -1,6 +1,6 @@
 {
   "name": "Ravelfrost",
-  "description": "A Relm Arena fighter. Power 91, Speed 94, Luck 55.",
+  "description": "A Relm Arena fighter. Power 60, Speed 51, Luck 41.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0248.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/caf4340b3b81ba438b7cb089c",
   "attributes": [
@@ -26,17 +26,17 @@
     },
     {
       "trait_type": "Power",
-      "value": 91,
+      "value": 60,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 94,
+      "value": 51,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 55,
+      "value": 41,
       "max_value": 100
     },
     {

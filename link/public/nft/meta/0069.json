@@ -1,6 +1,6 @@
 {
   "name": "Vexrage",
-  "description": "A Relm Arena fighter. Power 89, Speed 92, Luck 62.",
+  "description": "A Relm Arena fighter. Power 46, Speed 44, Luck 32.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0069.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cfea989e4281c4b11ef01e6a3",
   "attributes": [
@@ -26,17 +26,17 @@
     },
     {
       "trait_type": "Power",
-      "value": 89,
+      "value": 46,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 92,
+      "value": 44,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 62,
+      "value": 32,
       "max_value": 100
     },
     {

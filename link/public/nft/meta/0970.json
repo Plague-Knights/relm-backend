@@ -1,6 +1,6 @@
 {
   "name": "Glintweave",
-  "description": "A Relm Arena fighter. Power 46, Speed 95, Luck 37.",
+  "description": "A Relm Arena fighter. Power 41, Speed 39, Luck 41.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0970.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cc70609de32084ad271e5fc58",
   "attributes": [
@@ -26,17 +26,17 @@
     },
     {
       "trait_type": "Power",
-      "value": 46,
+      "value": 41,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 95,
+      "value": 39,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 37,
+      "value": 41,
       "max_value": 100
     },
     {

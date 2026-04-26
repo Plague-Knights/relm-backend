@@ -20,17 +20,34 @@ import {
   buildMetadata, rollTraits, traitProbability, type TraitCategory, type TraitSet,
 } from "../src/lib/fighterTraits.js";
 
-// Combined inverse-probability of all 5 traits + (power+speed+luck)
-// percentile. Tier thresholds get computed in pass 2 from the score
-// distribution so we always hit the target 60/25/10/4/1 split.
-function rarityScore(traits: TraitSet, total: number): number {
+// Trait-only rarity score (no stat contribution). Stats are then
+// rolled from tier-bounded ranges so legendary fighters always have
+// better mining numbers than commons.
+function rarityScore(traits: TraitSet): number {
   let traitScore = 0;
   const cats: TraitCategory[] = ["background", "helmet", "armor", "weapon", "hair"];
   for (const c of cats) {
     const p = traitProbability(c, traits[c]);
     if (p > 0) traitScore += 1 / p;
   }
-  return traitScore + (total / 285) * 8;
+  return traitScore;
+}
+
+// Per-tier stat ranges. Legendary fighters mine ~2× faster than
+// commons (the lua mod's dig_time scales off power; speed scales
+// movement; luck scales rarity-of-strike).
+const TIER_STAT_RANGE: Record<string, [number, number]> = {
+  Common:    [25, 50],
+  Uncommon:  [35, 65],
+  Rare:      [50, 78],
+  Epic:      [65, 88],
+  Legendary: [80, 95],
+};
+
+function rollTierStat(seed: number, tier: string, salt: string): number {
+  const [lo, hi] = TIER_STAT_RANGE[tier] ?? [25, 95];
+  const h = crypto.createHash("sha256").update(`${seed}:${tier}:${salt}`).digest();
+  return lo + (h[0]! % (hi - lo + 1));
 }
 
 // Sorted percentile cutoffs for 1000 fighters: bottom 60% = Common,
@@ -100,15 +117,14 @@ async function main() {
     fs.mkdirSync(path.join(OUT_DIR, sub), { recursive: true });
   }
 
-  // Pass 1: compute all rarity scores so we can pick percentile cutoffs.
+  // Pass 1: compute trait-only rarity scores so we can pick
+  // percentile cutoffs. Stats are derived from tier later, not used
+  // as input — legendary stays legendary based on its trait roll.
   const allScores: number[] = [];
   for (let i = 0; i < COUNT; i++) {
     const id = fakeCuid(i + 1);
     const traits = rollTraits(id);
-    const power = statRoll(i + 1, "power");
-    const speed = statRoll(i + 1, "speed");
-    const luck = statRoll(i + 1, "luck");
-    allScores.push(rarityScore(traits, power + speed + luck));
+    allScores.push(rarityScore(traits));
   }
   const sortedScores = [...allScores].sort((a, b) => a - b);
 
@@ -124,9 +140,14 @@ async function main() {
     const id = fakeCuid(tokenId);
     const traits = rollTraits(id);
     const name = nameFor(tokenId, traits);
-    const power = statRoll(tokenId, "power");
-    const speed = statRoll(tokenId, "speed");
-    const luck = statRoll(tokenId, "luck");
+    // Tier is locked in by the trait roll; stats roll from the tier's
+    // bounded range so a Legendary fighter always has stronger numbers
+    // than a Common one (and players see the gameplay difference).
+    const score = rarityScore(traits);
+    const tier = tierFor(score, sortedScores);
+    const power = rollTierStat(tokenId, tier, "power");
+    const speed = rollTierStat(tokenId, tier, "speed");
+    const luck = rollTierStat(tokenId, tier, "luck");
 
     const fighter: FighterRow = { id, name, power, speed, luck };
 
@@ -158,8 +179,6 @@ async function main() {
     fs.writeFileSync(path.join(OUT_DIR, tqRel), threeQ);
     fs.writeFileSync(path.join(OUT_DIR, skinRel), skin);
 
-    const score = rarityScore(traits, power + speed + luck);
-    const tier = tierFor(score, sortedScores);
     rarityCount[tier] = (rarityCount[tier] || 0) + 1;
 
     // The 3-quarter render is the closest match to how the fighter

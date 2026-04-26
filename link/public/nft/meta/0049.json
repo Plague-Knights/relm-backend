@@ -1,6 +1,6 @@
 {
   "name": "Cinderscale",
-  "description": "A Relm Arena fighter. Power 31, Speed 93, Luck 67.",
+  "description": "A Relm Arena fighter. Power 46, Speed 39, Luck 38.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0049.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c244c9047de888cb58fc36ae2",
   "attributes": [
@@ -26,17 +26,17 @@
     },
     {
       "trait_type": "Power",
-      "value": 31,
+      "value": 46,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 93,
+      "value": 39,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 67,
+      "value": 38,
       "max_value": 100
     },
     {

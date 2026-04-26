@@ -1,6 +1,6 @@
 {
   "name": "Driftburn",
-  "description": "A Relm Arena fighter. Power 93, Speed 60, Luck 72.",
+  "description": "A Relm Arena fighter. Power 48, Speed 47, Luck 43.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0879.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/c3cf53f245bb7ca87c6750844",
   "attributes": [
@@ -26,22 +26,22 @@
     },
     {
       "trait_type": "Power",
-      "value": 93,
+      "value": 48,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 60,
+      "value": 47,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 72,
+      "value": 43,
       "max_value": 100
     },
     {
       "trait_type": "Rarity",
-      "value": "Uncommon"
+      "value": "Common"
     }
   ],
   "properties": {

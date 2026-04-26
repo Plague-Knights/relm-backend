@@ -1,6 +1,6 @@
 {
   "name": "Palelock",
-  "description": "A Relm Arena fighter. Power 81, Speed 54, Luck 90.",
+  "description": "A Relm Arena fighter. Power 38, Speed 44, Luck 37.",
   "image": "https://relm-link-production.up.railway.app/nft/tq/0678.png",
   "external_url": "https://relm-link-production.up.railway.app/fighters/cc9c1db70ef0b57655ca05070",
   "attributes": [
@@ -26,17 +26,17 @@
     },
     {
       "trait_type": "Power",
-      "value": 81,
+      "value": 38,
       "max_value": 100
     },
     {
       "trait_type": "Speed",
-      "value": 54,
+      "value": 44,
       "max_value": 100
     },
     {
       "trait_type": "Luck",
-      "value": 90,
+      "value": 37,
       "max_value": 100
     },
     {
